@@ -1,4 +1,4 @@
-# Minimalistic Flat Modern GUI Template
+# Automatizações Dentalar
 [![GitHub](https://img.shields.io/github/license/anjalp/Minimalistic-Flat-Modern-GUI-Template?logo=Github)](https://github.com/anjalp/Minimalistic-Flat-Modern-GUI-Template/blob/master/LICENSE) [![GitHub top language](https://img.shields.io/github/languages/top/anjalp/Minimalistic-Flat-Modern-GUI-Template?logo=github)](https://github.com/anjalp/Minimalistic-Flat-Modern-GUI-Template) [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/anjalp/Minimalistic-Flat-Modern-GUI-Template?logo=github)](https://github.com/anjalp/Minimalistic-Flat-Modern-GUI-Template) [![GitHub issues](https://img.shields.io/github/issues/anjalp/Minimalistic-Flat-Modern-GUI-Template?logo=github)](https://github.com/anjalp/Minimalistic-Flat-Modern-GUI-Template/issues)
 
 A **Free** to use, Beautiful, Feature Rich, Fully Customizable Flat Modern GUI Template Using **Pyside2** designed in **Qt Designer**, supported for Windows/Linux/Mac OS, Incorporating widgets like Buttons, Progress Bar, Custom Tabs, and many more.
