@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>912</width>
     <height>550</height>
    </rect>
   </property>
@@ -267,7 +267,7 @@ QPushButton:pressed {
                 <string notr="true">color:rgb(255,255,255);</string>
                </property>
                <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;User8455&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;User&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -648,7 +648,7 @@ QPushButton:pressed {
            <number>0</number>
           </property>
           <item>
-           <widget class="QFrame" name="frame_home">
+           <widget class="QFrame" name="frame_whatsapp">
             <property name="minimumSize">
              <size>
               <width>80</width>
@@ -684,7 +684,7 @@ QPushButton:pressed {
               <number>0</number>
              </property>
              <item>
-              <widget class="QPushButton" name="bn_home">
+              <widget class="QPushButton" name="bn_whatsapp">
                <property name="minimumSize">
                 <size>
                  <width>80</width>
@@ -717,7 +717,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>icons/1x/homeAsset 46.png</normaloff>icons/1x/homeAsset 46.png</iconset>
+                 <normaloff>icons/1x/whatsappAsset.png</normaloff>icons/1x/whatsappAsset.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -1081,7 +1081,7 @@ QPushButton:pressed {
                 <string notr="true"/>
                </property>
                <property name="currentIndex">
-                <number>7</number>
+                <number>0</number>
                </property>
                <widget class="QWidget" name="page_home">
                 <property name="styleSheet">
@@ -1104,7 +1104,7 @@ QPushButton:pressed {
                   <number>5</number>
                  </property>
                  <item>
-                  <widget class="QFrame" name="frame_home_main">
+                  <widget class="QFrame" name="frame_whatsapp_main">
                    <property name="frameShape">
                     <enum>QFrame::NoFrame</enum>
                    </property>
@@ -1153,7 +1153,7 @@ QPushButton:pressed {
 }</string>
                       </property>
                       <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Profile&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;WhatsApp&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                       </property>
                       <property name="textFormat">
                        <enum>Qt::RichText</enum>
@@ -1208,7 +1208,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item>
-                  <widget class="QFrame" name="frame_home_stat">
+                  <widget class="QFrame" name="frame_whatsapp_stat">
                    <property name="minimumSize">
                     <size>
                      <width>220</width>
@@ -1269,7 +1269,7 @@ p, li { white-space: pre-wrap; }
 }</string>
                       </property>
                       <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Stat &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Contatos&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1277,18 +1277,74 @@ p, li { white-space: pre-wrap; }
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLabel" name="lab_home_stat_disc">
+                     <widget class="QPushButton" name="load_contacts_button">
+                      <property name="minimumSize">
+                       <size>
+                        <width>200</width>
+                        <height>25</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>250</width>
+                        <height>25</height>
+                       </size>
+                      </property>
                       <property name="font">
                        <font>
                         <family>Segoe UI</family>
-                        <pointsize>10</pointsize>
+                        <pointsize>12</pointsize>
                        </font>
                       </property>
-                      <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Weather: Rainy&lt;br/&gt;Skys: Cloudy&lt;br/&gt;Wind: blowing Fast&lt;br/&gt;Temperature: 32 Degree Celcious&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      <property name="mouseTracking">
+                       <bool>false</bool>
                       </property>
-                      <property name="alignment">
-                       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                      <property name="autoFillBackground">
+                       <bool>false</bool>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton {
+	border: 2px solid rgb(51,51,51);
+	border-radius: 5px;	
+	color:rgb(255,255,255);
+	background-color: rgb(51,51,51);
+}
+QPushButton:hover {
+	border: 2px solid rgb(0,143,150);
+	background-color: rgb(0,143,150);
+}
+QPushButton:pressed {	
+	border: 2px solid rgb(0,143,150);
+	background-color: rgb(51,51,51);
+}
+
+QPushButton:disabled {	
+	border-radius: 5px;	
+	border: 2px solid rgb(112,112,112);
+	background-color: rgb(112,112,112);
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>Carregar</string>
+                      </property>
+                      <property name="autoDefault">
+                       <bool>false</bool>
+                      </property>
+                      <property name="default">
+                       <bool>false</bool>
+                      </property>
+                      <property name="flat">
+                       <bool>false</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QListView" name="contacts_list">
+                      <property name="maximumSize">
+                       <size>
+                        <width>250</width>
+                        <height>16777215</height>
+                       </size>
                       </property>
                      </widget>
                     </item>
