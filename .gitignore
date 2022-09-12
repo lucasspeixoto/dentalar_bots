@@ -131,6 +131,3 @@ dmypy.json
 # Executables
 .exe
 exe/
-
-# Isse
-issue/
