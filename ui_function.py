@@ -33,7 +33,7 @@
 
 from main import * #IMPORTING THE MAIN.PY FILE
 
-from about import *
+from help import *
 
 
 GLOBAL_STATE = 0 #NECESSERY FOR CHECKING WEATHER THE WINDWO IS FULL SCREEN OR NOT
@@ -51,8 +51,8 @@ class UIFunction(MainWindow):
     def initStackTab(self):
         global init
         if init==False:
-            self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
-            self.ui.lab_tab.setText("Home")
+            self.ui.stackedWidget.setCurrentWidget(self.ui.page_whatsapp)
+            self.ui.lab_tab.setText("WhatsApp")
             self.ui.frame_whatsapp.setStyleSheet("background:rgb(91,90,90)")
             init = True
     ################################################################################################
@@ -114,14 +114,14 @@ class UIFunction(MainWindow):
             if currentWidth==80:
                 extend = maxWidth
                 #----> MAKE THE STACKED WIDGET PAGE TO ABOUT HOME PAGE
-                self.ui.stackedWidget.setCurrentWidget(self.ui.page_about_home)
-                self.ui.lab_tab.setText("About > Home")
+                self.ui.stackedWidget.setCurrentWidget(self.ui.page_whatsapp_help)
+                self.ui.lab_tab.setText("Ajuda > WhatsApp")
                 self.ui.frame_whatsapp.setStyleSheet("background:rgb(91,90,90)")
             else:
                 extend = minWidth
                 #-----> REVERT THE ABOUT HOME PAGE TO NORMAL HOME PAGE
-                self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
-                self.ui.lab_tab.setText("Home")
+                self.ui.stackedWidget.setCurrentWidget(self.ui.page_whatsapp)
+                self.ui.lab_tab.setText("WhatsApp")
                 self.ui.frame_whatsapp.setStyleSheet("background:rgb(91,90,90)")
             #THIS ANIMATION IS RESPONSIBLE FOR THE TOODLE TO MOVE IN A SOME FIXED STATE.
             self.animation = QPropertyAnimation(self.ui.frame_bottom_west, b"minimumWidth")
@@ -179,13 +179,13 @@ class UIFunction(MainWindow):
 
         if buttonName=='bn_whatsapp':
             if self.ui.frame_bottom_west.width()==80  and index!=0:
-                self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
-                self.ui.lab_tab.setText("Home")
+                self.ui.stackedWidget.setCurrentWidget(self.ui.page_whatsapp)
+                self.ui.lab_tab.setText("WhatsApp")
                 self.ui.frame_whatsapp.setStyleSheet("background:rgb(91,90,90)") # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST 
 
             elif self.ui.frame_bottom_west.width()==160  and index!=1:  # ABOUT PAGE STACKED WIDGET
-                self.ui.stackedWidget.setCurrentWidget(self.ui.page_about_home)
-                self.ui.lab_tab.setText("About > Home")
+                self.ui.stackedWidget.setCurrentWidget(self.ui.page_whatsapp_help)
+                self.ui.lab_tab.setText("Ajuda Bots")
                 self.ui.frame_whatsapp.setStyleSheet("background:rgb(91,90,90)") # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
 
         elif buttonName=='bn_bug':
@@ -196,7 +196,7 @@ class UIFunction(MainWindow):
 
             elif self.ui.frame_bottom_west.width()==160 and index!=4:   # ABOUT PAGE STACKED WIDGET
                 self.ui.stackedWidget.setCurrentWidget(self.ui.page_about_bug)
-                self.ui.lab_tab.setText("About > Bug")
+                self.ui.lab_tab.setText("Ajuda > Bug")
                 self.ui.frame_bug.setStyleSheet("background:rgb(91,90,90)") # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
 
         elif buttonName=='bn_android':
@@ -208,7 +208,7 @@ class UIFunction(MainWindow):
 
             elif self.ui.frame_bottom_west.width()==160  and index!=3:   # ABOUT PAGE STACKED WIDGET
                 self.ui.stackedWidget.setCurrentWidget(self.ui.page_about_android)
-                self.ui.lab_tab.setText("About > Android")
+                self.ui.lab_tab.setText("Ajuda > Android")
                 self.ui.frame_android.setStyleSheet("background:rgb(91,90,90)") # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
 
         elif buttonName=='bn_cloud':
@@ -219,7 +219,7 @@ class UIFunction(MainWindow):
 
             elif self.ui.frame_bottom_west.width()==160 and index!=2:   # ABOUT PAGE STACKED WIDGET
                 self.ui.stackedWidget.setCurrentWidget(self.ui.page_about_cloud)
-                self.ui.lab_tab.setText("About > Cloud")
+                self.ui.lab_tab.setText("Ajuda > Cloud")
                 self.ui.frame_cloud.setStyleSheet("background:rgb(91,90,90)") # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
 
         #ADD ANOTHER ELIF STATEMENT HERE FOR EXECTUITING A NEW MENU BUTTON STACK PAGE.
@@ -232,7 +232,7 @@ class UIFunction(MainWindow):
     def stackPage(self):
 
         ######### PAGE_HOME ############# BELOW DISPLAYS THE FUNCTION OF WIDGET, LABEL, PROGRESS BAR, E.T.C IN STACKEDWIDGET page_HOME
-        self.ui.lab_home_main_hed.setText("WhatsApp")
+        self.ui.whatsapp_page_title.setText("WhatsApp")
         self.ui.lab_home_stat_hed.setText("Contatos")
 
         ######### PAGE_BUG ############## BELOW DISPLAYS THE FUNCTION OF WIDGET, LABEL, PROGRESS BAR, E.T.C IN STACKEDWIDGET page_bug
@@ -270,8 +270,8 @@ class UIFunction(MainWindow):
         self.ui.checkBox_2.stateChanged.connect(lambda: self.errorexec("Even More Happy to hear this", "icons/1x/smileAsset 1.png", "Ok"))
 
         ##########PAGE: ABOUT HOME #############
-        self.ui.text_about_home.setVerticalScrollBar(self.ui.vsb_about_home)
-        self.ui.text_about_home.setText(aboutHome)
+        self.ui.text_whatsapp_page_whatsapp_help.setVerticalScrollBar(self.ui.vsb_whatsapp_page_whatsapp_help)
+        self.ui.text_whatsapp_page_whatsapp_help.setText(helpText)
     ################################################################################################################################
 
 
