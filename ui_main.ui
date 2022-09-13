@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>912</width>
+    <width>800</width>
     <height>550</height>
    </rect>
   </property>
@@ -224,7 +224,13 @@ QPushButton:pressed {
                 <string notr="true">color:rgb(255,255,255);</string>
                </property>
                <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Automações&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="margin">
+                <number>2</number>
+               </property>
+               <property name="indent">
+                <number>5</number>
                </property>
               </widget>
              </item>
@@ -803,7 +809,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>icons/1x/bugAsset 47.png</normaloff>icons/1x/bugAsset 47.png</iconset>
+                 <normaloff>icons/1x/emailsAsset.png</normaloff>icons/1x/emailsAsset.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -889,12 +895,12 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>icons/1x/cloudAsset 48.png</normaloff>icons/1x/cloudAsset 48.png</iconset>
+                 <normaloff>icons/1x/cloudAsset.png</normaloff>icons/1x/cloudAsset.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
                  <width>22</width>
-                 <height>12</height>
+                 <height>22</height>
                 </size>
                </property>
                <property name="flat">
@@ -1339,13 +1345,39 @@ QPushButton:disabled {
                      </widget>
                     </item>
                     <item>
-                     <widget class="QListView" name="contacts_list">
-                      <property name="maximumSize">
-                       <size>
-                        <width>250</width>
-                        <height>16777215</height>
-                       </size>
-                      </property>
+                     <widget class="QListWidget" name="contacts_list">
+                      <item>
+                       <property name="text">
+                        <string>(19) 98262 1117</string>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Segoe UI</family>
+                         <pointsize>14</pointsize>
+                         <weight>75</weight>
+                         <bold>true</bold>
+                         <kerning>false</kerning>
+                        </font>
+                       </property>
+                       <property name="background">
+                        <brush brushstyle="NoBrush">
+                         <color alpha="255">
+                          <red>255</red>
+                          <green>255</green>
+                          <blue>255</blue>
+                         </color>
+                        </brush>
+                       </property>
+                       <property name="foreground">
+                        <brush brushstyle="NoBrush">
+                         <color alpha="255">
+                          <red>229</red>
+                          <green>229</green>
+                          <blue>229</blue>
+                         </color>
+                        </brush>
+                       </property>
+                      </item>
                      </widget>
                     </item>
                    </layout>
