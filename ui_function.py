@@ -44,7 +44,7 @@ init = False # NECRESSERY FOR INITITTION OF THE WINDOW.
 # android_buttons = ['bn_android_contact', 'bn_android_game', 'bn_android_clean', 'bn_android_world'] #BUTTONS IN ANDROID STACKPAGE
 
 # THIS CLASS HOUSES ALL FUNCTION NECESSERY FOR OUR PROGRAMME TO RUN.
-class UIFunction(MainWindow):
+class UIFunction():
 
     #----> INITIAL FUNCTION TO LOAD THE FRONT STACK WIDGET AND TAB BUTTON I.E. HOME PAGE 
     #INITIALISING THE WELCOME PAGE TO: HOME PAGE IN THE STACKEDWIDGET, SETTING THE BOTTOM LABEL AS THE PAGE NAME, SETTING THE BUTTON STYLE.
@@ -57,12 +57,10 @@ class UIFunction(MainWindow):
             init = True
     ################################################################################################
 
-
     #------> SETING THE APPLICATION NAME IN OUR CUSTOME MADE TAB, WHERE LABEL NAMED: lab_appname()
     def labelTitle(self, appName):
         self.ui.lab_appname.setText(appName)
     ################################################################################################
-
 
     #----> MAXIMISE/RESTORE FUNCTION
     #THIS FUNCTION MAXIMISES OUR MAINWINDOW WHEN THE MAXIMISE BUTTON IS PRESSED OR IF DOUBLE MOUSE LEFT PRESS IS DOEN OVER THE TOPFRMAE.
@@ -225,7 +223,6 @@ class UIFunction(MainWindow):
         #ADD ANOTHER ELIF STATEMENT HERE FOR EXECTUITING A NEW MENU BUTTON STACK PAGE.
     ########################################################################################################################
 
-
     #----> STACKWIDGET EACH PAGE FUNCTION PAGE FUNCTIONS
     # CODE TO PERFOMR THE TASK IN THE STACKED WIDGET PAGE 
     # WHAT EVER WIDGET IS IN THE STACKED PAGES ITS ACTION IS EVALUATED HERE AND THEN THE REST FUNCTION IS PASSED.
@@ -270,10 +267,9 @@ class UIFunction(MainWindow):
         self.ui.checkBox_2.stateChanged.connect(lambda: self.errorexec("Even More Happy to hear this", "icons/1x/smileAsset 1.png", "Ok"))
 
         ##########PAGE: ABOUT HOME #############
-        self.ui.text_whatsapp_page_whatsapp_help.setVerticalScrollBar(self.ui.vsb_whatsapp_page_whatsapp_help)
-        self.ui.text_whatsapp_page_whatsapp_help.setText(helpText)
+        self.ui.text_whatsapp_page_help.setVerticalScrollBar(self.ui.vsb_whatsapp_page_help)
+        self.ui.text_whatsapp_page_help.setText(helpText)
     ################################################################################################################################
-
 
     #-----> FUNCTION TO SHOW CORRESPONDING STACK PAGE WHEN THE ANDROID BUTTONS ARE PRESSED: CONTACT, GAME, CLOUD, WORLD
     # SINCE THE ANDROID PAGE AHS A SUB STACKED WIDGET WIT FOUR MORE BUTTONS, ALL THIS 4 PAGES CONTENT: BUTTONS, TEXT, LABEL E.T.C ARE INITIALIED OVER HERE. 
