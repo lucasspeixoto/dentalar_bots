@@ -1149,7 +1149,7 @@ QPushButton:pressed {
                      <number>5</number>
                     </property>
                     <item>
-                     <widget class="QLabel" name="whatsapp_page_title">
+                     <widget class="QLabel" name="whatsapp_page_left_side_title">
                       <property name="minimumSize">
                        <size>
                         <width>0</width>
@@ -1191,6 +1191,12 @@ QPushButton:pressed {
                      <widget class="QPushButton" name="whatsapp_login_button">
                       <property name="enabled">
                        <bool>true</bool>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>30</height>
+                       </size>
                       </property>
                       <property name="maximumSize">
                        <size>
@@ -1237,7 +1243,7 @@ QPushButton:disabled {
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLabel" name="message_input_text">
+                     <widget class="QLabel" name="whatsapp_message_label">
                       <property name="font">
                        <font>
                         <family>Segoe UI</family>
@@ -1258,7 +1264,7 @@ QPushButton:disabled {
                      </widget>
                     </item>
                     <item>
-                     <widget class="QTextEdit" name="whatsapp_message_label">
+                     <widget class="QTextEdit" name="whatsapp_message_input">
                       <property name="maximumSize">
                        <size>
                         <width>16777215</width>
@@ -1301,13 +1307,13 @@ QPushButton:disabled {
                          <x>20</x>
                          <y>30</y>
                          <width>75</width>
-                         <height>25</height>
+                         <height>30</height>
                         </rect>
                        </property>
                        <property name="minimumSize">
                         <size>
                          <width>0</width>
-                         <height>25</height>
+                         <height>30</height>
                         </size>
                        </property>
                        <property name="font">
@@ -1343,18 +1349,21 @@ QPushButton:disabled {
                        </property>
                       </widget>
                       <widget class="QPushButton" name="load_file_button">
+                       <property name="enabled">
+                        <bool>false</bool>
+                       </property>
                        <property name="geometry">
                         <rect>
                          <x>110</x>
                          <y>30</y>
                          <width>75</width>
-                         <height>25</height>
+                         <height>30</height>
                         </rect>
                        </property>
                        <property name="minimumSize">
                         <size>
                          <width>0</width>
-                         <height>25</height>
+                         <height>30</height>
                         </size>
                        </property>
                        <property name="font">
@@ -1438,7 +1447,7 @@ QPushButton:disabled {
                      <number>5</number>
                     </property>
                     <item>
-                     <widget class="QLabel" name="lab_home_stat_hed">
+                     <widget class="QLabel" name="whatsapp_page_right_side_title">
                       <property name="minimumSize">
                        <size>
                         <width>0</width>
@@ -1472,6 +1481,15 @@ QPushButton:disabled {
                     </item>
                     <item>
                      <widget class="QPushButton" name="load_contacts_button">
+                      <property name="enabled">
+                       <bool>true</bool>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>30</height>
+                       </size>
+                      </property>
                       <property name="maximumSize">
                        <size>
                         <width>16777215</width>
@@ -1582,69 +1600,49 @@ QPushButton:disabled {
                      </widget>
                     </item>
                     <item>
-                     <widget class="QRadioButton" name="send_to_all_contacts_radio_button">
-                      <property name="enabled">
-                       <bool>false</bool>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <family>Segoe UI</family>
-                        <pointsize>12</pointsize>
-                        <weight>75</weight>
-                        <bold>true</bold>
-                        <underline>false</underline>
-                        <strikeout>false</strikeout>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QRadioButton {
-	color:rgb(255,255,255);
-}
-QPushButton:hover {
-	border: 2px solid rgb(0,143,150);
-	background-color: rgb(0,143,150);
-}
-QPushButton:pressed {	
-	border: 2px solid rgb(0,143,150);
-	background-color: rgb(51,51,51);
-}
-
-QPushButton:disabled {	
-	border-radius: 5px;	
-	border: 2px solid rgb(112,112,112);
-	background-color: rgb(112,112,112);
-}</string>
-                      </property>
-                      <property name="text">
-                       <string>Todos</string>
-                      </property>
-                      <property name="checked">
-                       <bool>false</bool>
-                      </property>
-                      <property name="autoExclusive">
-                       <bool>true</bool>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QPushButton" name="send_whatsapp_messages_button">
-                      <property name="enabled">
-                       <bool>false</bool>
-                      </property>
-                      <property name="maximumSize">
+                     <widget class="QGroupBox" name="groupBox_2">
+                      <property name="minimumSize">
                        <size>
-                        <width>16777215</width>
-                        <height>16777215</height>
+                        <width>0</width>
+                        <height>70</height>
                        </size>
                       </property>
                       <property name="font">
                        <font>
                         <family>Segoe UI</family>
                         <pointsize>12</pointsize>
+                        <weight>50</weight>
+                        <bold>false</bold>
                        </font>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">QPushButton {
+                       <string notr="true">QGroupBox {
+	color:rgb(255,255,255);
+}</string>
+                      </property>
+                      <property name="title">
+                       <string>Seleção</string>
+                      </property>
+                      <widget class="QPushButton" name="clear_contacts_list_button">
+                       <property name="enabled">
+                        <bool>false</bool>
+                       </property>
+                       <property name="geometry">
+                        <rect>
+                         <x>100</x>
+                         <y>30</y>
+                         <width>85</width>
+                         <height>30</height>
+                        </rect>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Segoe UI</family>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">QPushButton {
 	border: 2px solid rgb(51,51,51);
 	border-radius: 5px;	
 	color:rgb(255,255,255);
@@ -1664,10 +1662,82 @@ QPushButton:disabled {
 	border: 2px solid rgb(112,112,112);
 	background-color: rgb(112,112,112);
 }</string>
-                      </property>
-                      <property name="text">
-                       <string>Enviar</string>
-                      </property>
+                       </property>
+                       <property name="text">
+                        <string>Limpar</string>
+                       </property>
+                      </widget>
+                      <widget class="QPushButton" name="send_whatsapp_messages_button">
+                       <property name="enabled">
+                        <bool>false</bool>
+                       </property>
+                       <property name="geometry">
+                        <rect>
+                         <x>190</x>
+                         <y>30</y>
+                         <width>85</width>
+                         <height>30</height>
+                        </rect>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Segoe UI</family>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">QPushButton {
+	border: 2px solid rgb(51,51,51);
+	border-radius: 5px;	
+	color:rgb(255,255,255);
+	background-color: rgb(51,51,51);
+}
+QPushButton:hover {
+	border: 2px solid rgb(0,143,150);
+	background-color: rgb(0,143,150);
+}
+QPushButton:pressed {	
+	border: 2px solid rgb(0,143,150);
+	background-color: rgb(51,51,51);
+}
+
+QPushButton:disabled {	
+	border-radius: 5px;	
+	border: 2px solid rgb(112,112,112);
+	background-color: rgb(112,112,112);
+}</string>
+                       </property>
+                       <property name="text">
+                        <string>Enviar</string>
+                       </property>
+                      </widget>
+                      <widget class="QCheckBox" name="send_to_all_contacts_checkbox">
+                       <property name="geometry">
+                        <rect>
+                         <x>10</x>
+                         <y>30</y>
+                         <width>85</width>
+                         <height>30</height>
+                        </rect>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Segoe UI</family>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">QCheckBox {
+	color:rgb(255,255,255);
+}
+QCheckBox:hover {
+	font-weight: bold;
+}</string>
+                       </property>
+                       <property name="text">
+                        <string>Nenhum</string>
+                       </property>
+                      </widget>
                      </widget>
                     </item>
                    </layout>

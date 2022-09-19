@@ -229,8 +229,8 @@ class UIFunction():
     def stackPage(self):
 
         ######### PAGE_HOME ############# BELOW DISPLAYS THE FUNCTION OF WIDGET, LABEL, PROGRESS BAR, E.T.C IN STACKEDWIDGET page_HOME
-        self.ui.whatsapp_page_title.setText("WhatsApp")
-        self.ui.lab_home_stat_hed.setText("Contatos")
+        self.ui.whatsapp_page_left_side_title.setText("WhatsApp")
+        self.ui.whatsapp_page_right_side_title.setText("Contatos")
 
         ######### PAGE_BUG ############## BELOW DISPLAYS THE FUNCTION OF WIDGET, LABEL, PROGRESS BAR, E.T.C IN STACKEDWIDGET page_bug
         self.ui.bn_bug_start.clicked.connect(lambda: APFunction.addNumbers(self, self.ui.comboBox_bug.currentText(), True))  
