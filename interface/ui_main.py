@@ -456,7 +456,7 @@ class Ui_MainWindow(object):
         self.frame_whatsapp_main = QFrame(self.page_whatsapp)
         self.frame_whatsapp_main.setObjectName(u"frame_whatsapp_main")
         self.frame_whatsapp_main.setEnabled(True)
-        self.frame_whatsapp_main.setMinimumSize(QSize(420, 0))
+        self.frame_whatsapp_main.setMinimumSize(QSize(400, 0))
         font1 = QFont()
         font1.setFamily(u"Segoe UI")
         font1.setPointSize(12)
@@ -487,6 +487,7 @@ class Ui_MainWindow(object):
         self.whatsapp_login_button = QPushButton(self.frame_whatsapp_main)
         self.whatsapp_login_button.setObjectName(u"whatsapp_login_button")
         self.whatsapp_login_button.setEnabled(True)
+        self.whatsapp_login_button.setMinimumSize(QSize(0, 30))
         self.whatsapp_login_button.setMaximumSize(QSize(16777215, 16777215))
         font3 = QFont()
         font3.setFamily(u"Segoe UI")
@@ -520,22 +521,22 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_5.addWidget(self.whatsapp_login_button)
 
-        self.message_input_text = QLabel(self.frame_whatsapp_main)
-        self.message_input_text.setObjectName(u"message_input_text")
-        self.message_input_text.setFont(font1)
-        self.message_input_text.setStyleSheet(u"QLabel {\n"
+        self.whatsapp_message_label = QLabel(self.frame_whatsapp_main)
+        self.whatsapp_message_label.setObjectName(u"whatsapp_message_label")
+        self.whatsapp_message_label.setFont(font1)
+        self.whatsapp_message_label.setStyleSheet(u"QLabel {\n"
 "	color:rgb(255,255,255);\n"
 "}")
-        self.message_input_text.setTextFormat(Qt.RichText)
-
-        self.verticalLayout_5.addWidget(self.message_input_text)
-
-        self.whatsapp_message_label = QTextEdit(self.frame_whatsapp_main)
-        self.whatsapp_message_label.setObjectName(u"whatsapp_message_label")
-        self.whatsapp_message_label.setMaximumSize(QSize(16777215, 16777215))
-        self.whatsapp_message_label.setFont(font1)
+        self.whatsapp_message_label.setTextFormat(Qt.RichText)
 
         self.verticalLayout_5.addWidget(self.whatsapp_message_label)
+
+        self.whatsapp_message_input = QTextEdit(self.frame_whatsapp_main)
+        self.whatsapp_message_input.setObjectName(u"whatsapp_message_input")
+        self.whatsapp_message_input.setMaximumSize(QSize(16777215, 16777215))
+        self.whatsapp_message_input.setFont(font1)
+
+        self.verticalLayout_5.addWidget(self.whatsapp_message_input)
 
         self.attachments_groupbox = QGroupBox(self.frame_whatsapp_main)
         self.attachments_groupbox.setObjectName(u"attachments_groupbox")
@@ -546,8 +547,8 @@ class Ui_MainWindow(object):
 "}")
         self.load_image_button = QPushButton(self.attachments_groupbox)
         self.load_image_button.setObjectName(u"load_image_button")
-        self.load_image_button.setGeometry(QRect(20, 30, 75, 25))
-        self.load_image_button.setMinimumSize(QSize(0, 25))
+        self.load_image_button.setGeometry(QRect(20, 30, 75, 30))
+        self.load_image_button.setMinimumSize(QSize(0, 30))
         self.load_image_button.setFont(font1)
         self.load_image_button.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(51,51,51);\n"
@@ -571,8 +572,9 @@ class Ui_MainWindow(object):
 "}")
         self.load_file_button = QPushButton(self.attachments_groupbox)
         self.load_file_button.setObjectName(u"load_file_button")
-        self.load_file_button.setGeometry(QRect(110, 30, 75, 25))
-        self.load_file_button.setMinimumSize(QSize(0, 25))
+        self.load_file_button.setEnabled(False)
+        self.load_file_button.setGeometry(QRect(110, 30, 75, 30))
+        self.load_file_button.setMinimumSize(QSize(0, 30))
         self.load_file_button.setFont(font1)
         self.load_file_button.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(51,51,51);\n"
@@ -609,7 +611,7 @@ class Ui_MainWindow(object):
 
         self.frame_whatsapp_contacts = QFrame(self.page_whatsapp)
         self.frame_whatsapp_contacts.setObjectName(u"frame_whatsapp_contacts")
-        self.frame_whatsapp_contacts.setMinimumSize(QSize(300, 0))
+        self.frame_whatsapp_contacts.setMinimumSize(QSize(350, 0))
         self.frame_whatsapp_contacts.setMaximumSize(QSize(220, 16777215))
         self.frame_whatsapp_contacts.setFrameShape(QFrame.NoFrame)
         self.frame_whatsapp_contacts.setFrameShadow(QFrame.Plain)
@@ -631,6 +633,8 @@ class Ui_MainWindow(object):
 
         self.load_contacts_button = QPushButton(self.frame_whatsapp_contacts)
         self.load_contacts_button.setObjectName(u"load_contacts_button")
+        self.load_contacts_button.setEnabled(True)
+        self.load_contacts_button.setMinimumSize(QSize(0, 30))
         self.load_contacts_button.setMaximumSize(QSize(16777215, 16777215))
         self.load_contacts_button.setFont(font1)
         self.load_contacts_button.setMouseTracking(False)
@@ -686,19 +690,28 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_6.addWidget(self.contacts_list)
 
-        self.send_to_all_contacts_radio_button = QRadioButton(self.frame_whatsapp_contacts)
-        self.send_to_all_contacts_radio_button.setObjectName(u"send_to_all_contacts_radio_button")
-        self.send_to_all_contacts_radio_button.setEnabled(False)
+        self.groupBox_2 = QGroupBox(self.frame_whatsapp_contacts)
+        self.groupBox_2.setObjectName(u"groupBox_2")
+        self.groupBox_2.setMinimumSize(QSize(0, 70))
         font6 = QFont()
         font6.setFamily(u"Segoe UI")
         font6.setPointSize(12)
-        font6.setBold(True)
-        font6.setUnderline(False)
-        font6.setWeight(75)
-        font6.setStrikeOut(False)
-        self.send_to_all_contacts_radio_button.setFont(font6)
-        self.send_to_all_contacts_radio_button.setStyleSheet(u"QRadioButton {\n"
+        font6.setBold(False)
+        font6.setWeight(50)
+        self.groupBox_2.setFont(font6)
+        self.groupBox_2.setStyleSheet(u"QGroupBox {\n"
 "	color:rgb(255,255,255);\n"
+"}")
+        self.clear_contacts_list_button = QPushButton(self.groupBox_2)
+        self.clear_contacts_list_button.setObjectName(u"clear_contacts_list_button")
+        self.clear_contacts_list_button.setEnabled(False)
+        self.clear_contacts_list_button.setGeometry(QRect(100, 30, 85, 30))
+        self.clear_contacts_list_button.setFont(font1)
+        self.clear_contacts_list_button.setStyleSheet(u"QPushButton {\n"
+"	border: 2px solid rgb(51,51,51);\n"
+"	border-radius: 5px;	\n"
+"	color:rgb(255,255,255);\n"
+"	background-color: rgb(51,51,51);\n"
 "}\n"
 "QPushButton:hover {\n"
 "	border: 2px solid rgb(0,143,150);\n"
@@ -714,15 +727,10 @@ class Ui_MainWindow(object):
 "	border: 2px solid rgb(112,112,112);\n"
 "	background-color: rgb(112,112,112);\n"
 "}")
-        self.send_to_all_contacts_radio_button.setChecked(False)
-        self.send_to_all_contacts_radio_button.setAutoExclusive(True)
-
-        self.verticalLayout_6.addWidget(self.send_to_all_contacts_radio_button)
-
-        self.send_whatsapp_messages_button = QPushButton(self.frame_whatsapp_contacts)
+        self.send_whatsapp_messages_button = QPushButton(self.groupBox_2)
         self.send_whatsapp_messages_button.setObjectName(u"send_whatsapp_messages_button")
         self.send_whatsapp_messages_button.setEnabled(False)
-        self.send_whatsapp_messages_button.setMaximumSize(QSize(16777215, 16777215))
+        self.send_whatsapp_messages_button.setGeometry(QRect(190, 30, 85, 30))
         self.send_whatsapp_messages_button.setFont(font1)
         self.send_whatsapp_messages_button.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(51,51,51);\n"
@@ -744,8 +752,18 @@ class Ui_MainWindow(object):
 "	border: 2px solid rgb(112,112,112);\n"
 "	background-color: rgb(112,112,112);\n"
 "}")
+        self.send_to_all_contacts_checkbox = QCheckBox(self.groupBox_2)
+        self.send_to_all_contacts_checkbox.setObjectName(u"send_to_all_contacts_checkbox")
+        self.send_to_all_contacts_checkbox.setGeometry(QRect(10, 30, 85, 30))
+        self.send_to_all_contacts_checkbox.setFont(font1)
+        self.send_to_all_contacts_checkbox.setStyleSheet(u"QCheckBox {\n"
+"	color:rgb(255,255,255);\n"
+"}\n"
+"QCheckBox:hover {\n"
+"	font-weight: bold;\n"
+"}")
 
-        self.verticalLayout_6.addWidget(self.send_whatsapp_messages_button)
+        self.verticalLayout_6.addWidget(self.groupBox_2)
 
 
         self.horizontalLayout_19.addWidget(self.frame_whatsapp_contacts)
@@ -2310,7 +2328,7 @@ class Ui_MainWindow(object):
         self.bn_android.setText("")
         self.whatsapp_page_left_side_title.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#ffffff;\">WhatsApp</span></p></body></html>", None))
         self.whatsapp_login_button.setText(QCoreApplication.translate("MainWindow", u"Login", None))
-        self.message_input_text.setText(QCoreApplication.translate("MainWindow", u"Mensagem", None))
+        self.whatsapp_message_label.setText(QCoreApplication.translate("MainWindow", u"Mensagem", None))
         self.attachments_groupbox.setTitle(QCoreApplication.translate("MainWindow", u"Anexos", None))
         self.load_image_button.setText(QCoreApplication.translate("MainWindow", u"Imagem", None))
         self.load_file_button.setText(QCoreApplication.translate("MainWindow", u"Arquivo", None))
@@ -2323,8 +2341,10 @@ class Ui_MainWindow(object):
         ___qlistwidgetitem.setText(QCoreApplication.translate("MainWindow", u"Carregue Contatos...", None));
         self.contacts_list.setSortingEnabled(__sortingEnabled)
 
-        self.send_to_all_contacts_radio_button.setText(QCoreApplication.translate("MainWindow", u"Todos", None))
+        self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"Sele\u00e7\u00e3o", None))
+        self.clear_contacts_list_button.setText(QCoreApplication.translate("MainWindow", u"Limpar", None))
         self.send_whatsapp_messages_button.setText(QCoreApplication.translate("MainWindow", u"Enviar", None))
+        self.send_to_all_contacts_checkbox.setText(QCoreApplication.translate("MainWindow", u"Nenhum", None))
         self.lab_about_home.setText(QCoreApplication.translate("MainWindow", u"Ajuda: Bots", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"Empty", None))
         self.lab_Bug.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#ffffff;\">Bugs Found</span></p></body></html>", None))

@@ -1,21 +1,23 @@
 # -*- coding: utf-8 -*-
 #encoding: utf-8
 
-
-import random
 from random import uniform
 from time import sleep
 
 from selenium import webdriver
+from selenium.common.exceptions import WebDriverException
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 
 
-class BotProcess:
+class BotProcess():
+    
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super(BotProcess, self).__init__(*args, **kwargs)
 
     '''
     # TODO: Configurar
@@ -64,15 +66,16 @@ class BotProcess:
 
     def start_driver(self):
         self.config_bot()
-        self.driver = webdriver.Chrome(
-            service=Service(ChromeDriverManager().install()),
-            options=self.options,
-            desired_capabilities=self.capabilities
-        )
-        
-        self.driver.get('https://www.youtube.com')
-
-        return
+        try:
+            self.driver = webdriver.Chrome(
+                service=Service(ChromeDriverManager().install()),
+                options=self.options,
+                desired_capabilities=self.capabilities
+            )
+        except WebDriverException:
+            self.errorexec("Página fechada, logar novamente!",
+                           "icons/1x/errorAsset 55.png", "Ok")
+            return
 
     '''
     # TODO: Finalizar uma sessão de driver.

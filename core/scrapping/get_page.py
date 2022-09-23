@@ -3,6 +3,7 @@
 
 # TODO: Acessar uma página através de uma url recebida.
 def get_page(self, page_url: str):
+
     try:
         self.driver.get(page_url)
         pass

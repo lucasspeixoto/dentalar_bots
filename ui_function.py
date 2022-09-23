@@ -29,7 +29,9 @@
 #  DESIGNER AND MADE THE MODIFICATION AND THENY COME BACK HERE TO ADD FUNCTIONALITY TO THE#
 #  CHANGES.                                                                               #
 ########################################################################################### 
-
+from PySide2 import QtCore, QtGui
+from PySide2.QtCore import QPropertyAnimation
+from PySide2.QtWidgets import QFrame
 
 from main import * #IMPORTING THE MAIN.PY FILE
 

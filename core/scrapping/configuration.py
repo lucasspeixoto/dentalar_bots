@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 #encoding: utf-8
+
 import os
 import shutil
 import sys
@@ -7,10 +8,10 @@ from time import sleep
 
 import rootpath
 
-class Configuration:
+class Configuration():
 
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super(Configuration, self).__init__(*args, **kwargs)
 
         # Plataforma
         self.platform = sys.platform

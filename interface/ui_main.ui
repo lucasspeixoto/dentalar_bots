@@ -1116,7 +1116,7 @@ QPushButton:pressed {
                    </property>
                    <property name="minimumSize">
                     <size>
-                     <width>420</width>
+                     <width>400</width>
                      <height>0</height>
                     </size>
                    </property>
@@ -1414,7 +1414,7 @@ QPushButton:disabled {
                   <widget class="QFrame" name="frame_whatsapp_contacts">
                    <property name="minimumSize">
                     <size>
-                     <width>300</width>
+                     <width>350</width>
                      <height>0</height>
                     </size>
                    </property>
