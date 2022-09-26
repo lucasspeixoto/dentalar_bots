@@ -15,13 +15,14 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 
 class BotProcess():
-    
+
     def __init__(self, *args, **kwargs):
-        super(BotProcess, self).__init__(*args, **kwargs)
+        self.args = args
+        self.kwargs = kwargs
 
     '''
     # TODO: Configurar
-    # Configura o driver
+    # ** Configura o driver
     '''
 
     def config_bot(self):
@@ -61,7 +62,7 @@ class BotProcess():
 
     '''
     # TODO: Configurar e iniciar uma instância de driver
-    # Chama a configuração do selenium e inicia um driver
+    # ** Chama a configuração do selenium e inicia um driver
     '''
 
     def start_driver(self):
@@ -87,8 +88,8 @@ class BotProcess():
 
     '''
     # TODO: Pausa com tempo aleatória
-    # Gera por um tempo aleatório entre dois valores
-    # recebidos,
+    # ** Gera por um tempo aleatório entre dois valores
+    # ** recebidos,
     '''
 
     def uniform_wait(self, first_timer: int, last_timer: int):
@@ -99,8 +100,8 @@ class BotProcess():
 
     '''
     # TODO: Digitar pausadamente um texto
-    # Recebe uma referência de um elemento de input,
-    # um texto e digita pausadamente
+    # ** Recebe uma referência de um elemento de input,
+    # ** um texto e digita pausadamente
     '''
 
     def dummy_send(self, found, word: str, first_timer: int, last_timer: int):
@@ -112,8 +113,8 @@ class BotProcess():
 
     '''
     # TODO: Apagar texto inserido em um elemento
-    # Recebe uma referência de um elemento de input,
-    # e apaga o texto que eventualmente existir
+    # ** Recebe uma referência de um elemento de input,
+    # ** e apaga o texto que eventualmente existir
     '''
 
     def clear_field(self, element: str, etype: str, first_timer: int, last_timer: int):
@@ -133,7 +134,7 @@ class BotProcess():
 
     '''
     # TODO: Clicar em um elemento
-    # Recebe uma referência de um elemento e clica
+    # ** Recebe uma referência de um elemento e clica
     '''
 
     def click(self, element: str, etype: str, first_timer: int, last_timer: int):
@@ -152,9 +153,9 @@ class BotProcess():
 
     '''
     # TODO: Clicar e inserir textos em inputs
-    # Recebe uma referência de um elemento, um texto
-    # e clica no elemento digitando o texto recebido
-    # na sequência
+    # ** Recebe uma referência de um elemento, um texto
+    # ** e clica no elemento digitando o texto recebido
+    # ** na sequência
     '''
 
     def click_and_type(self, element: str, text: str, etype: str, first_timer: int, last_timer: int):
@@ -174,8 +175,8 @@ class BotProcess():
 
     '''
     # TODO: Obter a label de um elemento
-    # Recebe as referências para determinado elemento
-    # e retorna o texto 
+    # ** Recebe as referências para determinado elemento
+    # ** e retorna o texto 
     '''
 
     def get_element_text(self, element: str, etype: str, first_timer: int, last_timer: int) -> str:

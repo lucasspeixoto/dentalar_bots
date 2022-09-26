@@ -15,7 +15,7 @@ from webdriver_manager.chrome import ChromeDriverManager
     by the number and check if this contact exists
      
 """   
-def select_contact(self, contact: str):
+def select_contact_number(self, contact: str):
         
     search_field_xpath = '//*[@id="side"]/div[1]/div/div/div[2]/div/div[2]'
     

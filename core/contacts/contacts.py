@@ -13,11 +13,12 @@ from PySide2.QtCore import QObject
 
 from core.whatsapp.whatsapp_scrapping import *
 
-# Step 1: Create a worker class
-class Contacts(Files, QObject):
+
+class Contacts():
 
     def __init__(self, *args, **kwargs):
-        super(Contacts, self).__init__(*args, **kwargs)
+        self.args = args
+        self.kwargs = kwargs
 
         self.contacts_list = []
         self.selected_contacts = []
@@ -25,6 +26,8 @@ class Contacts(Files, QObject):
     def get_contacts_from_excel_file(self): get_contacts_from_excel_file(self)
 
     def toggle_all_contacts(self):
+        
+        print(self.files.test)
         isChecked = self.ui.send_to_all_contacts_checkbox.isChecked()
 
         for index in range(self.ui.contacts_list.count()):
@@ -44,20 +47,23 @@ class Contacts(Files, QObject):
         self.ui.send_to_all_contacts_checkbox.setChecked(False)
 
     def send_whatsapp_messages(self):
-        for i in range(10):
-            sleep(1)
-            print(i)
+        """ if (len(self.ui.contacts_list.selectedItems()) == 0):
+            self.errorexec("Selecione ao menos um contato para envio desta mensagem!",
+                           "icons/1x/errorAsset 55.png", "Ok")
 
-        return
-        
+            return """
+
         """ print([item.text() for item in self.ui.contacts_list.selectedItems()])
             print(self.selected_image)
             print(self.ui.whatsapp_message_input.toPlainText())
         """
-        # self.whatsapp_scrapping.start_driver()
+        self.whatsapp_scrapping.start_driver()
 
-        # self.whatsapp_scrapping.get_page('https://web.whatsapp.com/')
+        self.whatsapp_scrapping.get_page('https://web.whatsapp.com/')
 
-        # self.whatsapp_scrapping.whatsapp_login()
+        self.whatsapp_scrapping.whatsapp_login()
 
-        # self.whatsapp_scrapping.select_contact(self.ui.whatsapp_message_input.toPlainText())
+        self.whatsapp_scrapping.select_contact_number(
+            self.ui.whatsapp_message_input.toPlainText())
+
+        return

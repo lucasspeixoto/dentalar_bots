@@ -8,10 +8,13 @@ from main import *
 class Files():
 
     def __init__(self, *args, **kwargs):
-        super(Files, self).__init__(*args, **kwargs)
-        
+        self.args = args
+        self.kwargs = kwargs
+                
         self.selected_image = ''
         self.selected_file = ''
+        
+        self.test = 'TESTTTTT'
 
     def load_image(self):
                
