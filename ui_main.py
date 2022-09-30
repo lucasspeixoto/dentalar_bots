@@ -17,10 +17,18 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
+        MainWindow.setWindowModality(Qt.WindowModal)
         MainWindow.resize(900, 600)
         MainWindow.setMinimumSize(QSize(900, 600))
+        font = QFont()
+        font.setFamily(u"Segoe UI")
+        font.setPointSize(12)
+        MainWindow.setFont(font)
+        MainWindow.setTabShape(QTabWidget.Rounded)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
+        self.centralwidget.setMaximumSize(QSize(16777215, 600))
+        self.centralwidget.setFont(font)
         self.centralwidget.setStyleSheet(u"background:rgb(91,90,90);")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
         self.verticalLayout.setSpacing(0)
@@ -28,7 +36,7 @@ class Ui_MainWindow(object):
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.frame_top = QFrame(self.centralwidget)
         self.frame_top.setObjectName(u"frame_top")
-        self.frame_top.setMaximumSize(QSize(16777215, 55))
+        self.frame_top.setMaximumSize(QSize(16777215, 16777215))
         self.frame_top.setFrameShape(QFrame.NoFrame)
         self.frame_top.setFrameShadow(QFrame.Plain)
         self.horizontalLayout = QHBoxLayout(self.frame_top)
@@ -73,7 +81,7 @@ class Ui_MainWindow(object):
 
         self.frame_top_east = QFrame(self.frame_top)
         self.frame_top_east.setObjectName(u"frame_top_east")
-        self.frame_top_east.setMaximumSize(QSize(16777215, 55))
+        self.frame_top_east.setMaximumSize(QSize(16777215, 16777215))
         self.frame_top_east.setStyleSheet(u"background:rgb(51,51,51);")
         self.frame_top_east.setFrameShape(QFrame.NoFrame)
         self.frame_top_east.setFrameShadow(QFrame.Plain)
@@ -91,10 +99,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout_10.setContentsMargins(0, 0, 0, 0)
         self.lab_appname = QLabel(self.frame_appname)
         self.lab_appname.setObjectName(u"lab_appname")
-        font = QFont()
-        font.setFamily(u"Segoe UI Light")
-        font.setPointSize(24)
-        self.lab_appname.setFont(font)
+        font1 = QFont()
+        font1.setFamily(u"Segoe UI Light")
+        font1.setPointSize(24)
+        self.lab_appname.setFont(font1)
         self.lab_appname.setStyleSheet(u"color:rgb(255,255,255);")
         self.lab_appname.setMargin(2)
         self.lab_appname.setIndent(5)
@@ -114,7 +122,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_9.setContentsMargins(0, 0, 0, 0)
         self.lab_user = QLabel(self.frame_user)
         self.lab_user.setObjectName(u"lab_user")
-        self.lab_user.setFont(font)
+        self.lab_user.setFont(font1)
         self.lab_user.setStyleSheet(u"color:rgb(255,255,255);")
         self.lab_user.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
@@ -136,7 +144,7 @@ class Ui_MainWindow(object):
         self.lab_person = QLabel(self.frame_person)
         self.lab_person.setObjectName(u"lab_person")
         self.lab_person.setMaximumSize(QSize(55, 55))
-        self.lab_person.setPixmap(QPixmap(u"icons/1x/peple.png"))
+        self.lab_person.setPixmap(QPixmap(u"icons/1x/people.png"))
         self.lab_person.setScaledContents(False)
         self.lab_person.setAlignment(Qt.AlignCenter)
 
@@ -192,6 +200,7 @@ class Ui_MainWindow(object):
         self.bn_max = QPushButton(self.frame_max)
         self.bn_max.setObjectName(u"bn_max")
         self.bn_max.setMaximumSize(QSize(55, 55))
+        self.bn_max.setAcceptDrops(False)
         self.bn_max.setStyleSheet(u"QPushButton {\n"
 "	border: none;\n"
 "	background-color: rgba(0,0,0,0);\n"
@@ -286,6 +295,7 @@ class Ui_MainWindow(object):
         self.bn_whatsapp.setObjectName(u"bn_whatsapp")
         self.bn_whatsapp.setMinimumSize(QSize(80, 55))
         self.bn_whatsapp.setMaximumSize(QSize(160, 55))
+        self.bn_whatsapp.setFont(font)
         self.bn_whatsapp.setStyleSheet(u"QPushButton {\n"
 "	border: none;\n"
 "	background-color: rgba(0,0,0,0);\n"
@@ -321,6 +331,7 @@ class Ui_MainWindow(object):
         self.bn_bug.setObjectName(u"bn_bug")
         self.bn_bug.setMinimumSize(QSize(80, 55))
         self.bn_bug.setMaximumSize(QSize(160, 55))
+        self.bn_bug.setFont(font)
         self.bn_bug.setStyleSheet(u"QPushButton {\n"
 "	border: none;\n"
 "	background-color: rgba(0,0,0,0);\n"
@@ -356,6 +367,7 @@ class Ui_MainWindow(object):
         self.bn_cloud.setObjectName(u"bn_cloud")
         self.bn_cloud.setMinimumSize(QSize(80, 55))
         self.bn_cloud.setMaximumSize(QSize(160, 55))
+        self.bn_cloud.setFont(font)
         self.bn_cloud.setStyleSheet(u"QPushButton {\n"
 "	border: none;\n"
 "	background-color: rgba(0,0,0,0);\n"
@@ -391,6 +403,7 @@ class Ui_MainWindow(object):
         self.bn_android.setObjectName(u"bn_android")
         self.bn_android.setMinimumSize(QSize(80, 55))
         self.bn_android.setMaximumSize(QSize(160, 55))
+        self.bn_android.setFont(font)
         self.bn_android.setStyleSheet(u"QPushButton {\n"
 "	border: none;\n"
 "	background-color: rgba(0,0,0,0);\n"
@@ -444,7 +457,18 @@ class Ui_MainWindow(object):
         self.horizontalLayout_14.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget = QStackedWidget(self.frame)
         self.stackedWidget.setObjectName(u"stackedWidget")
-        self.stackedWidget.setMinimumSize(QSize(0, 55))
+        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.stackedWidget.sizePolicy().hasHeightForWidth())
+        self.stackedWidget.setSizePolicy(sizePolicy)
+        self.stackedWidget.setMinimumSize(QSize(0, 0))
+        font2 = QFont()
+        font2.setFamily(u"Segoe UI")
+        font2.setPointSize(12)
+        font2.setKerning(True)
+        self.stackedWidget.setFont(font2)
+        self.stackedWidget.setLayoutDirection(Qt.LeftToRight)
         self.stackedWidget.setStyleSheet(u"")
         self.page_whatsapp = QWidget()
         self.page_whatsapp.setObjectName(u"page_whatsapp")
@@ -456,100 +480,47 @@ class Ui_MainWindow(object):
         self.frame_whatsapp_main = QFrame(self.page_whatsapp)
         self.frame_whatsapp_main.setObjectName(u"frame_whatsapp_main")
         self.frame_whatsapp_main.setEnabled(True)
-        self.frame_whatsapp_main.setMinimumSize(QSize(400, 0))
-        font1 = QFont()
-        font1.setFamily(u"Segoe UI")
-        font1.setPointSize(12)
-        self.frame_whatsapp_main.setFont(font1)
+        self.frame_whatsapp_main.setMinimumSize(QSize(0, 0))
+        self.frame_whatsapp_main.setBaseSize(QSize(0, 0))
+        self.frame_whatsapp_main.setFont(font)
         self.frame_whatsapp_main.setFrameShape(QFrame.NoFrame)
         self.frame_whatsapp_main.setFrameShadow(QFrame.Plain)
         self.verticalLayout_5 = QVBoxLayout(self.frame_whatsapp_main)
         self.verticalLayout_5.setSpacing(5)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
         self.verticalLayout_5.setContentsMargins(5, 5, 5, 5)
-        self.whatsapp_page_left_side_title = QLabel(self.frame_whatsapp_main)
-        self.whatsapp_page_left_side_title.setObjectName(u"whatsapp_page_left_side_title")
-        self.whatsapp_page_left_side_title.setMinimumSize(QSize(0, 40))
-        self.whatsapp_page_left_side_title.setMaximumSize(QSize(16777215, 40))
-        font2 = QFont()
-        font2.setFamily(u"Segoe UI Semilight")
-        font2.setPointSize(24)
-        self.whatsapp_page_left_side_title.setFont(font2)
-        self.whatsapp_page_left_side_title.setStyleSheet(u"QLabel {\n"
-"	color:rgb(255,255,255);\n"
-"}")
-        self.whatsapp_page_left_side_title.setTextFormat(Qt.RichText)
-        self.whatsapp_page_left_side_title.setMargin(0)
-        self.whatsapp_page_left_side_title.setIndent(1)
-
-        self.verticalLayout_5.addWidget(self.whatsapp_page_left_side_title)
-
-        self.whatsapp_login_button = QPushButton(self.frame_whatsapp_main)
-        self.whatsapp_login_button.setObjectName(u"whatsapp_login_button")
-        self.whatsapp_login_button.setEnabled(True)
-        self.whatsapp_login_button.setMinimumSize(QSize(0, 30))
-        self.whatsapp_login_button.setMaximumSize(QSize(16777215, 16777215))
+        self.whatsapp_page_messages_frame_text = QLabel(self.frame_whatsapp_main)
+        self.whatsapp_page_messages_frame_text.setObjectName(u"whatsapp_page_messages_frame_text")
         font3 = QFont()
         font3.setFamily(u"Segoe UI")
-        font3.setPointSize(12)
-        font3.setItalic(False)
-        font3.setUnderline(False)
-        font3.setStrikeOut(False)
-        font3.setKerning(False)
-        font3.setStyleStrategy(QFont.PreferDefault)
-        self.whatsapp_login_button.setFont(font3)
-        self.whatsapp_login_button.setStyleSheet(u"QPushButton {\n"
-"	border: 2px solid rgb(51,51,51);\n"
-"	border-radius: 5px;	\n"
-"	color:rgb(255,255,255);\n"
-"	background-color: rgb(51,51,51);\n"
-"}\n"
-"QPushButton:hover {\n"
-"	border: 2px solid rgb(0,143,150);\n"
-"	background-color: rgb(0,143,150);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	border: 2px solid rgb(0,143,150);\n"
-"	background-color: rgb(51,51,51);\n"
-"}\n"
-"\n"
-"QPushButton:disabled {	\n"
-"	border-radius: 5px;	\n"
-"	border: 2px solid rgb(112,112,112);\n"
-"	background-color: rgb(112,112,112);\n"
-"}")
-
-        self.verticalLayout_5.addWidget(self.whatsapp_login_button)
-
-        self.whatsapp_message_label = QLabel(self.frame_whatsapp_main)
-        self.whatsapp_message_label.setObjectName(u"whatsapp_message_label")
-        self.whatsapp_message_label.setFont(font1)
-        self.whatsapp_message_label.setStyleSheet(u"QLabel {\n"
+        font3.setPointSize(22)
+        self.whatsapp_page_messages_frame_text.setFont(font3)
+        self.whatsapp_page_messages_frame_text.setStyleSheet(u"QLabel {\n"
 "	color:rgb(255,255,255);\n"
 "}")
-        self.whatsapp_message_label.setTextFormat(Qt.RichText)
+        self.whatsapp_page_messages_frame_text.setTextFormat(Qt.RichText)
 
-        self.verticalLayout_5.addWidget(self.whatsapp_message_label)
+        self.verticalLayout_5.addWidget(self.whatsapp_page_messages_frame_text)
 
         self.whatsapp_message_input = QTextEdit(self.frame_whatsapp_main)
         self.whatsapp_message_input.setObjectName(u"whatsapp_message_input")
         self.whatsapp_message_input.setMaximumSize(QSize(16777215, 16777215))
-        self.whatsapp_message_input.setFont(font1)
+        self.whatsapp_message_input.setFont(font)
 
         self.verticalLayout_5.addWidget(self.whatsapp_message_input)
 
         self.attachments_groupbox = QGroupBox(self.frame_whatsapp_main)
         self.attachments_groupbox.setObjectName(u"attachments_groupbox")
-        self.attachments_groupbox.setMinimumSize(QSize(0, 70))
-        self.attachments_groupbox.setFont(font1)
+        self.attachments_groupbox.setMinimumSize(QSize(0, 90))
+        self.attachments_groupbox.setFont(font)
         self.attachments_groupbox.setStyleSheet(u"QGroupBox {\n"
 "	color:rgb(255,255,255);\n"
 "}")
         self.load_image_button = QPushButton(self.attachments_groupbox)
         self.load_image_button.setObjectName(u"load_image_button")
-        self.load_image_button.setGeometry(QRect(20, 30, 75, 30))
+        self.load_image_button.setGeometry(QRect(10, 40, 75, 30))
         self.load_image_button.setMinimumSize(QSize(0, 30))
-        self.load_image_button.setFont(font1)
+        self.load_image_button.setFont(font)
         self.load_image_button.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(51,51,51);\n"
 "	border-radius: 5px;	\n"
@@ -573,9 +544,9 @@ class Ui_MainWindow(object):
         self.load_file_button = QPushButton(self.attachments_groupbox)
         self.load_file_button.setObjectName(u"load_file_button")
         self.load_file_button.setEnabled(False)
-        self.load_file_button.setGeometry(QRect(110, 30, 75, 30))
+        self.load_file_button.setGeometry(QRect(100, 40, 75, 30))
         self.load_file_button.setMinimumSize(QSize(0, 30))
-        self.load_file_button.setFont(font1)
+        self.load_file_button.setFont(font)
         self.load_file_button.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(51,51,51);\n"
 "	border-radius: 5px;	\n"
@@ -596,6 +567,30 @@ class Ui_MainWindow(object):
 "	border: 2px solid rgb(112,112,112);\n"
 "	background-color: rgb(112,112,112);\n"
 "}")
+        self.selected_whatsapp_image_path_text = QLabel(self.attachments_groupbox)
+        self.selected_whatsapp_image_path_text.setObjectName(u"selected_whatsapp_image_path_text")
+        self.selected_whatsapp_image_path_text.setGeometry(QRect(180, 20, 271, 61))
+        self.selected_whatsapp_image_path_text.setMinimumSize(QSize(200, 0))
+        font4 = QFont()
+        font4.setFamily(u"Segoe UI")
+        font4.setPointSize(10)
+        font4.setBold(True)
+        font4.setItalic(True)
+        font4.setWeight(75)
+        self.selected_whatsapp_image_path_text.setFont(font4)
+        self.selected_whatsapp_image_path_text.setLayoutDirection(Qt.LeftToRight)
+        self.selected_whatsapp_image_path_text.setAutoFillBackground(False)
+        self.selected_whatsapp_image_path_text.setStyleSheet(u"QLabel {\n"
+"	color:rgb(255,255,255);\n"
+"	\n"
+"}")
+        self.selected_whatsapp_image_path_text.setTextFormat(Qt.RichText)
+        self.selected_whatsapp_image_path_text.setScaledContents(False)
+        self.selected_whatsapp_image_path_text.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+        self.selected_whatsapp_image_path_text.setWordWrap(True)
+        self.selected_whatsapp_image_path_text.setMargin(1)
+        self.selected_whatsapp_image_path_text.setIndent(1)
+        self.selected_whatsapp_image_path_text.setOpenExternalLinks(False)
 
         self.verticalLayout_5.addWidget(self.attachments_groupbox)
 
@@ -604,6 +599,7 @@ class Ui_MainWindow(object):
 
         self.vert_divide = QFrame(self.page_whatsapp)
         self.vert_divide.setObjectName(u"vert_divide")
+        self.vert_divide.setFont(font)
         self.vert_divide.setFrameShape(QFrame.VLine)
         self.vert_divide.setFrameShadow(QFrame.Sunken)
 
@@ -619,24 +615,27 @@ class Ui_MainWindow(object):
         self.verticalLayout_6.setSpacing(5)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
         self.verticalLayout_6.setContentsMargins(5, 5, 5, 5)
-        self.whatsapp_page_right_side_title = QLabel(self.frame_whatsapp_contacts)
-        self.whatsapp_page_right_side_title.setObjectName(u"whatsapp_page_right_side_title")
-        self.whatsapp_page_right_side_title.setMinimumSize(QSize(0, 40))
-        self.whatsapp_page_right_side_title.setMaximumSize(QSize(16777215, 40))
-        self.whatsapp_page_right_side_title.setFont(font2)
-        self.whatsapp_page_right_side_title.setStyleSheet(u"QLabel {\n"
+        self.whatsapp_page_contacts_frame_text = QLabel(self.frame_whatsapp_contacts)
+        self.whatsapp_page_contacts_frame_text.setObjectName(u"whatsapp_page_contacts_frame_text")
+        self.whatsapp_page_contacts_frame_text.setMinimumSize(QSize(0, 40))
+        self.whatsapp_page_contacts_frame_text.setMaximumSize(QSize(16777215, 40))
+        font5 = QFont()
+        font5.setFamily(u"Segoe UI Semilight")
+        font5.setPointSize(22)
+        self.whatsapp_page_contacts_frame_text.setFont(font5)
+        self.whatsapp_page_contacts_frame_text.setStyleSheet(u"QLabel {\n"
 "	color:rgb(255,255,255);\n"
 "}")
-        self.whatsapp_page_right_side_title.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.whatsapp_page_contacts_frame_text.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
-        self.verticalLayout_6.addWidget(self.whatsapp_page_right_side_title)
+        self.verticalLayout_6.addWidget(self.whatsapp_page_contacts_frame_text)
 
         self.load_contacts_button = QPushButton(self.frame_whatsapp_contacts)
         self.load_contacts_button.setObjectName(u"load_contacts_button")
         self.load_contacts_button.setEnabled(True)
         self.load_contacts_button.setMinimumSize(QSize(0, 30))
         self.load_contacts_button.setMaximumSize(QSize(16777215, 16777215))
-        self.load_contacts_button.setFont(font1)
+        self.load_contacts_button.setFont(font)
         self.load_contacts_button.setMouseTracking(False)
         self.load_contacts_button.setToolTipDuration(-1)
         self.load_contacts_button.setAutoFillBackground(False)
@@ -671,20 +670,21 @@ class Ui_MainWindow(object):
         brush.setStyle(Qt.SolidPattern)
         brush1 = QBrush(QColor(255, 255, 255, 255))
         brush1.setStyle(Qt.NoBrush)
-        font4 = QFont()
-        font4.setFamily(u"Segoe UI")
-        font4.setPointSize(12)
-        font4.setBold(True)
-        font4.setWeight(75)
+        font6 = QFont()
+        font6.setFamily(u"Segoe UI")
+        font6.setPointSize(12)
+        font6.setBold(True)
+        font6.setWeight(75)
         __qlistwidgetitem = QListWidgetItem(self.contacts_list)
-        __qlistwidgetitem.setFont(font4);
+        __qlistwidgetitem.setFont(font6);
         __qlistwidgetitem.setBackground(brush1);
         __qlistwidgetitem.setForeground(brush);
         self.contacts_list.setObjectName(u"contacts_list")
         self.contacts_list.setEnabled(True)
-        font5 = QFont()
-        font5.setPointSize(12)
-        self.contacts_list.setFont(font5)
+        self.contacts_list.setMinimumSize(QSize(0, 0))
+        font7 = QFont()
+        font7.setPointSize(12)
+        self.contacts_list.setFont(font7)
         self.contacts_list.setSelectionMode(QAbstractItemView.MultiSelection)
         self.contacts_list.setSelectionRectVisible(False)
 
@@ -693,12 +693,12 @@ class Ui_MainWindow(object):
         self.groupBox_2 = QGroupBox(self.frame_whatsapp_contacts)
         self.groupBox_2.setObjectName(u"groupBox_2")
         self.groupBox_2.setMinimumSize(QSize(0, 70))
-        font6 = QFont()
-        font6.setFamily(u"Segoe UI")
-        font6.setPointSize(12)
-        font6.setBold(False)
-        font6.setWeight(50)
-        self.groupBox_2.setFont(font6)
+        font8 = QFont()
+        font8.setFamily(u"Segoe UI")
+        font8.setPointSize(12)
+        font8.setBold(False)
+        font8.setWeight(50)
+        self.groupBox_2.setFont(font8)
         self.groupBox_2.setStyleSheet(u"QGroupBox {\n"
 "	color:rgb(255,255,255);\n"
 "}")
@@ -706,7 +706,7 @@ class Ui_MainWindow(object):
         self.clear_contacts_list_button.setObjectName(u"clear_contacts_list_button")
         self.clear_contacts_list_button.setEnabled(False)
         self.clear_contacts_list_button.setGeometry(QRect(100, 30, 85, 30))
-        self.clear_contacts_list_button.setFont(font1)
+        self.clear_contacts_list_button.setFont(font)
         self.clear_contacts_list_button.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(51,51,51);\n"
 "	border-radius: 5px;	\n"
@@ -731,7 +731,7 @@ class Ui_MainWindow(object):
         self.send_whatsapp_messages_button.setObjectName(u"send_whatsapp_messages_button")
         self.send_whatsapp_messages_button.setEnabled(False)
         self.send_whatsapp_messages_button.setGeometry(QRect(190, 30, 85, 30))
-        self.send_whatsapp_messages_button.setFont(font1)
+        self.send_whatsapp_messages_button.setFont(font)
         self.send_whatsapp_messages_button.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(51,51,51);\n"
 "	border-radius: 5px;	\n"
@@ -755,7 +755,7 @@ class Ui_MainWindow(object):
         self.send_to_all_contacts_checkbox = QCheckBox(self.groupBox_2)
         self.send_to_all_contacts_checkbox.setObjectName(u"send_to_all_contacts_checkbox")
         self.send_to_all_contacts_checkbox.setGeometry(QRect(10, 30, 85, 30))
-        self.send_to_all_contacts_checkbox.setFont(font1)
+        self.send_to_all_contacts_checkbox.setFont(font)
         self.send_to_all_contacts_checkbox.setStyleSheet(u"QCheckBox {\n"
 "	color:rgb(255,255,255);\n"
 "}\n"
@@ -780,10 +780,10 @@ class Ui_MainWindow(object):
         self.lab_about_home.setObjectName(u"lab_about_home")
         self.lab_about_home.setMinimumSize(QSize(0, 55))
         self.lab_about_home.setMaximumSize(QSize(16777215, 55))
-        font7 = QFont()
-        font7.setFamily(u"Segoe UI")
-        font7.setPointSize(24)
-        self.lab_about_home.setFont(font7)
+        font9 = QFont()
+        font9.setFamily(u"Segoe UI")
+        font9.setPointSize(24)
+        self.lab_about_home.setFont(font9)
         self.lab_about_home.setStyleSheet(u"color:rgb(255,255,255);")
 
         self.verticalLayout_13.addWidget(self.lab_about_home)
@@ -799,10 +799,10 @@ class Ui_MainWindow(object):
         self.text_whatsapp_page_help = QTextEdit(self.frame_whatsapp_help)
         self.text_whatsapp_page_help.setObjectName(u"text_whatsapp_page_help")
         self.text_whatsapp_page_help.setEnabled(True)
-        font8 = QFont()
-        font8.setFamily(u"Segoe UI")
-        font8.setPointSize(10)
-        self.text_whatsapp_page_help.setFont(font8)
+        font10 = QFont()
+        font10.setFamily(u"Segoe UI")
+        font10.setPointSize(10)
+        self.text_whatsapp_page_help.setFont(font10)
         self.text_whatsapp_page_help.setStyleSheet(u"color:rgb(255,255,255);")
         self.text_whatsapp_page_help.setFrameShape(QFrame.NoFrame)
         self.text_whatsapp_page_help.setFrameShadow(QFrame.Plain)
@@ -842,10 +842,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout_29.setObjectName(u"horizontalLayout_29")
         self.label_10 = QLabel(self.page_about_cloud)
         self.label_10.setObjectName(u"label_10")
-        font9 = QFont()
-        font9.setFamily(u"Segoe UI")
-        font9.setPointSize(30)
-        self.label_10.setFont(font9)
+        font11 = QFont()
+        font11.setFamily(u"Segoe UI")
+        font11.setPointSize(30)
+        self.label_10.setFont(font11)
         self.label_10.setStyleSheet(u"color:rgb(255,255,255);")
         self.label_10.setAlignment(Qt.AlignCenter)
 
@@ -871,7 +871,10 @@ class Ui_MainWindow(object):
         self.lab_Bug.setObjectName(u"lab_Bug")
         self.lab_Bug.setMinimumSize(QSize(0, 55))
         self.lab_Bug.setMaximumSize(QSize(16777215, 55))
-        self.lab_Bug.setFont(font2)
+        font12 = QFont()
+        font12.setFamily(u"Segoe UI Semilight")
+        font12.setPointSize(24)
+        self.lab_Bug.setFont(font12)
         self.lab_Bug.setStyleSheet(u"color:rgb(255,255,255);")
 
         self.verticalLayout_7.addWidget(self.lab_Bug)
@@ -905,17 +908,17 @@ class Ui_MainWindow(object):
 
         self.lab_bug2 = QLabel(self.frame_bug_main)
         self.lab_bug2.setObjectName(u"lab_bug2")
-        font10 = QFont()
-        font10.setFamily(u"Segoe UI")
-        font10.setPointSize(14)
-        self.lab_bug2.setFont(font10)
+        font13 = QFont()
+        font13.setFamily(u"Segoe UI")
+        font13.setPointSize(14)
+        self.lab_bug2.setFont(font13)
         self.lab_bug2.setStyleSheet(u"color:rgb(255,255,255);")
 
         self.gridLayout.addWidget(self.lab_bug2, 1, 1, 1, 1)
 
         self.lab_bug3 = QLabel(self.frame_bug_main)
         self.lab_bug3.setObjectName(u"lab_bug3")
-        self.lab_bug3.setFont(font10)
+        self.lab_bug3.setFont(font13)
 
         self.gridLayout.addWidget(self.lab_bug3, 2, 1, 1, 1)
 
@@ -926,7 +929,7 @@ class Ui_MainWindow(object):
         self.comboBox_bug.addItem("")
         self.comboBox_bug.setObjectName(u"comboBox_bug")
         self.comboBox_bug.setMaximumSize(QSize(16777215, 25))
-        self.comboBox_bug.setFont(font8)
+        self.comboBox_bug.setFont(font10)
         self.comboBox_bug.setStyleSheet(u"QComboBox {\n"
 "	border: 2px solid rgb(51,51,51);\n"
 "	border-radius: 5px;	\n"
@@ -991,7 +994,7 @@ class Ui_MainWindow(object):
         self.lab_bug1.setObjectName(u"lab_bug1")
         self.lab_bug1.setMinimumSize(QSize(0, 0))
         self.lab_bug1.setMaximumSize(QSize(16777215, 16777215))
-        self.lab_bug1.setFont(font10)
+        self.lab_bug1.setFont(font13)
         self.lab_bug1.setStyleSheet(u"color:rgb(255,255,255);")
         self.lab_bug1.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
 
@@ -1008,7 +1011,7 @@ class Ui_MainWindow(object):
         self.bn_bug_start.setObjectName(u"bn_bug_start")
         self.bn_bug_start.setMinimumSize(QSize(69, 25))
         self.bn_bug_start.setMaximumSize(QSize(69, 25))
-        self.bn_bug_start.setFont(font1)
+        self.bn_bug_start.setFont(font)
         self.bn_bug_start.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(51,51,51);\n"
 "	border-radius: 5px;	\n"
@@ -1063,10 +1066,10 @@ class Ui_MainWindow(object):
         self.lab_bug_action.setObjectName(u"lab_bug_action")
         self.lab_bug_action.setMinimumSize(QSize(0, 20))
         self.lab_bug_action.setMaximumSize(QSize(16777215, 30))
-        font11 = QFont()
-        font11.setFamily(u"Segoe UI")
-        font11.setPointSize(16)
-        self.lab_bug_action.setFont(font11)
+        font14 = QFont()
+        font14.setFamily(u"Segoe UI")
+        font14.setPointSize(16)
+        self.lab_bug_action.setFont(font14)
         self.lab_bug_action.setStyleSheet(u"color:rgb(255,255,255);")
         self.lab_bug_action.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
@@ -1091,7 +1094,7 @@ class Ui_MainWindow(object):
         self.lab_cloud_main.setObjectName(u"lab_cloud_main")
         self.lab_cloud_main.setMinimumSize(QSize(0, 55))
         self.lab_cloud_main.setMaximumSize(QSize(16777215, 55))
-        self.lab_cloud_main.setFont(font7)
+        self.lab_cloud_main.setFont(font9)
         self.lab_cloud_main.setStyleSheet(u"QLabel {\n"
 "	color:rgb(255,255,255);\n"
 "}")
@@ -1103,7 +1106,7 @@ class Ui_MainWindow(object):
         self.frame_2.setEnabled(True)
         self.frame_2.setMinimumSize(QSize(0, 235))
         self.frame_2.setMaximumSize(QSize(16777215, 235))
-        self.frame_2.setFont(font1)
+        self.frame_2.setFont(font)
         self.frame_2.setFrameShape(QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QFrame.Raised)
         self.gridLayout_2 = QGridLayout(self.frame_2)
@@ -1114,7 +1117,7 @@ class Ui_MainWindow(object):
         self.label_2 = QLabel(self.frame_2)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setMinimumSize(QSize(100, 0))
-        self.label_2.setFont(font10)
+        self.label_2.setFont(font13)
         self.label_2.setStyleSheet(u"color:rgb(255,255,255);")
 
         self.gridLayout_2.addWidget(self.label_2, 0, 0, 1, 1)
@@ -1122,7 +1125,7 @@ class Ui_MainWindow(object):
         self.label_3 = QLabel(self.frame_2)
         self.label_3.setObjectName(u"label_3")
         self.label_3.setMinimumSize(QSize(100, 0))
-        self.label_3.setFont(font10)
+        self.label_3.setFont(font13)
         self.label_3.setStyleSheet(u"color:rgb(255,255,255);")
 
         self.gridLayout_2.addWidget(self.label_3, 1, 0, 1, 1)
@@ -1130,7 +1133,7 @@ class Ui_MainWindow(object):
         self.label_4 = QLabel(self.frame_2)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setMinimumSize(QSize(100, 0))
-        self.label_4.setFont(font10)
+        self.label_4.setFont(font13)
         self.label_4.setStyleSheet(u"color:rgb(255,255,255);")
 
         self.gridLayout_2.addWidget(self.label_4, 2, 0, 1, 1)
@@ -1139,7 +1142,7 @@ class Ui_MainWindow(object):
         self.line_cloud_proxy.setObjectName(u"line_cloud_proxy")
         self.line_cloud_proxy.setMinimumSize(QSize(400, 25))
         self.line_cloud_proxy.setMaximumSize(QSize(500, 25))
-        self.line_cloud_proxy.setFont(font1)
+        self.line_cloud_proxy.setFont(font)
         self.line_cloud_proxy.setStyleSheet(u"QLineEdit {\n"
 "	color:rgb(255,255,255);\n"
 "	border:2px solid rgb(51,51,51);\n"
@@ -1161,7 +1164,7 @@ class Ui_MainWindow(object):
         self.line_cloud_id.setEnabled(True)
         self.line_cloud_id.setMinimumSize(QSize(400, 25))
         self.line_cloud_id.setMaximumSize(QSize(500, 25))
-        self.line_cloud_id.setFont(font1)
+        self.line_cloud_id.setFont(font)
         self.line_cloud_id.setStyleSheet(u"QLineEdit {\n"
 "	color:rgb(255,255,255);\n"
 "	border:2px solid rgb(51,51,51);\n"
@@ -1182,7 +1185,7 @@ class Ui_MainWindow(object):
         self.line_cloud_adress.setObjectName(u"line_cloud_adress")
         self.line_cloud_adress.setMinimumSize(QSize(400, 25))
         self.line_cloud_adress.setMaximumSize(QSize(500, 25))
-        self.line_cloud_adress.setFont(font1)
+        self.line_cloud_adress.setFont(font)
         self.line_cloud_adress.setStyleSheet(u"QLineEdit {\n"
 "	color:rgb(255,255,255);\n"
 "	border:2px solid rgb(51,51,51);\n"
@@ -1212,7 +1215,7 @@ class Ui_MainWindow(object):
         self.bn_cloud_clear.setEnabled(True)
         self.bn_cloud_clear.setMinimumSize(QSize(69, 25))
         self.bn_cloud_clear.setMaximumSize(QSize(69, 25))
-        self.bn_cloud_clear.setFont(font1)
+        self.bn_cloud_clear.setFont(font)
         self.bn_cloud_clear.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(51,51,51);\n"
 "	border-radius: 5px;	\n"
@@ -1240,7 +1243,7 @@ class Ui_MainWindow(object):
         self.bn_cloud_connect.setObjectName(u"bn_cloud_connect")
         self.bn_cloud_connect.setMinimumSize(QSize(69, 25))
         self.bn_cloud_connect.setMaximumSize(QSize(69, 25))
-        self.bn_cloud_connect.setFont(font1)
+        self.bn_cloud_connect.setFont(font)
         self.bn_cloud_connect.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(51,51,51);\n"
 "	border-radius: 5px;	\n"
@@ -1449,7 +1452,7 @@ class Ui_MainWindow(object):
         self.lab_android_contact.setObjectName(u"lab_android_contact")
         self.lab_android_contact.setMinimumSize(QSize(0, 55))
         self.lab_android_contact.setMaximumSize(QSize(16777215, 55))
-        self.lab_android_contact.setFont(font7)
+        self.lab_android_contact.setFont(font9)
         self.lab_android_contact.setStyleSheet(u"color:rgb(255,255,255);")
 
         self.verticalLayout_10.addWidget(self.lab_android_contact)
@@ -1484,28 +1487,28 @@ class Ui_MainWindow(object):
         self.gridLayout_4.setContentsMargins(5, 5, 5, 5)
         self.label_8 = QLabel(self.frame_android_field)
         self.label_8.setObjectName(u"label_8")
-        self.label_8.setFont(font10)
+        self.label_8.setFont(font13)
         self.label_8.setStyleSheet(u"color:rgb(255,255,255);")
 
         self.gridLayout_4.addWidget(self.label_8, 7, 0, 1, 1)
 
         self.label_6 = QLabel(self.frame_android_field)
         self.label_6.setObjectName(u"label_6")
-        self.label_6.setFont(font10)
+        self.label_6.setFont(font13)
         self.label_6.setStyleSheet(u"color:rgb(255,255,255);")
 
         self.gridLayout_4.addWidget(self.label_6, 4, 0, 1, 1)
 
         self.label_7 = QLabel(self.frame_android_field)
         self.label_7.setObjectName(u"label_7")
-        self.label_7.setFont(font10)
+        self.label_7.setFont(font13)
         self.label_7.setStyleSheet(u"color:rgb(255,255,255);")
 
         self.gridLayout_4.addWidget(self.label_7, 5, 0, 1, 1)
 
         self.label = QLabel(self.frame_android_field)
         self.label.setObjectName(u"label")
-        self.label.setFont(font10)
+        self.label.setFont(font13)
         self.label.setStyleSheet(u"color:rgb(255,255,255);")
 
         self.gridLayout_4.addWidget(self.label, 1, 0, 1, 3)
@@ -1515,7 +1518,7 @@ class Ui_MainWindow(object):
         self.line_android_name.setEnabled(False)
         self.line_android_name.setMinimumSize(QSize(300, 25))
         self.line_android_name.setMaximumSize(QSize(400, 25))
-        self.line_android_name.setFont(font1)
+        self.line_android_name.setFont(font)
         self.line_android_name.setStyleSheet(u"QLineEdit {\n"
 "	color:rgb(255,255,255);\n"
 "	border:2px solid rgb(51,51,51);\n"
@@ -1534,7 +1537,7 @@ class Ui_MainWindow(object):
 
         self.label_5 = QLabel(self.frame_android_field)
         self.label_5.setObjectName(u"label_5")
-        self.label_5.setFont(font10)
+        self.label_5.setFont(font13)
         self.label_5.setStyleSheet(u"color:rgb(255,255,255);")
 
         self.gridLayout_4.addWidget(self.label_5, 3, 0, 1, 3)
@@ -1544,7 +1547,7 @@ class Ui_MainWindow(object):
         self.line_android_org.setEnabled(False)
         self.line_android_org.setMinimumSize(QSize(300, 25))
         self.line_android_org.setMaximumSize(QSize(400, 25))
-        self.line_android_org.setFont(font1)
+        self.line_android_org.setFont(font)
         self.line_android_org.setStyleSheet(u"QLineEdit {\n"
 "	color:rgb(255,255,255);\n"
 "	border:2px solid rgb(51,51,51);\n"
@@ -1566,7 +1569,7 @@ class Ui_MainWindow(object):
         self.line_android_adress.setEnabled(False)
         self.line_android_adress.setMinimumSize(QSize(300, 25))
         self.line_android_adress.setMaximumSize(QSize(400, 25))
-        self.line_android_adress.setFont(font1)
+        self.line_android_adress.setFont(font)
         self.line_android_adress.setStyleSheet(u"QLineEdit {\n"
 "	color:rgb(255,255,255);\n"
 "	border:2px solid rgb(51,51,51);\n"
@@ -1588,7 +1591,7 @@ class Ui_MainWindow(object):
         self.line_android_ph.setEnabled(False)
         self.line_android_ph.setMinimumSize(QSize(300, 25))
         self.line_android_ph.setMaximumSize(QSize(400, 25))
-        self.line_android_ph.setFont(font1)
+        self.line_android_ph.setFont(font)
         self.line_android_ph.setStyleSheet(u"QLineEdit {\n"
 "	color:rgb(255,255,255);\n"
 "	border:2px solid rgb(51,51,51);\n"
@@ -1610,7 +1613,7 @@ class Ui_MainWindow(object):
         self.line_android_email.setEnabled(False)
         self.line_android_email.setMinimumSize(QSize(300, 25))
         self.line_android_email.setMaximumSize(QSize(400, 25))
-        self.line_android_email.setFont(font1)
+        self.line_android_email.setFont(font)
         self.line_android_email.setStyleSheet(u"QLineEdit {\n"
 "	color:rgb(255,255,255);\n"
 "	border:2px solid rgb(51,51,51);\n"
@@ -1651,7 +1654,7 @@ class Ui_MainWindow(object):
         self.bn_android_contact_edit.setObjectName(u"bn_android_contact_edit")
         self.bn_android_contact_edit.setMinimumSize(QSize(69, 25))
         self.bn_android_contact_edit.setMaximumSize(QSize(69, 25))
-        self.bn_android_contact_edit.setFont(font1)
+        self.bn_android_contact_edit.setFont(font)
         self.bn_android_contact_edit.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(51,51,51);\n"
 "	border-radius: 5px;	\n"
@@ -1679,7 +1682,7 @@ class Ui_MainWindow(object):
         self.bn_android_contact_share.setObjectName(u"bn_android_contact_share")
         self.bn_android_contact_share.setMinimumSize(QSize(69, 25))
         self.bn_android_contact_share.setMaximumSize(QSize(69, 25))
-        self.bn_android_contact_share.setFont(font1)
+        self.bn_android_contact_share.setFont(font)
         self.bn_android_contact_share.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(51,51,51);\n"
 "	border-radius: 5px;	\n"
@@ -1707,7 +1710,7 @@ class Ui_MainWindow(object):
         self.bn_android_contact_delete.setObjectName(u"bn_android_contact_delete")
         self.bn_android_contact_delete.setMinimumSize(QSize(69, 25))
         self.bn_android_contact_delete.setMaximumSize(QSize(69, 25))
-        self.bn_android_contact_delete.setFont(font1)
+        self.bn_android_contact_delete.setFont(font)
         self.bn_android_contact_delete.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(51,51,51);\n"
 "	border-radius: 5px;	\n"
@@ -1736,7 +1739,7 @@ class Ui_MainWindow(object):
         self.bn_android_contact_save.setEnabled(False)
         self.bn_android_contact_save.setMinimumSize(QSize(69, 25))
         self.bn_android_contact_save.setMaximumSize(QSize(69, 25))
-        self.bn_android_contact_save.setFont(font1)
+        self.bn_android_contact_save.setFont(font)
         self.bn_android_contact_save.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(51,51,51);\n"
 "	border-radius: 5px;	\n"
@@ -1781,7 +1784,7 @@ class Ui_MainWindow(object):
         self.lab_gamepad.setObjectName(u"lab_gamepad")
         self.lab_gamepad.setMinimumSize(QSize(0, 55))
         self.lab_gamepad.setMaximumSize(QSize(16777215, 55))
-        self.lab_gamepad.setFont(font7)
+        self.lab_gamepad.setFont(font9)
         self.lab_gamepad.setStyleSheet(u"color:rgb(255,255,255);")
 
         self.verticalLayout_11.addWidget(self.lab_gamepad)
@@ -1797,7 +1800,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_26.setContentsMargins(5, 0, 0, 0)
         self.textEdit_gamepad = QTextEdit(self.frame_textbar)
         self.textEdit_gamepad.setObjectName(u"textEdit_gamepad")
-        self.textEdit_gamepad.setFont(font1)
+        self.textEdit_gamepad.setFont(font)
         self.textEdit_gamepad.setStyleSheet(u"color:rgb(255,255,255);")
         self.textEdit_gamepad.setFrameShape(QFrame.NoFrame)
         self.textEdit_gamepad.setFrameShadow(QFrame.Plain)
@@ -1847,7 +1850,7 @@ class Ui_MainWindow(object):
         self.groupBox_clean.setMinimumSize(QSize(250, 300))
         self.groupBox_clean.setMaximumSize(QSize(250, 300))
         self.groupBox_clean.setSizeIncrement(QSize(0, 0))
-        self.groupBox_clean.setFont(font8)
+        self.groupBox_clean.setFont(font10)
         self.groupBox_clean.setStyleSheet(u"QGroupBox{\n"
 "	border:1px solid rgb(51,51,51);	\n"
 "	border-radius:4px;\n"
@@ -1862,10 +1865,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.radioButton = QRadioButton(self.groupBox_clean)
         self.radioButton.setObjectName(u"radioButton")
-        font12 = QFont()
-        font12.setFamily(u"Segoe UI")
-        font12.setPointSize(9)
-        self.radioButton.setFont(font12)
+        font15 = QFont()
+        font15.setFamily(u"Segoe UI")
+        font15.setPointSize(9)
+        self.radioButton.setFont(font15)
         self.radioButton.setStyleSheet(u"QRadioButton {\n"
 "	background:rgb(91,90,90);\n"
 "    color:white;\n"
@@ -1891,7 +1894,7 @@ class Ui_MainWindow(object):
 
         self.radioButton_2 = QRadioButton(self.groupBox_clean)
         self.radioButton_2.setObjectName(u"radioButton_2")
-        self.radioButton_2.setFont(font12)
+        self.radioButton_2.setFont(font15)
         self.radioButton_2.setStyleSheet(u"QRadioButton {\n"
 "	background:rgb(91,90,90);\n"
 "    color:white;\n"
@@ -1916,7 +1919,7 @@ class Ui_MainWindow(object):
 
         self.radioButton_3 = QRadioButton(self.groupBox_clean)
         self.radioButton_3.setObjectName(u"radioButton_3")
-        self.radioButton_3.setFont(font12)
+        self.radioButton_3.setFont(font15)
         self.radioButton_3.setStyleSheet(u"QRadioButton {\n"
 "	background:rgb(91,90,90);\n"
 "    color:white;\n"
@@ -1941,7 +1944,7 @@ class Ui_MainWindow(object):
 
         self.radioButton_4 = QRadioButton(self.groupBox_clean)
         self.radioButton_4.setObjectName(u"radioButton_4")
-        self.radioButton_4.setFont(font12)
+        self.radioButton_4.setFont(font15)
         self.radioButton_4.setStyleSheet(u"QRadioButton {\n"
 "	background:rgb(91,90,90);\n"
 "    color:white;\n"
@@ -1966,7 +1969,7 @@ class Ui_MainWindow(object):
 
         self.checkBox = QCheckBox(self.groupBox_clean)
         self.checkBox.setObjectName(u"checkBox")
-        self.checkBox.setFont(font12)
+        self.checkBox.setFont(font15)
         self.checkBox.setStyleSheet(u"QCheckBox {\n"
 "    color:rgb(255,255,255);\n"
 "}\n"
@@ -2003,7 +2006,7 @@ class Ui_MainWindow(object):
 
         self.checkBox_4 = QCheckBox(self.groupBox_clean)
         self.checkBox_4.setObjectName(u"checkBox_4")
-        self.checkBox_4.setFont(font12)
+        self.checkBox_4.setFont(font15)
         self.checkBox_4.setStyleSheet(u"QCheckBox {\n"
 "    color:rgb(255,255,255);\n"
 "}\n"
@@ -2040,7 +2043,7 @@ class Ui_MainWindow(object):
 
         self.checkBox_2 = QCheckBox(self.groupBox_clean)
         self.checkBox_2.setObjectName(u"checkBox_2")
-        self.checkBox_2.setFont(font12)
+        self.checkBox_2.setFont(font15)
         self.checkBox_2.setStyleSheet(u"QCheckBox {\n"
 "    color:rgb(255,255,255);\n"
 "}\n"
@@ -2076,7 +2079,7 @@ class Ui_MainWindow(object):
 
         self.checkBox_3 = QCheckBox(self.groupBox_clean)
         self.checkBox_3.setObjectName(u"checkBox_3")
-        self.checkBox_3.setFont(font12)
+        self.checkBox_3.setFont(font15)
         self.checkBox_3.setStyleSheet(u"QCheckBox {\n"
 "    color:rgb(255,255,255);\n"
 "}\n"
@@ -2127,7 +2130,7 @@ class Ui_MainWindow(object):
         self.groupBox.setObjectName(u"groupBox")
         self.groupBox.setMinimumSize(QSize(250, 300))
         self.groupBox.setMaximumSize(QSize(250, 300))
-        self.groupBox.setFont(font12)
+        self.groupBox.setFont(font15)
         self.groupBox.setStyleSheet(u"QGroupBox{\n"
 "	border:1px solid rgb(51,51,51);	\n"
 "	border-radius:4px;\n"
@@ -2200,10 +2203,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout_27.setObjectName(u"horizontalLayout_27")
         self.label_9 = QLabel(self.page_android_world)
         self.label_9.setObjectName(u"label_9")
-        font13 = QFont()
-        font13.setFamily(u"Segoe UI Light")
-        font13.setPointSize(30)
-        self.label_9.setFont(font13)
+        font16 = QFont()
+        font16.setFamily(u"Segoe UI Light")
+        font16.setPointSize(30)
+        self.label_9.setFont(font16)
         self.label_9.setStyleSheet(u"color:rgb(255,255,255);")
         self.label_9.setAlignment(Qt.AlignCenter)
         self.label_9.setWordWrap(True)
@@ -2234,9 +2237,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout_11.setContentsMargins(0, 0, 0, 0)
         self.frame_tab = QFrame(self.frame_low)
         self.frame_tab.setObjectName(u"frame_tab")
-        font14 = QFont()
-        font14.setFamily(u"Segoe UI")
-        self.frame_tab.setFont(font14)
+        self.frame_tab.setMinimumSize(QSize(0, 0))
+        font17 = QFont()
+        font17.setFamily(u"Segoe UI")
+        self.frame_tab.setFont(font17)
         self.frame_tab.setStyleSheet(u"background:rgb(51,51,51);")
         self.frame_tab.setFrameShape(QFrame.NoFrame)
         self.frame_tab.setFrameShadow(QFrame.Plain)
@@ -2246,11 +2250,14 @@ class Ui_MainWindow(object):
         self.horizontalLayout_12.setContentsMargins(0, 0, 0, 0)
         self.lab_tab = QLabel(self.frame_tab)
         self.lab_tab.setObjectName(u"lab_tab")
-        font15 = QFont()
-        font15.setFamily(u"Segoe UI Light")
-        font15.setPointSize(10)
-        self.lab_tab.setFont(font15)
-        self.lab_tab.setStyleSheet(u"color:rgb(255,255,255);")
+        self.lab_tab.setStyleSheet(u"QLabel {\n"
+"	color:rgb(255,255,255);\n"
+"}")
+        self.lab_tab.setTextFormat(Qt.RichText)
+        self.lab_tab.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.lab_tab.setWordWrap(True)
+        self.lab_tab.setMargin(0)
+        self.lab_tab.setIndent(-1)
 
         self.horizontalLayout_12.addWidget(self.lab_tab)
 
@@ -2299,40 +2306,44 @@ class Ui_MainWindow(object):
         self.lab_user.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#ffffff;\">User</span></p></body></html>", None))
         self.lab_person.setText("")
 #if QT_CONFIG(tooltip)
-        self.bn_min.setToolTip(QCoreApplication.translate("MainWindow", u"Minimize", None))
+        self.bn_min.setToolTip(QCoreApplication.translate("MainWindow", u"Minimizar", None))
 #endif // QT_CONFIG(tooltip)
         self.bn_min.setText("")
 #if QT_CONFIG(tooltip)
-        self.bn_max.setToolTip(QCoreApplication.translate("MainWindow", u"Maximize", None))
+        self.bn_max.setToolTip(QCoreApplication.translate("MainWindow", u"Maximizar", None))
 #endif // QT_CONFIG(tooltip)
         self.bn_max.setText("")
 #if QT_CONFIG(tooltip)
-        self.bn_close.setToolTip(QCoreApplication.translate("MainWindow", u"Close", None))
+        self.bn_close.setToolTip(QCoreApplication.translate("MainWindow", u"Fechar", None))
 #endif // QT_CONFIG(tooltip)
         self.bn_close.setText("")
 #if QT_CONFIG(tooltip)
-        self.bn_whatsapp.setToolTip(QCoreApplication.translate("MainWindow", u"Home", None))
+        self.bn_whatsapp.setToolTip(QCoreApplication.translate("MainWindow", u"WhatsApp", None))
 #endif // QT_CONFIG(tooltip)
         self.bn_whatsapp.setText("")
 #if QT_CONFIG(tooltip)
-        self.bn_bug.setToolTip(QCoreApplication.translate("MainWindow", u"Bug", None))
+        self.bn_bug.setToolTip(QCoreApplication.translate("MainWindow", u"E-mails", None))
 #endif // QT_CONFIG(tooltip)
         self.bn_bug.setText("")
 #if QT_CONFIG(tooltip)
-        self.bn_cloud.setToolTip(QCoreApplication.translate("MainWindow", u"Cloud", None))
+        self.bn_cloud.setToolTip(QCoreApplication.translate("MainWindow", u"Conex\u00e3o", None))
 #endif // QT_CONFIG(tooltip)
         self.bn_cloud.setText("")
 #if QT_CONFIG(tooltip)
         self.bn_android.setToolTip(QCoreApplication.translate("MainWindow", u"Android", None))
 #endif // QT_CONFIG(tooltip)
         self.bn_android.setText("")
-        self.whatsapp_page_left_side_title.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#ffffff;\">WhatsApp</span></p></body></html>", None))
-        self.whatsapp_login_button.setText(QCoreApplication.translate("MainWindow", u"Login", None))
-        self.whatsapp_message_label.setText(QCoreApplication.translate("MainWindow", u"Mensagem", None))
+        self.whatsapp_page_messages_frame_text.setText(QCoreApplication.translate("MainWindow", u"Mensagem de Texto", None))
+        self.whatsapp_message_input.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"> </p></body></html>", None))
         self.attachments_groupbox.setTitle(QCoreApplication.translate("MainWindow", u"Anexos", None))
         self.load_image_button.setText(QCoreApplication.translate("MainWindow", u"Imagem", None))
         self.load_file_button.setText(QCoreApplication.translate("MainWindow", u"Arquivo", None))
-        self.whatsapp_page_right_side_title.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Contatos</p></body></html>", None))
+        self.selected_whatsapp_image_path_text.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"justify\"><br/></p></body></html>", None))
+        self.whatsapp_page_contacts_frame_text.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Contatos</p></body></html>", None))
         self.load_contacts_button.setText(QCoreApplication.translate("MainWindow", u"Carregar", None))
 
         __sortingEnabled = self.contacts_list.isSortingEnabled()
@@ -2411,7 +2422,7 @@ class Ui_MainWindow(object):
         self.lab_clean.setText("")
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Sliders", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"VACANT? TRY YOUR IMAGINATION", None))
-        self.lab_tab.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><br/></p></body></html>", None))
+        self.lab_tab.setText("")
 #if QT_CONFIG(tooltip)
         self.frame_drag.setToolTip(QCoreApplication.translate("MainWindow", u"Drag", None))
 #endif // QT_CONFIG(tooltip)

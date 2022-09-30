@@ -1,6 +1,32 @@
 
-from PySide2.QtCore import (QRunnable, Slot)
+from PySide2.QtCore import  QRunnable, Slot, Signal, QObject
 
+import sys
+import traceback
+
+class WorkerSignals(QObject):
+    '''
+    Defines the signals available from a running worker thread.
+
+    Supported signals are:
+
+    finished
+        No data
+
+    error
+        tuple (exctype, value, traceback.format_exc() )
+
+    result
+        object data returned from processing, anything
+
+    progress
+        int indicating % progress
+
+    '''
+    finished = Signal()
+    error = Signal(tuple)
+    result = Signal(object)
+    progress = Signal(int)
 
 class Worker(QRunnable):
     '''
@@ -23,10 +49,21 @@ class Worker(QRunnable):
         self.function = function
         self.args = args
         self.kwargs = kwargs
-
+        self.signals = WorkerSignals()
+        
+       
     @Slot()
     def run(self):
         '''
         Initialise the runner function with passed args, kwargs.
         '''
-        self.function(*self.args, **self.kwargs)
+        try:
+            result = self.function(*self.args, **self.kwargs)
+        except:
+            traceback.print_exc()
+            exctype, value = sys.exc_info()[:2]
+            self.signals.error.emit((exctype, value, traceback.format_exc()))
+        else:
+            self.signals.result.emit(result)  # Return the result of the processing
+        finally:
+            self.signals.finished.emit()  # Done

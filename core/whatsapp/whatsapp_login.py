@@ -25,21 +25,22 @@ from main import *
 """
 
 
-def whatsapp_login(self):
-    # Aguardar por 200s até o QR Code ser Scaneado
+def whatsapp_login(self) -> str:
+   
     search_xpath = '''//*[@id="side"]/div[1]/div/div/div[2]/div/div[2]'''
 
     try:
-        elem = WebDriverWait(self.driver, 200).until(
+        elem = WebDriverWait(self.driver, 2).until(
             EC.presence_of_element_located((By.XPATH, search_xpath))
         )
     finally:
         try:
             elem.click()
             self.uniform_wait(2, 3)
+            self.is_logged = True
         except UnboundLocalError:
             self.driver.quit()
             self.errorexec("Tempo expirado, logar novamente!",
                            "icons/1x/errorAsset 55.png", "Ok")
-        
+
     return

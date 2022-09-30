@@ -11,8 +11,9 @@ import rootpath
 class Configuration():
 
     def __init__(self, *args, **kwargs):
-        super(Configuration, self).__init__(*args, **kwargs)
-
+        self.args = args
+        self.kwargs = kwargs
+        
         # Plataforma
         self.platform = sys.platform
 
@@ -49,4 +50,10 @@ class Configuration():
                 pass
         else:
             pass
-   
+        
+        print(f'Platform: {platform}')
+        
+        return
+    
+    def test(self):
+        print("TEST")
