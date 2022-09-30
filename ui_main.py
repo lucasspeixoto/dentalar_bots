@@ -18,7 +18,7 @@ class Ui_MainWindow(object):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.setWindowModality(Qt.WindowModal)
-        MainWindow.resize(900, 600)
+        MainWindow.resize(916, 600)
         MainWindow.setMinimumSize(QSize(900, 600))
         font = QFont()
         font.setFamily(u"Segoe UI")
@@ -27,7 +27,7 @@ class Ui_MainWindow(object):
         MainWindow.setTabShape(QTabWidget.Rounded)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.centralwidget.setMaximumSize(QSize(16777215, 600))
+        self.centralwidget.setMaximumSize(QSize(16777215, 16777215))
         self.centralwidget.setFont(font)
         self.centralwidget.setStyleSheet(u"background:rgb(91,90,90);")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
@@ -2293,7 +2293,7 @@ class Ui_MainWindow(object):
 
         self.stackedWidget.setCurrentIndex(0)
         self.load_contacts_button.setDefault(False)
-        self.stackedWidget_android.setCurrentIndex(1)
+        self.stackedWidget_android.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
