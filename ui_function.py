@@ -73,14 +73,14 @@ class UIFunction():
         if status == 0:
             self.showMaximized()
             GLOBAL_STATE = 1
-            self.ui.bn_max.setToolTip("Restore") 
+            self.ui.bn_max.setToolTip("Restaurar") 
             self.ui.bn_max.setIcon(QtGui.QIcon("icons/1x/restore.png")) #CHANGE THE MAXIMISE ICON TO RESTOR ICON
             self.ui.frame_drag.hide() #HIDE DRAG AS NOT NECESSERY
         else:
             GLOBAL_STATE = 0
             self.showNormal()
             self.resize(self.width()+1, self.height()+1)
-            self.ui.bn_max.setToolTip("Maximize")
+            self.ui.bn_max.setToolTip("Maximizar")
             self.ui.bn_max.setIcon(QtGui.QIcon("icons/1x/max.png")) #CHANGE BACK TO MAXIMISE ICON
             self.ui.frame_drag.show()
     ################################################################################################
@@ -231,9 +231,9 @@ class UIFunction():
     def stackPage(self):
 
         ######### PAGE_HOME ############# BELOW DISPLAYS THE FUNCTION OF WIDGET, LABEL, PROGRESS BAR, E.T.C IN STACKEDWIDGET page_HOME
-        self.ui.whatsapp_page_left_side_title.setText("WhatsApp")
+        """ self.ui.whatsapp_page_left_side_title.setText("WhatsApp")
         self.ui.whatsapp_page_right_side_title.setText("Contatos")
-
+        """
         ######### PAGE_BUG ############## BELOW DISPLAYS THE FUNCTION OF WIDGET, LABEL, PROGRESS BAR, E.T.C IN STACKEDWIDGET page_bug
         self.ui.bn_bug_start.clicked.connect(lambda: APFunction.addNumbers(self, self.ui.comboBox_bug.currentText(), True))  
 

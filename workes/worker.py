@@ -1,9 +1,7 @@
 
-from PySide2.QtWidgets import QVBoxLayout, QLabel, QPushButton, QWidget, QMainWindow, QApplication
-from PySide2.QtCore import QTimer, QRunnable, Slot, Signal, QObject, QThreadPool
+from PySide2.QtCore import  QRunnable, Slot, Signal, QObject
 
 import sys
-import time
 import traceback
 
 class WorkerSignals(QObject):

@@ -4,7 +4,7 @@
 import pandas as pd
 
 from PySide2.QtWidgets import QFileDialog
-from core.contacts.build_contacts_list import build_contacts_list
+from core.contacts.helpers.build_contacts_list import build_contacts_list
 
 from main import *
 
@@ -17,7 +17,9 @@ from main import *
     :Returns:
         - ShadowRoot object or
         - NoSuchShadowRoot - if no shadow root was attached to element
-"""    
+"""
+
+
 def get_contacts_from_excel_file(self):
 
     file_name: str = QFileDialog.getOpenFileName(
@@ -30,16 +32,17 @@ def get_contacts_from_excel_file(self):
 
     except FileNotFoundError:
         self.ui.contacts_list.clear()
-        self.ui.whatsapp_page_right_side_title.setText('Contatos')
+        self.ui.whatsapp_page_contacts_frame_text.setText('Contatos')
         self.errorexec("Nenhum arquivo carregado!",
-                        "icons/1x/errorAsset 55.png", "Ok")
+                       "icons/1x/errorAsset 55.png", "Ok")
 
         return
 
     selected_contacts = len(self.contacts_list)
-    
+
     if (selected_contacts > 0):
-        self.ui.whatsapp_page_right_side_title.setText('Contatos - {}'.format(selected_contacts))
+        self.ui.whatsapp_page_contacts_frame_text.setText(
+            'Contatos - {}'.format(selected_contacts))
         self.ui.contacts_list.clear()
 
         for contact in self.contacts_list:

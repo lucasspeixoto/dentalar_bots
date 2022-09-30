@@ -10,7 +10,7 @@ from interface.dialog.dialog import dialogUi
 from interface.error.error import errorUi
 from workes.worker import Worker
 
-from interface.ui_main import Ui_MainWindow
+from ui_main import Ui_MainWindow
 
 from ui_function import *
 
@@ -31,11 +31,13 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        
 
         self.contacts = Contacts()
 
         self.files = Files()
-
+        self.files.set_default_image_and_file()
+        
         self.configuration = Configuration()
 
         self.bot = BotProcess()
@@ -107,10 +109,6 @@ class MainWindow(QMainWindow):
 
         # --PAGE WhatsApp---------------------------------:
 
-        # - WhatsApp Login
-        self.ui.whatsapp_login_button.clicked.connect(
-            lambda: self.whatsapp_login())
-
         # --Set Default image path ----------------------:
         #self.contacts.selected_image = ''
 
@@ -150,30 +148,17 @@ class MainWindow(QMainWindow):
         # WIDGET TO MOVE: WE CHOOSE THE TOPMOST FRAME WHERE THE APPLICATION NAME IS PRESENT AS THE AREA TO MOVE THE WINDOW.
         # CALLING THE FUNCTION TO CJANGE THE POSITION OF THE WINDOW DURING MOUSE DRAG
         self.ui.frame_appname.mouseMoveEvent = moveWindow
-
-    """
-    TODO Call whatsapp_login method from
-    WhatsAppScrapping class
-    :Args:    
-    :Returns:
-    """
-
-    
-
-    def whatsapp_login(self):
-        def whatsapp_login_pointer():
-            WhatsAppScrapping.whatsapp_login(self)
        
-        worker = Worker(whatsapp_login_pointer)
 
-        self.threadpool.start(worker)
+    def send_whatsapp_messages_pointer(self):
+        Contacts.send_whatsapp_messages(self)
+        
+        return
 
     def send_whatsapp_messages(self):
-        def send_whatsapp_messages_pointer():
-            Contacts.send_whatsapp_messages(self)
 
-        worker = Worker(send_whatsapp_messages_pointer)
-        
+        worker = Worker(self.send_whatsapp_messages_pointer)
+
         self.threadpool.start(worker)
 
     # ----> FUNCTION TO CAPTURE THE INITIAL POSITION OF THE MOUSE: NECESSERY FOR THE moveWindow FUNCTION
@@ -198,7 +183,8 @@ class MainWindow(QMainWindow):
     def errorexec(self, heading, icon, btnOk):
         errorUi.errorConstrict(self.error, heading, icon, btnOk)
         self.error.exec_()
-    ##############################################################
+
+        ##############################################################
 
 
 if __name__ == "__main__":
