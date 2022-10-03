@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>150</height>
+    <height>183</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -19,7 +19,7 @@
   <property name="maximumSize">
    <size>
     <width>400</width>
-    <height>150</height>
+    <height>250</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -43,6 +43,12 @@
    </property>
    <item>
     <widget class="QFrame" name="frame">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="styleSheet">
       <string notr="true">background:rgb(51,51,51);</string>
      </property>
@@ -73,13 +79,13 @@
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>55</height>
+          <height>0</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
           <width>16777215</width>
-          <height>55</height>
+          <height>80</height>
          </size>
         </property>
         <property name="styleSheet">
@@ -128,6 +134,18 @@
          </item>
          <item>
           <widget class="QLabel" name="lab_heading">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>71</height>
+            </size>
+           </property>
            <property name="font">
             <font>
              <family>Segoe UI</family>
@@ -143,6 +161,9 @@
            <property name="wordWrap">
             <bool>true</bool>
            </property>
+           <property name="margin">
+            <number>1</number>
+           </property>
           </widget>
          </item>
         </layout>
@@ -150,6 +171,12 @@
       </item>
       <item>
        <widget class="QFrame" name="frame_bottom">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="styleSheet">
          <string notr="true">background:rgb(91,90,90);</string>
         </property>
@@ -167,15 +194,21 @@
           <widget class="QPushButton" name="bn_ok">
            <property name="minimumSize">
             <size>
-             <width>69</width>
-             <height>25</height>
+             <width>85</width>
+             <height>30</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>69</width>
-             <height>25</height>
+             <width>85</width>
+             <height>30</height>
             </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Segoe UI</family>
+             <pointsize>12</pointsize>
+            </font>
            </property>
            <property name="styleSheet">
             <string notr="true">QPushButton {

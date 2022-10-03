@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-#encoding: utf-8
+# encoding: utf-8
 
 """
-    TODO: Get a dataframe with two columns
+    Get a dataframe with two columns
     (name and whatsapp number) to transform
     into a 'name - number' list
     
@@ -12,7 +12,9 @@
           
     :Returns:
         - List of transformed contact detail ['name - number']
-"""   
+"""
+
+
 def build_contacts_list(selected_file_dataframe_content):
 
     # Copy of received datraframe
@@ -20,16 +22,16 @@ def build_contacts_list(selected_file_dataframe_content):
 
     # Declaration of auxiliary lists
     names_and_numbers_list, contacts_list = [], []
-    
-    # Building list with two positions where 
-    # the first is a list of names and 
+
+    # Building list with two positions where
+    # the first is a list of names and
     # the second is a list of numbers
     for index in range(0, len(table.columns)):
         contact = table[table.columns[index]]
         names_and_numbers_list.append(contact)
-        
+
     # Building concat list, with a string:
-    # 'name - number' of the contacts  
+    # 'name - number' of the contacts
     for index in range(0, len(table)):
         first_column = str(names_and_numbers_list[0][index])
         second_column = str(names_and_numbers_list[1][index])

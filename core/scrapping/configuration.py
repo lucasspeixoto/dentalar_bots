@@ -1,24 +1,22 @@
 # -*- coding: utf-8 -*-
-#encoding: utf-8
+# encoding: utf-8
 
 import os
-import shutil
 import sys
-from time import sleep
 
 import rootpath
 
-class Configuration():
 
+class Configuration:
     def __init__(self, *args, **kwargs):
         self.args = args
         self.kwargs = kwargs
-        
+
         # Plataforma
         self.platform = sys.platform
 
         # Diretório Raiz
-        self.root = ''
+        self.root = ""
 
         # Definição do diretório raiz com base no sistema operacional
         self.check_system(self.platform)
@@ -29,16 +27,18 @@ class Configuration():
         # Caminho dos arquivos cvs renomeados e do excel
         self.files_path = self.root + "\\src\\assets\\cvs"
 
-        self.current_folder = os.path.dirname(os.path.abspath(__file__)) + '/'
+        self.current_folder = os.path.dirname(os.path.abspath(__file__)) + "/"
         self.path = "/".join(self.current_folder.split("\\")[0:-2]) + "/"
 
-    '''
-    # TODO: Identificar sistema operacional
-    '''
+    """
+        :Args:
+            
+        :Returns:
+    """
 
     def check_system(self, platform: str):
         # Verificação do sistema operacional
-        if platform in ["linux", 'linux2']:
+        if platform in ["linux", "linux2"]:
             try:
                 self.root = os.path.dirname(self.base_path)
             except AttributeError:
@@ -50,10 +50,7 @@ class Configuration():
                 pass
         else:
             pass
-        
-        print(f'Platform: {platform}')
-        
+
+        print(f"Platform: {platform}")
+
         return
-    
-    def test(self):
-        print("TEST")

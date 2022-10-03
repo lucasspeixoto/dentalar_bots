@@ -259,14 +259,14 @@ QPushButton:pressed {
           <widget class="QPushButton" name="bn_east">
            <property name="minimumSize">
             <size>
-             <width>69</width>
-             <height>25</height>
+             <width>85</width>
+             <height>30</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>69</width>
-             <height>25</height>
+             <width>85</width>
+             <height>30</height>
             </size>
            </property>
            <property name="font">
@@ -322,14 +322,14 @@ QPushButton:pressed {
           <widget class="QPushButton" name="bn_west">
            <property name="minimumSize">
             <size>
-             <width>69</width>
-             <height>25</height>
+             <width>85</width>
+             <height>30</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>69</width>
-             <height>25</height>
+             <width>85</width>
+             <height>30</height>
             </size>
            </property>
            <property name="font">
