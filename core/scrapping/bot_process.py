@@ -9,14 +9,21 @@ from selenium.common.exceptions import WebDriverException
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-from selenium.webdriver.support import expected_conditions as EC
+
 from webdriver_manager.chrome import ChromeDriverManager
 
 
 class BotProcess:
     def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
         self.args = args
         self.kwargs = kwargs
+
+        self.capabilities = None
+        self.prefs = None
+        self.options = None
+        self.find_options = None
 
     """
     :Args:

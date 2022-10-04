@@ -17,7 +17,7 @@
 
 def build_contacts_list(selected_file_dataframe_content):
 
-    # Copy of received datraframe
+    # Copy of received dataframe
     table = selected_file_dataframe_content.copy()
 
     # Declaration of auxiliary lists

@@ -114,8 +114,9 @@ class MainWindow(QMainWindow):
                 self.dragPos = event.globalPos()
                 event.accept()
 
-        # WIDGET TO MOVE: WE CHOOSE THE TOPMOST FRAME WHERE THE APPLICATION NAME IS PRESENT AS THE AREA TO MOVE THE WINDOW.
-        # CALLING THE FUNCTION TO CJANGE THE POSITION OF THE WINDOW DURING MOUSE DRAG
+        # WIDGET TO MOVE: WE CHOOSE THE TOPMOST FRAME WHERE THE APPLICATION NAME IS PRESENT AS
+        # THE AREA TO MOVE THE WINDOW.
+        # CALLING THE FUNCTION TO CHANGE THE POSITION OF THE WINDOW DURING MOUSE DRAG
         self.ui.frame_appname.mouseMoveEvent = moveWindow
 
     def send_whatsapp_messages_pointer(self):
@@ -124,7 +125,6 @@ class MainWindow(QMainWindow):
         return
 
     def send_whatsapp_messages(self):
-
         worker = Worker(self.send_whatsapp_messages_pointer)
 
         self.threadpool.start(worker)
@@ -132,30 +132,30 @@ class MainWindow(QMainWindow):
         return
 
     """
-    FUNCTION TO CAPTURE THE INITIAL POSITION OF THE MOUSE: NECESSERY FOR THE
-    moveWindow FUNCTION
+    function to capture the initial position of the mouse: necessary for the move window function
     """
 
     def mousePressEvent(self, event):
         self.dragPos = event.globalPos()
 
-    """ FUNCTION WHICH OPENS THE DIALOG AND DISPLAYS IT: SO TO CALL DIALOG BOX JUST CALL THE FUNCTION dialogexec() WITH ALL THE PARAMETER
-     NOW WHENEVER YOU WANT A DIALOG BOX TO APPEAR IN THE APP LIKE IN PRESS OF CLODE BUTTON, THIS CAN BE DONE BY CALLING THIS FUNCTION.        ----------(C11)
-     IT TAKES DIALOG OBJECT(INITIALISED EARLIER), HEADER NAME OF DIALOG BOX, MESSAGE TO BE DISPLAYED, ICON, BUTTON NAMES.
-     THIS CODE EXECUTES THE DIALOGBOX AND SO WE CAN SEE THE DIALOG BOX IN THE SCREEN.
-     DURING THE APPEARENCE OF THIS WINDOW, YOU CANNOT USE THE MAINWINDOW, YOU SHPULD EITHER PRESS ANY ONE OFT HE PROVIDED BUTTONS
-     OR JUST CLODE THE DIALOG BOX.
+    """ Function which opens the dialog and displays it: so to call dialog box just call
+    the function dialogexec() with all the parameter now whenever you want a dialog box
+    to appear in the app like in press of clode button, this can be done by calling this function. 
+    it takes dialog object(initialised earlier), header name of dialog box, message to be displayed,
+    icon, button names. This code executes the dialogbox and so we can see the dialog box in the screen.
+    during the appearence of this window, you cannot use the mainwindow, you shpuld either press
+    any one oft he provided buttons  or just clode the dialog box.
      """
 
-    def dialogexec(self, heading, message, icon, btn1, btn2):
-        dialogUi.dialogConstrict(self.diag, heading, message, icon, btn1, btn2)
+    def dialogexec(self, heading: str, message: str, icon: str, button_cancel_text: str, button_ok_text: str):
+        dialogUi.dialogConstrict(self.diag, heading, message, icon, button_cancel_text, button_ok_text)
         self.diag.exec_()
 
-    """ FUNCTION WHICH OPENS THE ERROR BOX AND DISPLAYS IT: SO TO CALL DIALOG BOX JUST CALL THE FUNCTION errorexec() WITH ALL THE PARAMETER
-    SAME AS COMMEND (C11), EXCEPT THIS IS FOR THE ERROR BOX. """
-
-    def errorexec(self, heading, icon, btnOk):
-        errorUi.errorConstruct(self.error, heading, icon, btnOk)
+    """ Function which opens the error box and displays it: so to call dialog box just call
+    the function errorexec() with all the parameter same as commend (c11),
+     except this is for the error box. """
+    def errorexec(self, heading: str, icon: str, button_ok_text: str) -> None:
+        errorUi.errorConstruct(self.error, heading, icon, button_ok_text)
         self.error.exec_()
 
 

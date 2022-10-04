@@ -5,30 +5,23 @@ from core.files_management.files import *
 
 from core.contacts.get_contacts_from_excel_file import get_contacts_from_excel_file
 
-from core.contacts.toggle_all_contacts import (
-    clear_selected_contacts,
-    toggle_all_contacts,
-)
+from core.contacts.toggle_all_contacts import toggle_all_contacts
 
 from core.contacts.clear_contacts_list import clear_contacts_list
-
-from core.files_management.files import *
-
-from main import *
-
-from interface.error.error import errorUi
 
 from core.whatsapp.whatsapp_scrapping import *
 
 
 class Contacts(Files):
     def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
         self.args = args
         self.kwargs = kwargs
-
+        self.ui = None
+        self.whatsapp_scrapping = None
         self.contacts_list = []
         self.selected_contacts = []
-
         self.error = errorUi()
 
     def get_contacts_from_excel_file(self):
@@ -61,3 +54,5 @@ class Contacts(Files):
             number: str = contact.text().split(" - ")[-1]
 
             self.whatsapp_scrapping.select_contact_number(number)
+
+        return
