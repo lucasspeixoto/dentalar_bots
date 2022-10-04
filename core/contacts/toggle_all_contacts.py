@@ -13,11 +13,10 @@
 
 
 def toggle_all_contacts(self):
-
-    isChecked = self.ui.send_to_all_contacts_checkbox.isChecked()
+    is_checked: bool = self.ui.send_to_all_contacts_checkbox.isChecked()
 
     for index in range(self.ui.contacts_list.count()):
-        if isChecked == False:
+        if not is_checked:
             self.ui.contacts_list.item(index).setSelected(False)
             self.ui.send_to_all_contacts_checkbox.setText("Nenhum")
         else:
@@ -28,7 +27,6 @@ def toggle_all_contacts(self):
 
 
 def clear_selected_contacts(self):
-
     for index in range(self.ui.contacts_list.count()):
         self.ui.contacts_list.item(index).setSelected(False)
         self.ui.send_to_all_contacts_checkbox.setText("Nenhum")

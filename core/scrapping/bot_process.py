@@ -20,11 +20,6 @@ class BotProcess:
         self.args = args
         self.kwargs = kwargs
 
-        self.capabilities = None
-        self.prefs = None
-        self.options = None
-        self.find_options = None
-
     """
     :Args:
         
@@ -39,7 +34,7 @@ class BotProcess:
             "tag": By.TAG_NAME,
         }
 
-        # Configuração
+        # Configuration
         self.options = webdriver.ChromeOptions()
         self.options.add_argument("--disable-infobars")
         self.options.add_argument("--start-maximized")
@@ -80,7 +75,7 @@ class BotProcess:
                 desired_capabilities=self.capabilities,
             )
         except WebDriverException:
-            self.errorexec(
+            self.show_error(
                 "Página fechada, logar novamente!", "icons/1x/errorAsset 55.png", "Ok"
             )
             return
@@ -101,7 +96,8 @@ class BotProcess:
     :Returns:
     """
 
-    def uniform_wait(self, first_timer: int, last_timer: int):
+    @staticmethod
+    def uniform_wait(first_timer: int, last_timer: int):
         sleep(
             uniform(uniform(first_timer, last_timer), uniform(first_timer, last_timer))
         )
@@ -189,10 +185,12 @@ class BotProcess:
     """
 
     def get_element_text(
-        self, element: str, etype: str, first_timer: int, last_timer: int
+        self, element: str, element_type: str, first_timer: int, last_timer: int
     ) -> str:
         try:
-            found = self.driver.find_element(by=self.find_options[etype], value=element)
+            found = self.driver.find_element(
+                by=self.find_options[element_type], value=element
+            )
         except Exception as error:
             print(f"Error Inside get_element_text function: {error}")
             pass

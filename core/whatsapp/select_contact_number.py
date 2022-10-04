@@ -10,7 +10,6 @@
 
 
 def select_contact_number(self, contact: str):
-
     search_field_xpath = '//*[@id="side"]/div[1]/div/div/div[2]/div/div[2]'
 
     # Select the search contact field

@@ -3,9 +3,7 @@
 
 import pandas as pd
 
-from PySide2.QtWidgets import QFileDialog
 from core.contacts.helpers.build_contacts_list import build_contacts_list
-
 from main import *
 
 """
@@ -16,7 +14,6 @@ from main import *
 
 
 def get_contacts_from_excel_file(self):
-
     file_name: str = QFileDialog.getOpenFileName(
         self, "Carregar Contatos", "", "XLSX(*.xlsx)"
     )
@@ -29,8 +26,7 @@ def get_contacts_from_excel_file(self):
     except FileNotFoundError:
         self.ui.contacts_list.clear()
         self.ui.whatsapp_page_contacts_frame_text.setText("Contatos")
-        self.errorexec("Nenhum arquivo carregado!",
-                       "icons/1x/errorAsset 55.png", "Ok")
+        self.show_error("Nenhum arquivo carregado!", "icons/1x/errorAsset 55.png", "Ok")
 
         return
 

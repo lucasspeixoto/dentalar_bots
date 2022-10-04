@@ -7,11 +7,6 @@ from core.validations.update_whatsapp_validation_state import (
     validate_whatsapp_needed_data,
 )
 
-"""
-Class with methods to check validations that need
-interface updates as enabled and disable buttons.
-"""
-
 
 class Validations:
     def __init__(self, *args, **kwargs):
@@ -72,7 +67,7 @@ class Validations:
         # If has any error, show the message and disabled send messages button,
         # enable, load imagem button, message input and contacts list
         if has_error == True:
-            self.errorexec(
+            self.show_error(
                 "Para o envio é necessário selecionar um ou mais contatos, inserir a mensagem e selecionar a imagem.",
                 "icons/1x/errorAsset 55.png",
                 "Ok",

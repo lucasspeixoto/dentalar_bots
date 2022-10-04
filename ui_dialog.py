@@ -119,8 +119,8 @@ class Ui_Dialog(object):
         self.gridLayout.setContentsMargins(15, -1, 35, 0)
         self.bn_east = QPushButton(self.frame_bottom)
         self.bn_east.setObjectName(u"bn_east")
-        self.bn_east.setMinimumSize(QSize(69, 25))
-        self.bn_east.setMaximumSize(QSize(69, 25))
+        self.bn_east.setMinimumSize(QSize(85, 30))
+        self.bn_east.setMaximumSize(QSize(85, 30))
         font1 = QFont()
         font1.setFamily(u"Segoe UI")
         font1.setPointSize(12)
@@ -152,8 +152,8 @@ class Ui_Dialog(object):
 
         self.bn_west = QPushButton(self.frame_bottom)
         self.bn_west.setObjectName(u"bn_west")
-        self.bn_west.setMinimumSize(QSize(69, 25))
-        self.bn_west.setMaximumSize(QSize(69, 25))
+        self.bn_west.setMinimumSize(QSize(85, 30))
+        self.bn_west.setMaximumSize(QSize(85, 30))
         self.bn_west.setFont(font1)
         self.bn_west.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(51,51,51);\n"

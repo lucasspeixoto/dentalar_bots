@@ -21,6 +21,6 @@ def clear_contacts_list(self):
     self.ui.clear_contacts_list_button.setEnabled(False)
     self.ui.send_to_all_contacts_checkbox.setText("Nenhum")
     self.ui.send_to_all_contacts_checkbox.setChecked(False)
-    self.ui.validate_whatsapp_sending_button.setEnabled(False)
+    #self.ui.validate_whatsapp_sending_button.setEnabled(False)
 
     return

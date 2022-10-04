@@ -1,16 +1,17 @@
 # -*- coding: utf-8 -*-
 # encoding: utf-8
 
+import sys
+
 from PySide2.QtCore import Qt, QThreadPool
 from PySide2.QtWidgets import *
 
-import sys
-
-from ui_main import Ui_MainWindow
-
+from core.validations.validations import *
 from interface.dialog.dialog import dialogUi
 from interface.error.error import errorUi
+from workes.worker import Worker
 
+from ui_main import Ui_MainWindow
 
 from ui_function import *
 
@@ -18,10 +19,8 @@ from core.scrapping.bot_process import *
 from core.contacts.contacts import *
 from core.whatsapp.whatsapp_scrapping import *
 from core.files_management.files import *
-from core.validations.validations import *
 
 from help import *
-from workes.worker import Worker
 
 
 class MainWindow(QMainWindow):
@@ -66,13 +65,13 @@ class MainWindow(QMainWindow):
 
         UIFunction.stackPage(self)
 
-        self.diag = dialogUi()
+        self.dialog = dialogUi()
 
         self.error = errorUi()
 
-        self.threadpool = QThreadPool()
+        self.thread_pool = QThreadPool()
         print(
-            "Multithreading with maximum %d threads" % self.threadpool.maxThreadCount()
+            "Multithreading with maximum %d threads" % self.thread_pool.maxThreadCount()
         )
 
         self.ui.load_contacts_button.clicked.connect(
@@ -114,9 +113,9 @@ class MainWindow(QMainWindow):
                 self.dragPos = event.globalPos()
                 event.accept()
 
-        # WIDGET TO MOVE: WE CHOOSE THE TOPMOST FRAME WHERE THE APPLICATION NAME IS PRESENT AS
-        # THE AREA TO MOVE THE WINDOW.
-        # CALLING THE FUNCTION TO CHANGE THE POSITION OF THE WINDOW DURING MOUSE DRAG
+        # WIDGET TO MOVE: WE CHOOSE THE TOPMOST FRAME WHERE THE APPLICATION NAME IS
+        # PRESENT AS THE AREA TO MOVE THE WINDOW. CALLING THE FUNCTION TO CHANGE THE
+        # POSITION OF THE WINDOW DURING MOUSE DRAG
         self.ui.frame_appname.mouseMoveEvent = moveWindow
 
     def send_whatsapp_messages_pointer(self):
@@ -127,7 +126,7 @@ class MainWindow(QMainWindow):
     def send_whatsapp_messages(self):
         worker = Worker(self.send_whatsapp_messages_pointer)
 
-        self.threadpool.start(worker)
+        self.thread_pool.start(worker)
 
         return
 
@@ -139,22 +138,34 @@ class MainWindow(QMainWindow):
         self.dragPos = event.globalPos()
 
     """ Function which opens the dialog and displays it: so to call dialog box just call
-    the function dialogexec() with all the parameter now whenever you want a dialog box
+    the function show_dialog() with all the parameter now whenever you want a dialog box
     to appear in the app like in press of clode button, this can be done by calling this function. 
     it takes dialog object(initialised earlier), header name of dialog box, message to be displayed,
     icon, button names. This code executes the dialogbox and so we can see the dialog box in the screen.
     during the appearence of this window, you cannot use the mainwindow, you shpuld either press
     any one oft he provided buttons  or just clode the dialog box.
-     """
+    """
 
-    def dialogexec(self, heading: str, message: str, icon: str, button_cancel_text: str, button_ok_text: str):
-        dialogUi.dialogConstrict(self.diag, heading, message, icon, button_cancel_text, button_ok_text)
-        self.diag.exec_()
+    def show_dialog(
+        self,
+        heading: str,
+        message: str,
+        icon: str,
+        button_cancel_text: str,
+        button_ok_text: str,
+    ):
+        dialogUi.dialogConstrict(
+            self.dialog, heading, message, icon, button_cancel_text, button_ok_text
+        )
+        self.dialog.exec_()
 
-    """ Function which opens the error box and displays it: so to call dialog box just call
-    the function errorexec() with all the parameter same as commend (c11),
-     except this is for the error box. """
-    def errorexec(self, heading: str, icon: str, button_ok_text: str) -> None:
+    """
+    Function which opens the error box and displays it: so to call dialog box just call
+    the function show_error() with all the parameter same as commend (c11),
+    except this is for the error box. 
+    """
+
+    def show_error(self, heading: str, icon: str, button_ok_text: str) -> None:
         errorUi.errorConstruct(self.error, heading, icon, button_ok_text)
         self.error.exec_()
 

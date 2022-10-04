@@ -25,7 +25,7 @@ pandas==1.4.4
 pefile==2022.5.30
 pycodestyle==2.9.1
 pycparser==2.21
-pyinstaller @ https://github.com/pyinstaller/pyinstaller/tarball/develop
+pyinstaller@ https://github.com/pyinstaller/pyinstaller/tarball/develop
 pyinstaller-hooks-contrib==2022.10
 pyparsing==3.0.9
 PySide2==5.15.2.1
@@ -51,3 +51,7 @@ wsproto==1.2.0
 xlrd==2.0.1
 zope.event==4.5.0
 zope.interface==5.4.0
+pyinstaller~=5.4.1
+pip~=22.2.2
+wheel~=0.37.1
+setuptools~=62.3.2

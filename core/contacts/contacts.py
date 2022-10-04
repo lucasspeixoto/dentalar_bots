@@ -18,10 +18,13 @@ class Contacts(Files):
 
         self.args = args
         self.kwargs = kwargs
+
         self.ui = None
         self.whatsapp_scrapping = None
+
         self.contacts_list = []
         self.selected_contacts = []
+
         self.error = errorUi()
 
     def get_contacts_from_excel_file(self):

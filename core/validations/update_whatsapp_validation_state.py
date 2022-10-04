@@ -25,6 +25,12 @@ def reset_validate_whatsapp_needed_data(self):
 
     # Enable Contact List for Selection
     self.ui.contacts_list.setEnabled(True)
+    
+    # Enable Select or Unselect all contacts checkbox
+    self.ui.send_to_all_contacts_checkbox.setEnabled(True)
+    
+    # Enable clean all contacts button
+    self.ui.clear_contacts_list_button.setEnabled(True)
 
     return
 
@@ -53,5 +59,11 @@ def validate_whatsapp_needed_data(self):
 
     # Disabled Contact List for Selection
     self.ui.contacts_list.setEnabled(False)
+    
+    # Disabled Select or Unselect all contacts checkbox
+    self.ui.send_to_all_contacts_checkbox.setEnabled(False)
+    
+    # Disabled clean all contacts button
+    self.ui.clear_contacts_list_button.setEnabled(False)
 
     return
