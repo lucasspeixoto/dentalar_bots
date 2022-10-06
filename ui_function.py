@@ -44,8 +44,8 @@ GLOBAL_TITLE_BAR = (
 )
 init = False  # NECRESSERY FOR INITITTION OF THE WINDOW.
 
-# tab_Buttons = ['bn_whatsapp', 'bn_bug', 'bn_android', 'bn_cloud'] #BUTTONS IN MAIN TAB
-# android_buttons = ['bn_android_contact', 'bn_android_game', 'bn_android_clean', 'bn_android_world'] #BUTTONS IN ANDROID STACKPAGE
+# tab_Buttons = ['menu_whatsapp_button', 'menu_email_button', 'menu_user_button', 'bn_cloud'] #BUTTONS IN MAIN TAB
+# android_buttons = ['menu_user_button_contact', 'menu_user_button_game', 'menu_user_button_clean', 'menu_user_button_world'] #BUTTONS IN ANDROID STACKPAGE
 
 # THIS CLASS HOUSES ALL FUNCTION NECESSERY FOR OUR PROGRAMME TO RUN.
 class UIFunction:
@@ -179,7 +179,7 @@ class UIFunction:
     ################################################################################################################
 
     # ----> BUTTON IN TAB PRESSED EXECUTES THE CORRESPONDING PAGE IN STACKEDWIDGET PAGES
-    def buttonPressed(self, buttonName):
+    def buttonPressed(self, button_name):
 
         index = self.ui.stackedWidget.currentIndex()
 
@@ -187,7 +187,7 @@ class UIFunction:
         for each in self.ui.frame_bottom_west.findChildren(QFrame):
             each.setStyleSheet("background:rgb(51,51,51)")
 
-        if buttonName == "bn_whatsapp":
+        if button_name == "menu_whatsapp_button":
             if self.ui.frame_bottom_west.width() == 80 and index != 0:
                 self.ui.stackedWidget.setCurrentWidget(self.ui.page_whatsapp)
                 self.ui.lab_tab.setText("WhatsApp")
@@ -204,10 +204,10 @@ class UIFunction:
                     "background:rgb(91,90,90)"
                 )  # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
 
-        elif buttonName == "bn_bug":
+        elif button_name == "menu_email_button":
             if self.ui.frame_bottom_west.width() == 80 and index != 5:
                 self.ui.stackedWidget.setCurrentWidget(self.ui.page_bug)
-                self.ui.lab_tab.setText("Bug")
+                self.ui.lab_tab.setText("E-mails")
                 self.ui.frame_bug.setStyleSheet(
                     "background:rgb(91,90,90)"
                 )  # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
@@ -216,15 +216,15 @@ class UIFunction:
                 self.ui.frame_bottom_west.width() == 160 and index != 4
             ):  # ABOUT PAGE STACKED WIDGET
                 self.ui.stackedWidget.setCurrentWidget(self.ui.page_about_bug)
-                self.ui.lab_tab.setText("Ajuda > Bug")
+                self.ui.lab_tab.setText("Ajuda > E-mails")
                 self.ui.frame_bug.setStyleSheet(
                     "background:rgb(91,90,90)"
                 )  # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
 
-        elif buttonName == "bn_android":
+        elif button_name == "menu_user_button":
             if self.ui.frame_bottom_west.width() == 80 and index != 7:
                 self.ui.stackedWidget.setCurrentWidget(self.ui.page_android)
-                self.ui.lab_tab.setText("Android")
+                self.ui.lab_tab.setText("Usuário")
                 self.ui.frame_android.setStyleSheet(
                     "background:rgb(91,90,90)"
                 )  # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
@@ -234,15 +234,15 @@ class UIFunction:
                 self.ui.frame_bottom_west.width() == 160 and index != 3
             ):  # ABOUT PAGE STACKED WIDGET
                 self.ui.stackedWidget.setCurrentWidget(self.ui.page_about_android)
-                self.ui.lab_tab.setText("Ajuda > Android")
+                self.ui.lab_tab.setText("Ajuda > Usuário")
                 self.ui.frame_android.setStyleSheet(
                     "background:rgb(91,90,90)"
                 )  # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
 
-        elif buttonName == "bn_cloud":
+        elif button_name == "bn_cloud":
             if self.ui.frame_bottom_west.width() == 80 and index != 6:
                 self.ui.stackedWidget.setCurrentWidget(self.ui.page_cloud)
-                self.ui.lab_tab.setText("Cloud")
+                self.ui.lab_tab.setText("Conexão E-mail")
                 self.ui.frame_cloud.setStyleSheet(
                     "background:rgb(91,90,90)"
                 )  # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
@@ -251,7 +251,7 @@ class UIFunction:
                 self.ui.frame_bottom_west.width() == 160 and index != 2
             ):  # ABOUT PAGE STACKED WIDGET
                 self.ui.stackedWidget.setCurrentWidget(self.ui.page_about_cloud)
-                self.ui.lab_tab.setText("Ajuda > Cloud")
+                self.ui.lab_tab.setText("Ajuda > Conexão E-mail")
                 self.ui.frame_cloud.setStyleSheet(
                     "background:rgb(91,90,90)"
                 )  # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
@@ -270,11 +270,11 @@ class UIFunction:
         self.ui.whatsapp_page_right_side_title.setText("Contatos")
         """
         ######### PAGE_BUG ############## BELOW DISPLAYS THE FUNCTION OF WIDGET, LABEL, PROGRESS BAR, E.T.C IN STACKEDWIDGET page_bug
-        self.ui.bn_bug_start.clicked.connect(
+        """ self.ui.menu_email_button_start.clicked.connect(
             lambda: APFunction.addNumbers(
                 self, self.ui.comboBox_bug.currentText(), True
             )
-        )
+        ) """
 
         # THIS CALLS A SIMPLE FUNCTION LOOPS THROW THE NUMBER FORWARDED BY THE COMBOBOX 'comboBox_bug' AND DISPLAY IN PROGRESS BAR
         # ALONGWITH MOVING THE PROGRESS CHUNK FROM 0 TO 100%
@@ -285,21 +285,21 @@ class UIFunction:
         self.ui.bn_cloud_clear.clicked.connect(lambda: APFunction.cloudClear(self))
 
         #########PAGE ANDROID WIDGET AND ITS STACKANDROID WIDGET PAGES
-        self.ui.bn_android_contact.clicked.connect(
+        self.ui.menu_user_button_contact.clicked.connect(
             lambda: UIFunction.androidStackPages(self, "page_contact")
         )
-        self.ui.bn_android_game.clicked.connect(
+        self.ui.menu_user_button_game.clicked.connect(
             lambda: UIFunction.androidStackPages(self, "page_game")
         )
-        self.ui.bn_android_clean.clicked.connect(
+        self.ui.menu_user_button_clean.clicked.connect(
             lambda: UIFunction.androidStackPages(self, "page_clean")
         )
-        self.ui.bn_android_world.clicked.connect(
+        self.ui.menu_user_button_world.clicked.connect(
             lambda: UIFunction.androidStackPages(self, "page_world")
         )
 
         ######ANDROID > PAGE CONTACT >>>>>>>>>>>>>>>>>>>>
-        self.ui.bn_android_contact_delete.clicked.connect(
+        self.ui.user_contact_delete_button.clicked.connect(
             lambda: self.show_dialog(
                 "Warning",
                 "The Contact Infromtion will be Deleted, Do you want to continue.",
@@ -309,19 +309,19 @@ class UIFunction:
             )
         )
 
-        self.ui.bn_android_contact_edit.clicked.connect(
+        self.ui.user_contact_edit_button.clicked.connect(
             lambda: APFunction.editable(self)
         )
 
-        self.ui.bn_android_contact_save.clicked.connect(
+        self.ui.user_contact_save_button.clicked.connect(
             lambda: APFunction.saveContact(self)
         )
 
         #######ANDROID > PAGE GAMEPAD >>>>>>>>>>>>>>>>>>>
-        self.ui.textEdit_gamepad.setVerticalScrollBar(
+        self.ui.user_notations_input.setVerticalScrollBar(
             self.ui.vsb_gamepad
         )  # SETTING THE TEXT FILED AREA A SCROLL BAR
-        self.ui.textEdit_gamepad.setText("Type Here Something, or paste something here")
+        self.ui.user_notations_input.setText("Utilize este espaço para suas anotações...")
 
         ######ANDROID > PAGE CLEAN >>>>>>>>>>>>>>>>>>>>>>
         # NOTHING HERE
@@ -356,22 +356,22 @@ class UIFunction:
 
         if page == "page_contact":
             self.ui.stackedWidget_android.setCurrentWidget(self.ui.page_android_contact)
-            self.ui.lab_tab.setText("Android > Contact")
+            self.ui.lab_tab.setText("Usuário > Informações")
             self.ui.frame_android_contact.setStyleSheet("background:rgb(91,90,90)")
 
         elif page == "page_game":
             self.ui.stackedWidget_android.setCurrentWidget(self.ui.page_android_game)
-            self.ui.lab_tab.setText("Android > GamePad")
+            self.ui.lab_tab.setText("Usuário > Anotações")
             self.ui.frame_android_game.setStyleSheet("background:rgb(91,90,90)")
 
         elif page == "page_clean":
             self.ui.stackedWidget_android.setCurrentWidget(self.ui.page_android_clean)
-            self.ui.lab_tab.setText("Android > Clean")
+            self.ui.lab_tab.setText("Usuário > Clean")
             self.ui.frame_android_clean.setStyleSheet("background:rgb(91,90,90)")
 
         elif page == "page_world":
             self.ui.stackedWidget_android.setCurrentWidget(self.ui.page_android_world)
-            self.ui.lab_tab.setText("Android > World")
+            self.ui.lab_tab.setText("Usuário > World")
             self.ui.frame_android_world.setStyleSheet("background:rgb(91,90,90)")
 
         # ADD A ADDITIONAL ELIF STATEMNT WITH THE SIMILAR CODE UP ABOVE FOR YOUR NEW SUBMENU BUTTON IN THE ANDROID STACK PAGE.
@@ -406,14 +406,14 @@ class APFunction:
         if textID == "asd" and textADRESS == "1234":
             self.ui.line_cloud_adress.setText("")
             self.ui.line_cloud_id.setText("")
-            self.ui.line_cloud_proxy.setText("Connection established")
+            #self.ui.line_cloud_proxy.setText("Connection established")
         else:
             self.show_error(
                 "Incorrect Credentials", "icons/1x/errorAsset 55.png", "Retry"
             )
 
     def cloudClear(self):
-        self.ui.line_cloud_proxy.setText("")
+        #self.ui.line_cloud_proxy.setText("")
         self.ui.line_cloud_adress.setText("")
         self.ui.line_cloud_id.setText("")
 
@@ -423,12 +423,12 @@ class APFunction:
         self.ui.line_android_adress.setEnabled(True)
         self.ui.line_android_org.setEnabled(True)
         self.ui.line_android_email.setEnabled(True)
-        self.ui.line_android_ph.setEnabled(True)
+        #self.ui.line_android_ph.setEnabled(True)
 
-        self.ui.bn_android_contact_save.setEnabled(True)
-        self.ui.bn_android_contact_edit.setEnabled(False)
-        self.ui.bn_android_contact_share.setEnabled(False)
-        self.ui.bn_android_contact_delete.setEnabled(False)
+        self.ui.user_contact_save_button.setEnabled(True)
+        self.ui.user_contact_edit_button.setEnabled(False)
+        #self.ui.menu_user_button_contact_share.setEnabled(False)
+        self.ui.user_contact_delete_button.setEnabled(False)
 
     # -----> FUNCTION TO SAVE THE MODOFOED TEXT FIELD
     def saveContact(self):
@@ -436,12 +436,12 @@ class APFunction:
         self.ui.line_android_adress.setEnabled(False)
         self.ui.line_android_org.setEnabled(False)
         self.ui.line_android_email.setEnabled(False)
-        self.ui.line_android_ph.setEnabled(False)
+        #self.ui.line_android_ph.setEnabled(False)
 
-        self.ui.bn_android_contact_save.setEnabled(False)
-        self.ui.bn_android_contact_edit.setEnabled(True)
-        self.ui.bn_android_contact_share.setEnabled(True)
-        self.ui.bn_android_contact_delete.setEnabled(True)
+        self.ui.user_contact_save_button.setEnabled(False)
+        self.ui.user_contact_edit_button.setEnabled(True)
+        #self.ui.menu_user_button_contact_share.setEnabled(True)
+        self.ui.user_contact_delete_button.setEnabled(True)
 
 
 ###############################################################################################################################################################

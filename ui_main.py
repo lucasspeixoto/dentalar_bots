@@ -292,12 +292,12 @@ class Ui_MainWindow(object):
         self.horizontalLayout_15.setSpacing(0)
         self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
         self.horizontalLayout_15.setContentsMargins(0, 0, 0, 0)
-        self.bn_whatsapp = QPushButton(self.frame_whatsapp)
-        self.bn_whatsapp.setObjectName(u"bn_whatsapp")
-        self.bn_whatsapp.setMinimumSize(QSize(80, 55))
-        self.bn_whatsapp.setMaximumSize(QSize(160, 55))
-        self.bn_whatsapp.setFont(font)
-        self.bn_whatsapp.setStyleSheet(u"QPushButton {\n"
+        self.menu_whatsapp_button = QPushButton(self.frame_whatsapp)
+        self.menu_whatsapp_button.setObjectName(u"menu_whatsapp_button")
+        self.menu_whatsapp_button.setMinimumSize(QSize(80, 55))
+        self.menu_whatsapp_button.setMaximumSize(QSize(160, 55))
+        self.menu_whatsapp_button.setFont(font)
+        self.menu_whatsapp_button.setStyleSheet(u"QPushButton {\n"
 "	border: none;\n"
 "	background-color: rgba(0,0,0,0);\n"
 "}\n"
@@ -309,11 +309,11 @@ class Ui_MainWindow(object):
 "}")
         icon4 = QIcon()
         icon4.addFile(u"icons/1x/whatsappAsset.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.bn_whatsapp.setIcon(icon4)
-        self.bn_whatsapp.setIconSize(QSize(22, 22))
-        self.bn_whatsapp.setFlat(True)
+        self.menu_whatsapp_button.setIcon(icon4)
+        self.menu_whatsapp_button.setIconSize(QSize(22, 22))
+        self.menu_whatsapp_button.setFlat(True)
 
-        self.horizontalLayout_15.addWidget(self.bn_whatsapp)
+        self.horizontalLayout_15.addWidget(self.menu_whatsapp_button)
 
 
         self.verticalLayout_3.addWidget(self.frame_whatsapp)
@@ -328,12 +328,12 @@ class Ui_MainWindow(object):
         self.horizontalLayout_16.setSpacing(0)
         self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
         self.horizontalLayout_16.setContentsMargins(0, 0, 0, 0)
-        self.bn_bug = QPushButton(self.frame_bug)
-        self.bn_bug.setObjectName(u"bn_bug")
-        self.bn_bug.setMinimumSize(QSize(80, 55))
-        self.bn_bug.setMaximumSize(QSize(160, 55))
-        self.bn_bug.setFont(font)
-        self.bn_bug.setStyleSheet(u"QPushButton {\n"
+        self.menu_email_button = QPushButton(self.frame_bug)
+        self.menu_email_button.setObjectName(u"menu_email_button")
+        self.menu_email_button.setMinimumSize(QSize(80, 55))
+        self.menu_email_button.setMaximumSize(QSize(160, 55))
+        self.menu_email_button.setFont(font)
+        self.menu_email_button.setStyleSheet(u"QPushButton {\n"
 "	border: none;\n"
 "	background-color: rgba(0,0,0,0);\n"
 "}\n"
@@ -345,11 +345,11 @@ class Ui_MainWindow(object):
 "}")
         icon5 = QIcon()
         icon5.addFile(u"icons/1x/emailsAsset.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.bn_bug.setIcon(icon5)
-        self.bn_bug.setIconSize(QSize(22, 22))
-        self.bn_bug.setFlat(True)
+        self.menu_email_button.setIcon(icon5)
+        self.menu_email_button.setIconSize(QSize(22, 22))
+        self.menu_email_button.setFlat(True)
 
-        self.horizontalLayout_16.addWidget(self.bn_bug)
+        self.horizontalLayout_16.addWidget(self.menu_email_button)
 
 
         self.verticalLayout_3.addWidget(self.frame_bug)
@@ -400,12 +400,12 @@ class Ui_MainWindow(object):
         self.horizontalLayout_18.setSpacing(0)
         self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
         self.horizontalLayout_18.setContentsMargins(0, 0, 0, 0)
-        self.bn_android = QPushButton(self.frame_android)
-        self.bn_android.setObjectName(u"bn_android")
-        self.bn_android.setMinimumSize(QSize(80, 55))
-        self.bn_android.setMaximumSize(QSize(160, 55))
-        self.bn_android.setFont(font)
-        self.bn_android.setStyleSheet(u"QPushButton {\n"
+        self.menu_user_button = QPushButton(self.frame_android)
+        self.menu_user_button.setObjectName(u"menu_user_button")
+        self.menu_user_button.setMinimumSize(QSize(80, 55))
+        self.menu_user_button.setMaximumSize(QSize(160, 55))
+        self.menu_user_button.setFont(font)
+        self.menu_user_button.setStyleSheet(u"QPushButton {\n"
 "	border: none;\n"
 "	background-color: rgba(0,0,0,0);\n"
 "}\n"
@@ -416,12 +416,12 @@ class Ui_MainWindow(object):
 "	background-color: rgba(0,0,0,0);\n"
 "}")
         icon7 = QIcon()
-        icon7.addFile(u"icons/1x/androidAsset 49.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.bn_android.setIcon(icon7)
-        self.bn_android.setIconSize(QSize(20, 22))
-        self.bn_android.setFlat(True)
+        icon7.addFile(u"icons/1x/userAsset.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.menu_user_button.setIcon(icon7)
+        self.menu_user_button.setIconSize(QSize(20, 22))
+        self.menu_user_button.setFlat(True)
 
-        self.horizontalLayout_18.addWidget(self.bn_android)
+        self.horizontalLayout_18.addWidget(self.menu_user_button)
 
 
         self.verticalLayout_3.addWidget(self.frame_android)
@@ -941,202 +941,6 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_7.addWidget(self.lab_Bug)
 
-        self.frame_bug_main = QFrame(self.page_bug)
-        self.frame_bug_main.setObjectName(u"frame_bug_main")
-        self.frame_bug_main.setMinimumSize(QSize(0, 200))
-        self.frame_bug_main.setMaximumSize(QSize(16777215, 200))
-        self.frame_bug_main.setFrameShape(QFrame.NoFrame)
-        self.frame_bug_main.setFrameShadow(QFrame.Plain)
-        self.gridLayout = QGridLayout(self.frame_bug_main)
-        self.gridLayout.setObjectName(u"gridLayout")
-        self.horizontalSpacer = QSpacerItem(421, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.gridLayout.addItem(self.horizontalSpacer, 5, 7, 1, 1)
-
-        self.lab_bullet = QLabel(self.frame_bug_main)
-        self.lab_bullet.setObjectName(u"lab_bullet")
-        self.lab_bullet.setMaximumSize(QSize(5, 16777215))
-        self.lab_bullet.setPixmap(QPixmap(u"icons/1x/bulletAsset 54.png"))
-        self.lab_bullet.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout.addWidget(self.lab_bullet, 0, 0, 1, 1)
-
-        self.lab_bullet3 = QLabel(self.frame_bug_main)
-        self.lab_bullet3.setObjectName(u"lab_bullet3")
-        self.lab_bullet3.setMaximumSize(QSize(5, 16777215))
-        self.lab_bullet3.setPixmap(QPixmap(u"icons/1x/bulletAsset 54.png"))
-
-        self.gridLayout.addWidget(self.lab_bullet3, 2, 0, 1, 1)
-
-        self.lab_bug2 = QLabel(self.frame_bug_main)
-        self.lab_bug2.setObjectName(u"lab_bug2")
-        self.lab_bug2.setFont(font4)
-        self.lab_bug2.setStyleSheet(u"color:rgb(255,255,255);")
-
-        self.gridLayout.addWidget(self.lab_bug2, 1, 1, 1, 1)
-
-        self.lab_bug3 = QLabel(self.frame_bug_main)
-        self.lab_bug3.setObjectName(u"lab_bug3")
-        self.lab_bug3.setFont(font4)
-
-        self.gridLayout.addWidget(self.lab_bug3, 2, 1, 1, 1)
-
-        self.comboBox_bug = QComboBox(self.frame_bug_main)
-        self.comboBox_bug.addItem("")
-        self.comboBox_bug.addItem("")
-        self.comboBox_bug.addItem("")
-        self.comboBox_bug.addItem("")
-        self.comboBox_bug.setObjectName(u"comboBox_bug")
-        self.comboBox_bug.setMaximumSize(QSize(16777215, 25))
-        self.comboBox_bug.setFont(font11)
-        self.comboBox_bug.setStyleSheet(u"QComboBox {\n"
-"	border: 2px solid rgb(51,51,51);\n"
-"	border-radius: 5px;	\n"
-"	color:rgb(255,255,255);\n"
-"	background-color: rgb(51,51,51);\n"
-"}\n"
-"\n"
-"QComboBox:hover {\n"
-"	border: 2px solid rgb(0,143,170);\n"
-"	border-radius: 5px;	\n"
-"	color:rgb(255,255,255);\n"
-"	background-color: rgb(0,143,170);\n"
-"}\n"
-"\n"
-"QComboBox:!editable, QComboBox::drop-down:editable {\n"
-"	background: rgb(51,51,51);\n"
-"}\n"
-"\n"
-"QComboBox:!editable:on, QComboBox::drop-down:editable:on {\n"
-"    background:rgb(51,51,51);\n"
-"}\n"
-"\n"
-"QComboBox:on { /* shift the text when the popup opens */\n"
-"    padding-top: 3px;\n"
-"    padding-left: 4px;\n"
-"}\n"
-"\n"
-"QComboBox::drop-down {\n"
-"    subcontrol-origin: padding;\n"
-"    subcontrol-position: top right;\n"
-"    width: 15px;\n"
-"\n"
-"    border-left-width: 1px;\n"
-"    border-left-color: darkgray;\n"
-"    border-left-style: solid; /* just a single line */\n"
-"    border-top-right-radius: 5px; /* same radius as the QComboBox */\n"
-"    border-bottom-right-radius: 5px;\n"
-""
-                        "}\n"
-"\n"
-"QComboBox::down-arrow {\n"
-"    image: url(icons/1x/arrow.png);\n"
-"}\n"
-"\n"
-"QComboBox::down-arrow:on { /* shift the arrow when popup is open */\n"
-"    top: 1px;\n"
-"    left: 1px;\n"
-"}\n"
-"\n"
-"QComboBox::drop-down {\n"
-"    background:rgb(51,51,51);\n"
-"}\n"
-"\n"
-"")
-        self.comboBox_bug.setSizeAdjustPolicy(QComboBox.AdjustToContents)
-        self.comboBox_bug.setFrame(False)
-        self.comboBox_bug.setModelColumn(0)
-
-        self.gridLayout.addWidget(self.comboBox_bug, 3, 8, 1, 1)
-
-        self.lab_bug1 = QLabel(self.frame_bug_main)
-        self.lab_bug1.setObjectName(u"lab_bug1")
-        self.lab_bug1.setMinimumSize(QSize(0, 0))
-        self.lab_bug1.setMaximumSize(QSize(16777215, 16777215))
-        self.lab_bug1.setFont(font4)
-        self.lab_bug1.setStyleSheet(u"color:rgb(255,255,255);")
-        self.lab_bug1.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
-
-        self.gridLayout.addWidget(self.lab_bug1, 0, 1, 1, 1)
-
-        self.lab_bullet2 = QLabel(self.frame_bug_main)
-        self.lab_bullet2.setObjectName(u"lab_bullet2")
-        self.lab_bullet2.setMaximumSize(QSize(5, 16777215))
-        self.lab_bullet2.setPixmap(QPixmap(u"icons/1x/bulletAsset 54.png"))
-
-        self.gridLayout.addWidget(self.lab_bullet2, 1, 0, 1, 1)
-
-        self.bn_bug_start = QPushButton(self.frame_bug_main)
-        self.bn_bug_start.setObjectName(u"bn_bug_start")
-        self.bn_bug_start.setMinimumSize(QSize(69, 25))
-        self.bn_bug_start.setMaximumSize(QSize(69, 25))
-        self.bn_bug_start.setFont(font)
-        self.bn_bug_start.setStyleSheet(u"QPushButton {\n"
-"	border: 2px solid rgb(51,51,51);\n"
-"	border-radius: 5px;	\n"
-"	color:rgb(255,255,255);\n"
-"	background-color: rgb(51,51,51);\n"
-"}\n"
-"QPushButton:hover {\n"
-"	border: 2px solid rgb(0,143,150);\n"
-"	background-color: rgb(0,143,150);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	border: 2px solid rgb(0,143,150);\n"
-"	background-color: rgb(51,51,51);\n"
-"}\n"
-"\n"
-"QPushButton:disabled {	\n"
-"	border-radius: 5px;	\n"
-"	border: 2px solid rgb(112,112,112);\n"
-"	background-color: rgb(112,112,112);\n"
-"}")
-        self.bn_bug_start.setCheckable(False)
-        self.bn_bug_start.setFlat(True)
-
-        self.gridLayout.addWidget(self.bn_bug_start, 3, 9, 1, 1)
-
-        self.progressBar_bug = QProgressBar(self.frame_bug_main)
-        self.progressBar_bug.setObjectName(u"progressBar_bug")
-        self.progressBar_bug.setEnabled(True)
-        self.progressBar_bug.setStyleSheet(u"QProgressBar\n"
-"{\n"
-"	color:rgb(255,255,255);\n"
-"	background-color :rgb(51,51,51);\n"
-"	border : 2px;\n"
-"	border-radius:4px;\n"
-"}\n"
-"\n"
-"QProgressBar::chunk{\n"
-"	border : 2px;\n"
-"	border-radius:4px;\n"
-"	background-color:rgb(0,143,170);\n"
-"}")
-        self.progressBar_bug.setValue(0)
-        self.progressBar_bug.setAlignment(Qt.AlignCenter)
-        self.progressBar_bug.setTextVisible(True)
-        self.progressBar_bug.setOrientation(Qt.Horizontal)
-        self.progressBar_bug.setInvertedAppearance(False)
-        self.progressBar_bug.setTextDirection(QProgressBar.TopToBottom)
-
-        self.gridLayout.addWidget(self.progressBar_bug, 4, 7, 1, 3)
-
-        self.lab_bug_action = QLabel(self.frame_bug_main)
-        self.lab_bug_action.setObjectName(u"lab_bug_action")
-        self.lab_bug_action.setMinimumSize(QSize(0, 20))
-        self.lab_bug_action.setMaximumSize(QSize(16777215, 30))
-        font14 = QFont()
-        font14.setFamily(u"Segoe UI")
-        font14.setPointSize(16)
-        self.lab_bug_action.setFont(font14)
-        self.lab_bug_action.setStyleSheet(u"color:rgb(255,255,255);")
-        self.lab_bug_action.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
-
-        self.gridLayout.addWidget(self.lab_bug_action, 3, 7, 1, 1)
-
-
-        self.verticalLayout_7.addWidget(self.frame_bug_main)
-
         self.verticalSpacer = QSpacerItem(20, 197, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
         self.verticalLayout_7.addItem(self.verticalSpacer)
@@ -1173,14 +977,6 @@ class Ui_MainWindow(object):
         self.gridLayout_2.setHorizontalSpacing(5)
         self.gridLayout_2.setVerticalSpacing(0)
         self.gridLayout_2.setContentsMargins(5, 5, 5, 5)
-        self.label_2 = QLabel(self.frame_2)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setMinimumSize(QSize(100, 0))
-        self.label_2.setFont(font4)
-        self.label_2.setStyleSheet(u"color:rgb(255,255,255);")
-
-        self.gridLayout_2.addWidget(self.label_2, 0, 0, 1, 1)
-
         self.label_3 = QLabel(self.frame_2)
         self.label_3.setObjectName(u"label_3")
         self.label_3.setMinimumSize(QSize(100, 0))
@@ -1189,20 +985,24 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.label_3, 1, 0, 1, 1)
 
-        self.label_4 = QLabel(self.frame_2)
-        self.label_4.setObjectName(u"label_4")
-        self.label_4.setMinimumSize(QSize(100, 0))
-        self.label_4.setFont(font4)
-        self.label_4.setStyleSheet(u"color:rgb(255,255,255);")
+        self.label_2 = QLabel(self.frame_2)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setMinimumSize(QSize(100, 0))
+        self.label_2.setFont(font4)
+        self.label_2.setStyleSheet(u"color:rgb(255,255,255);")
 
-        self.gridLayout_2.addWidget(self.label_4, 2, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.label_2, 0, 0, 1, 1)
 
-        self.line_cloud_proxy = QLineEdit(self.frame_2)
-        self.line_cloud_proxy.setObjectName(u"line_cloud_proxy")
-        self.line_cloud_proxy.setMinimumSize(QSize(400, 25))
-        self.line_cloud_proxy.setMaximumSize(QSize(500, 25))
-        self.line_cloud_proxy.setFont(font)
-        self.line_cloud_proxy.setStyleSheet(u"QLineEdit {\n"
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout_2.addItem(self.horizontalSpacer_2, 1, 4, 1, 1)
+
+        self.line_cloud_adress = QLineEdit(self.frame_2)
+        self.line_cloud_adress.setObjectName(u"line_cloud_adress")
+        self.line_cloud_adress.setMinimumSize(QSize(400, 25))
+        self.line_cloud_adress.setMaximumSize(QSize(500, 25))
+        self.line_cloud_adress.setFont(font)
+        self.line_cloud_adress.setStyleSheet(u"QLineEdit {\n"
 "	color:rgb(255,255,255);\n"
 "	border:2px solid rgb(51,51,51);\n"
 "	border-radius:4px;\n"
@@ -1216,7 +1016,7 @@ class Ui_MainWindow(object):
 "	background:rgb(112,112,112);\n"
 "}")
 
-        self.gridLayout_2.addWidget(self.line_cloud_proxy, 2, 1, 1, 3)
+        self.gridLayout_2.addWidget(self.line_cloud_adress, 1, 1, 1, 3)
 
         self.line_cloud_id = QLineEdit(self.frame_2)
         self.line_cloud_id.setObjectName(u"line_cloud_id")
@@ -1240,68 +1040,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.line_cloud_id, 0, 1, 1, 3)
 
-        self.line_cloud_adress = QLineEdit(self.frame_2)
-        self.line_cloud_adress.setObjectName(u"line_cloud_adress")
-        self.line_cloud_adress.setMinimumSize(QSize(400, 25))
-        self.line_cloud_adress.setMaximumSize(QSize(500, 25))
-        self.line_cloud_adress.setFont(font)
-        self.line_cloud_adress.setStyleSheet(u"QLineEdit {\n"
-"	color:rgb(255,255,255);\n"
-"	border:2px solid rgb(51,51,51);\n"
-"	border-radius:4px;\n"
-"	background:rgb(51,51,51);\n"
-"}\n"
-"\n"
-"QLineEdit:disabled {\n"
-"	color:rgb(255,255,255);\n"
-"	border:2px solid rgb(112,112,112);\n"
-"	border-radius:4px;\n"
-"	background:rgb(112,112,112);\n"
-"}")
-
-        self.gridLayout_2.addWidget(self.line_cloud_adress, 1, 1, 1, 3)
-
-        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.gridLayout_2.addItem(self.horizontalSpacer_2, 1, 4, 1, 1)
-
-        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.gridLayout_2.addItem(self.horizontalSpacer_3, 3, 0, 1, 2)
-
-        self.bn_cloud_clear = QPushButton(self.frame_2)
-        self.bn_cloud_clear.setObjectName(u"bn_cloud_clear")
-        self.bn_cloud_clear.setEnabled(True)
-        self.bn_cloud_clear.setMinimumSize(QSize(69, 25))
-        self.bn_cloud_clear.setMaximumSize(QSize(69, 25))
-        self.bn_cloud_clear.setFont(font)
-        self.bn_cloud_clear.setStyleSheet(u"QPushButton {\n"
-"	border: 2px solid rgb(51,51,51);\n"
-"	border-radius: 5px;	\n"
-"	color:rgb(255,255,255);\n"
-"	background-color: rgb(51,51,51);\n"
-"}\n"
-"QPushButton:hover {\n"
-"	border: 2px solid rgb(0,143,150);\n"
-"	background-color: rgb(0,143,150);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	border: 2px solid rgb(0,143,150);\n"
-"	background-color: rgb(51,51,51);\n"
-"}\n"
-"\n"
-"QPushButton:disabled {	\n"
-"	border-radius: 5px;	\n"
-"	border: 2px solid rgb(112,112,112);\n"
-"	background-color: rgb(112,112,112);\n"
-"}")
-
-        self.gridLayout_2.addWidget(self.bn_cloud_clear, 3, 2, 1, 1)
-
         self.bn_cloud_connect = QPushButton(self.frame_2)
         self.bn_cloud_connect.setObjectName(u"bn_cloud_connect")
-        self.bn_cloud_connect.setMinimumSize(QSize(69, 25))
-        self.bn_cloud_connect.setMaximumSize(QSize(69, 25))
+        self.bn_cloud_connect.setMinimumSize(QSize(85, 30))
+        self.bn_cloud_connect.setMaximumSize(QSize(85, 30))
         self.bn_cloud_connect.setFont(font)
         self.bn_cloud_connect.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(51,51,51);\n"
@@ -1324,7 +1066,40 @@ class Ui_MainWindow(object):
 "	background-color: rgb(112,112,112);\n"
 "}")
 
-        self.gridLayout_2.addWidget(self.bn_cloud_connect, 3, 3, 1, 1)
+        self.gridLayout_2.addWidget(self.bn_cloud_connect, 2, 3, 1, 1)
+
+        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout_2.addItem(self.horizontalSpacer_3, 2, 0, 1, 2)
+
+        self.bn_cloud_clear = QPushButton(self.frame_2)
+        self.bn_cloud_clear.setObjectName(u"bn_cloud_clear")
+        self.bn_cloud_clear.setEnabled(True)
+        self.bn_cloud_clear.setMinimumSize(QSize(85, 30))
+        self.bn_cloud_clear.setMaximumSize(QSize(85, 30))
+        self.bn_cloud_clear.setFont(font)
+        self.bn_cloud_clear.setStyleSheet(u"QPushButton {\n"
+"	border: 2px solid rgb(51,51,51);\n"
+"	border-radius: 5px;	\n"
+"	color:rgb(255,255,255);\n"
+"	background-color: rgb(51,51,51);\n"
+"}\n"
+"QPushButton:hover {\n"
+"	border: 2px solid rgb(0,143,150);\n"
+"	background-color: rgb(0,143,150);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	border: 2px solid rgb(0,143,150);\n"
+"	background-color: rgb(51,51,51);\n"
+"}\n"
+"\n"
+"QPushButton:disabled {	\n"
+"	border-radius: 5px;	\n"
+"	border: 2px solid rgb(112,112,112);\n"
+"	background-color: rgb(112,112,112);\n"
+"}")
+
+        self.gridLayout_2.addWidget(self.bn_cloud_clear, 2, 2, 1, 1)
 
 
         self.verticalLayout_8.addWidget(self.frame_2)
@@ -1362,11 +1137,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_21.setSpacing(0)
         self.horizontalLayout_21.setObjectName(u"horizontalLayout_21")
         self.horizontalLayout_21.setContentsMargins(0, 0, 0, 0)
-        self.bn_android_contact = QPushButton(self.frame_android_contact)
-        self.bn_android_contact.setObjectName(u"bn_android_contact")
-        self.bn_android_contact.setMinimumSize(QSize(80, 30))
-        self.bn_android_contact.setMaximumSize(QSize(80, 30))
-        self.bn_android_contact.setStyleSheet(u"QPushButton {\n"
+        self.menu_user_button_contact = QPushButton(self.frame_android_contact)
+        self.menu_user_button_contact.setObjectName(u"menu_user_button_contact")
+        self.menu_user_button_contact.setMinimumSize(QSize(80, 30))
+        self.menu_user_button_contact.setMaximumSize(QSize(80, 30))
+        self.menu_user_button_contact.setStyleSheet(u"QPushButton {\n"
 "	border: none;\n"
 "	background-color: rgba(0,0,0,0);\n"
 "}\n"
@@ -1377,12 +1152,12 @@ class Ui_MainWindow(object):
 "	background-color: rgba(0,0,0,0);\n"
 "}")
         icon8 = QIcon()
-        icon8.addFile(u"icons/1x/bookAsset 57.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.bn_android_contact.setIcon(icon8)
-        self.bn_android_contact.setIconSize(QSize(13, 16))
-        self.bn_android_contact.setFlat(True)
+        icon8.addFile(u"icons/1x/userInfo.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.menu_user_button_contact.setIcon(icon8)
+        self.menu_user_button_contact.setIconSize(QSize(13, 16))
+        self.menu_user_button_contact.setFlat(True)
 
-        self.horizontalLayout_21.addWidget(self.bn_android_contact)
+        self.horizontalLayout_21.addWidget(self.menu_user_button_contact)
 
 
         self.horizontalLayout_20.addWidget(self.frame_android_contact)
@@ -1397,11 +1172,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_22.setSpacing(0)
         self.horizontalLayout_22.setObjectName(u"horizontalLayout_22")
         self.horizontalLayout_22.setContentsMargins(0, 0, 0, 0)
-        self.bn_android_game = QPushButton(self.frame_android_game)
-        self.bn_android_game.setObjectName(u"bn_android_game")
-        self.bn_android_game.setMinimumSize(QSize(80, 30))
-        self.bn_android_game.setMaximumSize(QSize(80, 30))
-        self.bn_android_game.setStyleSheet(u"QPushButton {\n"
+        self.menu_user_button_game = QPushButton(self.frame_android_game)
+        self.menu_user_button_game.setObjectName(u"menu_user_button_game")
+        self.menu_user_button_game.setMinimumSize(QSize(80, 30))
+        self.menu_user_button_game.setMaximumSize(QSize(80, 30))
+        self.menu_user_button_game.setStyleSheet(u"QPushButton {\n"
 "	border: none;\n"
 "	background-color: rgba(0,0,0,0);\n"
 "}\n"
@@ -1412,12 +1187,12 @@ class Ui_MainWindow(object):
 "	background-color: rgba(0,0,0,0);\n"
 "}")
         icon9 = QIcon()
-        icon9.addFile(u"icons/1x/gameAsset 61.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.bn_android_game.setIcon(icon9)
-        self.bn_android_game.setIconSize(QSize(20, 13))
-        self.bn_android_game.setFlat(True)
+        icon9.addFile(u"icons/1x/notations.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.menu_user_button_game.setIcon(icon9)
+        self.menu_user_button_game.setIconSize(QSize(20, 13))
+        self.menu_user_button_game.setFlat(True)
 
-        self.horizontalLayout_22.addWidget(self.bn_android_game)
+        self.horizontalLayout_22.addWidget(self.menu_user_button_game)
 
 
         self.horizontalLayout_20.addWidget(self.frame_android_game)
@@ -1432,11 +1207,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_23.setSpacing(0)
         self.horizontalLayout_23.setObjectName(u"horizontalLayout_23")
         self.horizontalLayout_23.setContentsMargins(0, 0, 0, 0)
-        self.bn_android_clean = QPushButton(self.frame_android_clean)
-        self.bn_android_clean.setObjectName(u"bn_android_clean")
-        self.bn_android_clean.setMinimumSize(QSize(80, 30))
-        self.bn_android_clean.setMaximumSize(QSize(80, 30))
-        self.bn_android_clean.setStyleSheet(u"QPushButton {\n"
+        self.menu_user_button_clean = QPushButton(self.frame_android_clean)
+        self.menu_user_button_clean.setObjectName(u"menu_user_button_clean")
+        self.menu_user_button_clean.setMinimumSize(QSize(80, 30))
+        self.menu_user_button_clean.setMaximumSize(QSize(80, 30))
+        self.menu_user_button_clean.setStyleSheet(u"QPushButton {\n"
 "	border: none;\n"
 "	background-color: rgba(0,0,0,0);\n"
 "}\n"
@@ -1448,10 +1223,10 @@ class Ui_MainWindow(object):
 "}")
         icon10 = QIcon()
         icon10.addFile(u"icons/1x/cleanAsset 59.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.bn_android_clean.setIcon(icon10)
-        self.bn_android_clean.setFlat(True)
+        self.menu_user_button_clean.setIcon(icon10)
+        self.menu_user_button_clean.setFlat(True)
 
-        self.horizontalLayout_23.addWidget(self.bn_android_clean)
+        self.horizontalLayout_23.addWidget(self.menu_user_button_clean)
 
 
         self.horizontalLayout_20.addWidget(self.frame_android_clean)
@@ -1466,11 +1241,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_24.setSpacing(0)
         self.horizontalLayout_24.setObjectName(u"horizontalLayout_24")
         self.horizontalLayout_24.setContentsMargins(0, 0, 0, 0)
-        self.bn_android_world = QPushButton(self.frame_android_world)
-        self.bn_android_world.setObjectName(u"bn_android_world")
-        self.bn_android_world.setMinimumSize(QSize(80, 30))
-        self.bn_android_world.setMaximumSize(QSize(80, 30))
-        self.bn_android_world.setStyleSheet(u"QPushButton {\n"
+        self.menu_user_button_world = QPushButton(self.frame_android_world)
+        self.menu_user_button_world.setObjectName(u"menu_user_button_world")
+        self.menu_user_button_world.setMinimumSize(QSize(80, 30))
+        self.menu_user_button_world.setMaximumSize(QSize(80, 30))
+        self.menu_user_button_world.setStyleSheet(u"QPushButton {\n"
 "	border: none;\n"
 "	background-color: rgba(0,0,0,0);\n"
 "}\n"
@@ -1482,10 +1257,10 @@ class Ui_MainWindow(object):
 "}")
         icon11 = QIcon()
         icon11.addFile(u"icons/1x/worldAsset 60.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.bn_android_world.setIcon(icon11)
-        self.bn_android_world.setFlat(True)
+        self.menu_user_button_world.setIcon(icon11)
+        self.menu_user_button_world.setFlat(True)
 
-        self.horizontalLayout_24.addWidget(self.bn_android_world)
+        self.horizontalLayout_24.addWidget(self.menu_user_button_world)
 
 
         self.horizontalLayout_20.addWidget(self.frame_android_world)
@@ -1526,9 +1301,14 @@ class Ui_MainWindow(object):
         self.gridLayout_3.setContentsMargins(5, 5, 5, 5)
         self.lab_person_icon = QLabel(self.frame_android_bottom)
         self.lab_person_icon.setObjectName(u"lab_person_icon")
-        self.lab_person_icon.setMinimumSize(QSize(200, 160))
+        self.lab_person_icon.setMinimumSize(QSize(200, 130))
         self.lab_person_icon.setMaximumSize(QSize(200, 160))
-        self.lab_person_icon.setPixmap(QPixmap(u"icons/1x/peopleAsset 62.png"))
+        self.lab_person_icon.setLayoutDirection(Qt.LeftToRight)
+        self.lab_person_icon.setFrameShape(QFrame.NoFrame)
+        self.lab_person_icon.setFrameShadow(QFrame.Plain)
+        self.lab_person_icon.setPixmap(QPixmap(u"icons/1x/userAsset512.png"))
+        self.lab_person_icon.setScaledContents(True)
+        self.lab_person_icon.setIndent(0)
 
         self.gridLayout_3.addWidget(self.lab_person_icon, 0, 0, 1, 1)
 
@@ -1544,19 +1324,12 @@ class Ui_MainWindow(object):
         self.gridLayout_4.setSpacing(5)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
         self.gridLayout_4.setContentsMargins(5, 5, 5, 5)
-        self.label_8 = QLabel(self.frame_android_field)
-        self.label_8.setObjectName(u"label_8")
-        self.label_8.setFont(font4)
-        self.label_8.setStyleSheet(u"color:rgb(255,255,255);")
+        self.label = QLabel(self.frame_android_field)
+        self.label.setObjectName(u"label")
+        self.label.setFont(font4)
+        self.label.setStyleSheet(u"color:rgb(255,255,255);")
 
-        self.gridLayout_4.addWidget(self.label_8, 7, 0, 1, 1)
-
-        self.label_6 = QLabel(self.frame_android_field)
-        self.label_6.setObjectName(u"label_6")
-        self.label_6.setFont(font4)
-        self.label_6.setStyleSheet(u"color:rgb(255,255,255);")
-
-        self.gridLayout_4.addWidget(self.label_6, 4, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.label, 1, 0, 1, 3)
 
         self.label_7 = QLabel(self.frame_android_field)
         self.label_7.setObjectName(u"label_7")
@@ -1564,13 +1337,6 @@ class Ui_MainWindow(object):
         self.label_7.setStyleSheet(u"color:rgb(255,255,255);")
 
         self.gridLayout_4.addWidget(self.label_7, 5, 0, 1, 1)
-
-        self.label = QLabel(self.frame_android_field)
-        self.label.setObjectName(u"label")
-        self.label.setFont(font4)
-        self.label.setStyleSheet(u"color:rgb(255,255,255);")
-
-        self.gridLayout_4.addWidget(self.label, 1, 0, 1, 3)
 
         self.line_android_name = QLineEdit(self.frame_android_field)
         self.line_android_name.setObjectName(u"line_android_name")
@@ -1594,34 +1360,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.line_android_name, 1, 3, 1, 1)
 
-        self.label_5 = QLabel(self.frame_android_field)
-        self.label_5.setObjectName(u"label_5")
-        self.label_5.setFont(font4)
-        self.label_5.setStyleSheet(u"color:rgb(255,255,255);")
+        self.label_6 = QLabel(self.frame_android_field)
+        self.label_6.setObjectName(u"label_6")
+        self.label_6.setFont(font4)
+        self.label_6.setStyleSheet(u"color:rgb(255,255,255);")
 
-        self.gridLayout_4.addWidget(self.label_5, 3, 0, 1, 3)
-
-        self.line_android_org = QLineEdit(self.frame_android_field)
-        self.line_android_org.setObjectName(u"line_android_org")
-        self.line_android_org.setEnabled(False)
-        self.line_android_org.setMinimumSize(QSize(300, 25))
-        self.line_android_org.setMaximumSize(QSize(400, 25))
-        self.line_android_org.setFont(font)
-        self.line_android_org.setStyleSheet(u"QLineEdit {\n"
-"	color:rgb(255,255,255);\n"
-"	border:2px solid rgb(51,51,51);\n"
-"	border-radius:4px;\n"
-"	background:rgb(51,51,51);\n"
-"}\n"
-"\n"
-"QLineEdit:disabled {\n"
-"	color:rgb(255,255,255);\n"
-"	border:2px solid rgb(112,112,112);\n"
-"	border-radius:4px;\n"
-"	background:rgb(112,112,112);\n"
-"}")
-
-        self.gridLayout_4.addWidget(self.line_android_org, 4, 3, 1, 1)
+        self.gridLayout_4.addWidget(self.label_6, 4, 0, 1, 1)
 
         self.line_android_adress = QLineEdit(self.frame_android_field)
         self.line_android_adress.setObjectName(u"line_android_adress")
@@ -1645,27 +1389,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.line_android_adress, 3, 3, 1, 1)
 
-        self.line_android_ph = QLineEdit(self.frame_android_field)
-        self.line_android_ph.setObjectName(u"line_android_ph")
-        self.line_android_ph.setEnabled(False)
-        self.line_android_ph.setMinimumSize(QSize(300, 25))
-        self.line_android_ph.setMaximumSize(QSize(400, 25))
-        self.line_android_ph.setFont(font)
-        self.line_android_ph.setStyleSheet(u"QLineEdit {\n"
-"	color:rgb(255,255,255);\n"
-"	border:2px solid rgb(51,51,51);\n"
-"	border-radius:4px;\n"
-"	background:rgb(51,51,51);\n"
-"}\n"
-"\n"
-"QLineEdit:disabled {\n"
-"	color:rgb(255,255,255);\n"
-"	border:2px solid rgb(112,112,112);\n"
-"	border-radius:4px;\n"
-"	background:rgb(112,112,112);\n"
-"}")
+        self.label_5 = QLabel(self.frame_android_field)
+        self.label_5.setObjectName(u"label_5")
+        self.label_5.setFont(font4)
+        self.label_5.setStyleSheet(u"color:rgb(255,255,255);")
 
-        self.gridLayout_4.addWidget(self.line_android_ph, 7, 3, 1, 1)
+        self.gridLayout_4.addWidget(self.label_5, 3, 0, 1, 3)
 
         self.line_android_email = QLineEdit(self.frame_android_field)
         self.line_android_email.setObjectName(u"line_android_email")
@@ -1689,17 +1418,39 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.line_android_email, 5, 3, 1, 1)
 
-        self.horizontalSpacer_6 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.line_android_org = QLineEdit(self.frame_android_field)
+        self.line_android_org.setObjectName(u"line_android_org")
+        self.line_android_org.setEnabled(False)
+        self.line_android_org.setMinimumSize(QSize(300, 25))
+        self.line_android_org.setMaximumSize(QSize(400, 25))
+        self.line_android_org.setFont(font)
+        self.line_android_org.setStyleSheet(u"QLineEdit {\n"
+"	color:rgb(255,255,255);\n"
+"	border:2px solid rgb(51,51,51);\n"
+"	border-radius:4px;\n"
+"	background:rgb(51,51,51);\n"
+"}\n"
+"\n"
+"QLineEdit:disabled {\n"
+"	color:rgb(255,255,255);\n"
+"	border:2px solid rgb(112,112,112);\n"
+"	border-radius:4px;\n"
+"	background:rgb(112,112,112);\n"
+"}")
 
-        self.gridLayout_4.addItem(self.horizontalSpacer_6, 8, 8, 1, 1)
+        self.gridLayout_4.addWidget(self.line_android_org, 4, 3, 1, 1)
 
         self.horizontalSpacer_5 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.gridLayout_4.addItem(self.horizontalSpacer_5, 4, 8, 1, 1)
 
+        self.horizontalSpacer_6 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout_4.addItem(self.horizontalSpacer_6, 7, 8, 1, 1)
+
         self.verticalSpacer_4 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.gridLayout_4.addItem(self.verticalSpacer_4, 9, 3, 1, 1)
+        self.gridLayout_4.addItem(self.verticalSpacer_4, 8, 3, 1, 1)
 
         self.frame_3 = QFrame(self.frame_android_field)
         self.frame_3.setObjectName(u"frame_3")
@@ -1709,12 +1460,12 @@ class Ui_MainWindow(object):
         self.horizontalLayout_25.setSpacing(0)
         self.horizontalLayout_25.setObjectName(u"horizontalLayout_25")
         self.horizontalLayout_25.setContentsMargins(100, 0, 0, 0)
-        self.bn_android_contact_edit = QPushButton(self.frame_3)
-        self.bn_android_contact_edit.setObjectName(u"bn_android_contact_edit")
-        self.bn_android_contact_edit.setMinimumSize(QSize(69, 25))
-        self.bn_android_contact_edit.setMaximumSize(QSize(69, 25))
-        self.bn_android_contact_edit.setFont(font)
-        self.bn_android_contact_edit.setStyleSheet(u"QPushButton {\n"
+        self.user_contact_edit_button = QPushButton(self.frame_3)
+        self.user_contact_edit_button.setObjectName(u"user_contact_edit_button")
+        self.user_contact_edit_button.setMinimumSize(QSize(85, 30))
+        self.user_contact_edit_button.setMaximumSize(QSize(85, 30))
+        self.user_contact_edit_button.setFont(font)
+        self.user_contact_edit_button.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(51,51,51);\n"
 "	border-radius: 5px;	\n"
 "	color:rgb(255,255,255);\n"
@@ -1735,42 +1486,14 @@ class Ui_MainWindow(object):
 "	background-color: rgb(112,112,112);\n"
 "}")
 
-        self.horizontalLayout_25.addWidget(self.bn_android_contact_edit)
+        self.horizontalLayout_25.addWidget(self.user_contact_edit_button)
 
-        self.bn_android_contact_share = QPushButton(self.frame_3)
-        self.bn_android_contact_share.setObjectName(u"bn_android_contact_share")
-        self.bn_android_contact_share.setMinimumSize(QSize(69, 25))
-        self.bn_android_contact_share.setMaximumSize(QSize(69, 25))
-        self.bn_android_contact_share.setFont(font)
-        self.bn_android_contact_share.setStyleSheet(u"QPushButton {\n"
-"	border: 2px solid rgb(51,51,51);\n"
-"	border-radius: 5px;	\n"
-"	color:rgb(255,255,255);\n"
-"	background-color: rgb(51,51,51);\n"
-"}\n"
-"QPushButton:hover {\n"
-"	border: 2px solid rgb(0,143,150);\n"
-"	background-color: rgb(0,143,150);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	border: 2px solid rgb(0,143,150);\n"
-"	background-color: rgb(51,51,51);\n"
-"}\n"
-"\n"
-"QPushButton:disabled {	\n"
-"	border-radius: 5px;	\n"
-"	border: 2px solid rgb(112,112,112);\n"
-"	background-color: rgb(112,112,112);\n"
-"}")
-
-        self.horizontalLayout_25.addWidget(self.bn_android_contact_share)
-
-        self.bn_android_contact_delete = QPushButton(self.frame_3)
-        self.bn_android_contact_delete.setObjectName(u"bn_android_contact_delete")
-        self.bn_android_contact_delete.setMinimumSize(QSize(69, 25))
-        self.bn_android_contact_delete.setMaximumSize(QSize(69, 25))
-        self.bn_android_contact_delete.setFont(font)
-        self.bn_android_contact_delete.setStyleSheet(u"QPushButton {\n"
+        self.user_contact_delete_button = QPushButton(self.frame_3)
+        self.user_contact_delete_button.setObjectName(u"user_contact_delete_button")
+        self.user_contact_delete_button.setMinimumSize(QSize(85, 30))
+        self.user_contact_delete_button.setMaximumSize(QSize(85, 30))
+        self.user_contact_delete_button.setFont(font)
+        self.user_contact_delete_button.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(51,51,51);\n"
 "	border-radius: 5px;	\n"
 "	color:rgb(255,255,255);\n"
@@ -1791,15 +1514,15 @@ class Ui_MainWindow(object):
 "	background-color: rgb(112,112,112);\n"
 "}")
 
-        self.horizontalLayout_25.addWidget(self.bn_android_contact_delete)
+        self.horizontalLayout_25.addWidget(self.user_contact_delete_button)
 
-        self.bn_android_contact_save = QPushButton(self.frame_3)
-        self.bn_android_contact_save.setObjectName(u"bn_android_contact_save")
-        self.bn_android_contact_save.setEnabled(False)
-        self.bn_android_contact_save.setMinimumSize(QSize(69, 25))
-        self.bn_android_contact_save.setMaximumSize(QSize(69, 25))
-        self.bn_android_contact_save.setFont(font)
-        self.bn_android_contact_save.setStyleSheet(u"QPushButton {\n"
+        self.user_contact_save_button = QPushButton(self.frame_3)
+        self.user_contact_save_button.setObjectName(u"user_contact_save_button")
+        self.user_contact_save_button.setEnabled(False)
+        self.user_contact_save_button.setMinimumSize(QSize(85, 30))
+        self.user_contact_save_button.setMaximumSize(QSize(85, 30))
+        self.user_contact_save_button.setFont(font)
+        self.user_contact_save_button.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(51,51,51);\n"
 "	border-radius: 5px;	\n"
 "	color:rgb(255,255,255);\n"
@@ -1820,10 +1543,10 @@ class Ui_MainWindow(object):
 "	background-color: rgb(112,112,112);\n"
 "}")
 
-        self.horizontalLayout_25.addWidget(self.bn_android_contact_save)
+        self.horizontalLayout_25.addWidget(self.user_contact_save_button)
 
 
-        self.gridLayout_4.addWidget(self.frame_3, 8, 0, 1, 7)
+        self.gridLayout_4.addWidget(self.frame_3, 7, 0, 1, 7)
 
 
         self.gridLayout_3.addWidget(self.frame_android_field, 0, 1, 2, 1)
@@ -1857,16 +1580,16 @@ class Ui_MainWindow(object):
         self.horizontalLayout_26.setSpacing(0)
         self.horizontalLayout_26.setObjectName(u"horizontalLayout_26")
         self.horizontalLayout_26.setContentsMargins(5, 0, 0, 0)
-        self.textEdit_gamepad = QTextEdit(self.frame_textbar)
-        self.textEdit_gamepad.setObjectName(u"textEdit_gamepad")
-        self.textEdit_gamepad.setFont(font)
-        self.textEdit_gamepad.setStyleSheet(u"color:rgb(255,255,255);")
-        self.textEdit_gamepad.setFrameShape(QFrame.NoFrame)
-        self.textEdit_gamepad.setFrameShadow(QFrame.Plain)
-        self.textEdit_gamepad.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
-        self.textEdit_gamepad.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.user_notations_input = QTextEdit(self.frame_textbar)
+        self.user_notations_input.setObjectName(u"user_notations_input")
+        self.user_notations_input.setFont(font)
+        self.user_notations_input.setStyleSheet(u"color:rgb(255,255,255);")
+        self.user_notations_input.setFrameShape(QFrame.NoFrame)
+        self.user_notations_input.setFrameShadow(QFrame.Plain)
+        self.user_notations_input.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+        self.user_notations_input.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
 
-        self.horizontalLayout_26.addWidget(self.textEdit_gamepad)
+        self.horizontalLayout_26.addWidget(self.user_notations_input)
 
         self.vsb_gamepad = QScrollBar(self.frame_textbar)
         self.vsb_gamepad.setObjectName(u"vsb_gamepad")
@@ -1924,10 +1647,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.radioButton = QRadioButton(self.groupBox_clean)
         self.radioButton.setObjectName(u"radioButton")
-        font15 = QFont()
-        font15.setFamily(u"Segoe UI")
-        font15.setPointSize(9)
-        self.radioButton.setFont(font15)
+        font14 = QFont()
+        font14.setFamily(u"Segoe UI")
+        font14.setPointSize(9)
+        self.radioButton.setFont(font14)
         self.radioButton.setStyleSheet(u"QRadioButton {\n"
 "	background:rgb(91,90,90);\n"
 "    color:white;\n"
@@ -1953,7 +1676,7 @@ class Ui_MainWindow(object):
 
         self.radioButton_2 = QRadioButton(self.groupBox_clean)
         self.radioButton_2.setObjectName(u"radioButton_2")
-        self.radioButton_2.setFont(font15)
+        self.radioButton_2.setFont(font14)
         self.radioButton_2.setStyleSheet(u"QRadioButton {\n"
 "	background:rgb(91,90,90);\n"
 "    color:white;\n"
@@ -1978,7 +1701,7 @@ class Ui_MainWindow(object):
 
         self.radioButton_3 = QRadioButton(self.groupBox_clean)
         self.radioButton_3.setObjectName(u"radioButton_3")
-        self.radioButton_3.setFont(font15)
+        self.radioButton_3.setFont(font14)
         self.radioButton_3.setStyleSheet(u"QRadioButton {\n"
 "	background:rgb(91,90,90);\n"
 "    color:white;\n"
@@ -2003,7 +1726,7 @@ class Ui_MainWindow(object):
 
         self.radioButton_4 = QRadioButton(self.groupBox_clean)
         self.radioButton_4.setObjectName(u"radioButton_4")
-        self.radioButton_4.setFont(font15)
+        self.radioButton_4.setFont(font14)
         self.radioButton_4.setStyleSheet(u"QRadioButton {\n"
 "	background:rgb(91,90,90);\n"
 "    color:white;\n"
@@ -2028,7 +1751,7 @@ class Ui_MainWindow(object):
 
         self.checkBox = QCheckBox(self.groupBox_clean)
         self.checkBox.setObjectName(u"checkBox")
-        self.checkBox.setFont(font15)
+        self.checkBox.setFont(font14)
         self.checkBox.setStyleSheet(u"QCheckBox {\n"
 "    color:rgb(255,255,255);\n"
 "}\n"
@@ -2065,7 +1788,7 @@ class Ui_MainWindow(object):
 
         self.checkBox_4 = QCheckBox(self.groupBox_clean)
         self.checkBox_4.setObjectName(u"checkBox_4")
-        self.checkBox_4.setFont(font15)
+        self.checkBox_4.setFont(font14)
         self.checkBox_4.setStyleSheet(u"QCheckBox {\n"
 "    color:rgb(255,255,255);\n"
 "}\n"
@@ -2102,7 +1825,7 @@ class Ui_MainWindow(object):
 
         self.checkBox_2 = QCheckBox(self.groupBox_clean)
         self.checkBox_2.setObjectName(u"checkBox_2")
-        self.checkBox_2.setFont(font15)
+        self.checkBox_2.setFont(font14)
         self.checkBox_2.setStyleSheet(u"QCheckBox {\n"
 "    color:rgb(255,255,255);\n"
 "}\n"
@@ -2138,7 +1861,7 @@ class Ui_MainWindow(object):
 
         self.checkBox_3 = QCheckBox(self.groupBox_clean)
         self.checkBox_3.setObjectName(u"checkBox_3")
-        self.checkBox_3.setFont(font15)
+        self.checkBox_3.setFont(font14)
         self.checkBox_3.setStyleSheet(u"QCheckBox {\n"
 "    color:rgb(255,255,255);\n"
 "}\n"
@@ -2189,7 +1912,7 @@ class Ui_MainWindow(object):
         self.groupBox.setObjectName(u"groupBox")
         self.groupBox.setMinimumSize(QSize(250, 300))
         self.groupBox.setMaximumSize(QSize(250, 300))
-        self.groupBox.setFont(font15)
+        self.groupBox.setFont(font14)
         self.groupBox.setStyleSheet(u"QGroupBox{\n"
 "	border:1px solid rgb(51,51,51);	\n"
 "	border-radius:4px;\n"
@@ -2262,10 +1985,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout_27.setObjectName(u"horizontalLayout_27")
         self.label_9 = QLabel(self.page_android_world)
         self.label_9.setObjectName(u"label_9")
-        font16 = QFont()
-        font16.setFamily(u"Segoe UI Light")
-        font16.setPointSize(30)
-        self.label_9.setFont(font16)
+        font15 = QFont()
+        font15.setFamily(u"Segoe UI Light")
+        font15.setPointSize(30)
+        self.label_9.setFont(font15)
         self.label_9.setStyleSheet(u"color:rgb(255,255,255);")
         self.label_9.setAlignment(Qt.AlignCenter)
         self.label_9.setWordWrap(True)
@@ -2297,9 +2020,9 @@ class Ui_MainWindow(object):
         self.frame_tab = QFrame(self.frame_low)
         self.frame_tab.setObjectName(u"frame_tab")
         self.frame_tab.setMinimumSize(QSize(0, 0))
-        font17 = QFont()
-        font17.setFamily(u"Segoe UI")
-        self.frame_tab.setFont(font17)
+        font16 = QFont()
+        font16.setFamily(u"Segoe UI")
+        self.frame_tab.setFont(font16)
         self.frame_tab.setStyleSheet(u"background:rgb(51,51,51);")
         self.frame_tab.setFrameShape(QFrame.NoFrame)
         self.frame_tab.setFrameShadow(QFrame.Plain)
@@ -2350,9 +2073,9 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(7)
         self.load_contacts_button.setDefault(False)
-        self.stackedWidget_android.setCurrentIndex(3)
+        self.stackedWidget_android.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -2377,21 +2100,21 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(tooltip)
         self.bn_close.setText("")
 #if QT_CONFIG(tooltip)
-        self.bn_whatsapp.setToolTip(QCoreApplication.translate("MainWindow", u"WhatsApp", None))
+        self.menu_whatsapp_button.setToolTip(QCoreApplication.translate("MainWindow", u"WhatsApp", None))
 #endif // QT_CONFIG(tooltip)
-        self.bn_whatsapp.setText("")
+        self.menu_whatsapp_button.setText("")
 #if QT_CONFIG(tooltip)
-        self.bn_bug.setToolTip(QCoreApplication.translate("MainWindow", u"E-mails", None))
+        self.menu_email_button.setToolTip(QCoreApplication.translate("MainWindow", u"E-mails", None))
 #endif // QT_CONFIG(tooltip)
-        self.bn_bug.setText("")
+        self.menu_email_button.setText("")
 #if QT_CONFIG(tooltip)
         self.bn_cloud.setToolTip(QCoreApplication.translate("MainWindow", u"Conex\u00e3o", None))
 #endif // QT_CONFIG(tooltip)
         self.bn_cloud.setText("")
 #if QT_CONFIG(tooltip)
-        self.bn_android.setToolTip(QCoreApplication.translate("MainWindow", u"Android", None))
+        self.menu_user_button.setToolTip(QCoreApplication.translate("MainWindow", u"Android", None))
 #endif // QT_CONFIG(tooltip)
-        self.bn_android.setText("")
+        self.menu_user_button.setText("")
         self.whatsapp_page_messages_frame_text.setText(QCoreApplication.translate("MainWindow", u"Mensagem de Texto", None))
         self.attachments_groupbox.setTitle(QCoreApplication.translate("MainWindow", u"Anexos", None))
         self.load_image_button.setText(QCoreApplication.translate("MainWindow", u"Imagem", None))
@@ -2415,58 +2138,42 @@ class Ui_MainWindow(object):
         self.reset_validations_whatsapp_sending_button.setText(QCoreApplication.translate("MainWindow", u"Resetar", None))
         self.lab_about_home.setText(QCoreApplication.translate("MainWindow", u"Ajuda: Bots", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"Empty", None))
-        self.lab_Bug.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#ffffff;\">Bugs Found</span></p></body></html>", None))
-        self.lab_bullet.setText("")
-        self.lab_bullet3.setText("")
-        self.lab_bug2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#ffffff;\">Simple TO</span></p></body></html>", None))
-        self.lab_bug3.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#ffffff;\">Sertilage</span></p></body></html>", None))
-        self.comboBox_bug.setItemText(0, QCoreApplication.translate("MainWindow", u"100000", None))
-        self.comboBox_bug.setItemText(1, QCoreApplication.translate("MainWindow", u"1000000", None))
-        self.comboBox_bug.setItemText(2, QCoreApplication.translate("MainWindow", u"10000000", None))
-        self.comboBox_bug.setItemText(3, QCoreApplication.translate("MainWindow", u"100000000", None))
-
-        self.lab_bug1.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#ffffff;\">Vore/Lore</span></p></body></html>", None))
-        self.lab_bullet2.setText("")
-        self.bn_bug_start.setText(QCoreApplication.translate("MainWindow", u"Start", None))
-        self.lab_bug_action.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#ffffff;\">Action: </span></p></body></html>", None))
-        self.lab_cloud_main.setText(QCoreApplication.translate("MainWindow", u"Cloud Connect", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Client ID :", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Server Adress :", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Proxy :", None))
-        self.bn_cloud_clear.setText(QCoreApplication.translate("MainWindow", u"Clear", None))
-        self.bn_cloud_connect.setText(QCoreApplication.translate("MainWindow", u"Connect", None))
+        self.lab_Bug.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#ffffff;\">E-mails</span></p></body></html>", None))
+        self.lab_cloud_main.setText(QCoreApplication.translate("MainWindow", u"Conex\u00e3o E-mail", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Senha", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"E-mail", None))
+        self.bn_cloud_connect.setText(QCoreApplication.translate("MainWindow", u"Conectar", None))
+        self.bn_cloud_clear.setText(QCoreApplication.translate("MainWindow", u"Limpar", None))
 #if QT_CONFIG(tooltip)
-        self.bn_android_contact.setToolTip(QCoreApplication.translate("MainWindow", u"Contact", None))
+        self.menu_user_button_contact.setToolTip(QCoreApplication.translate("MainWindow", u"Contact", None))
 #endif // QT_CONFIG(tooltip)
-        self.bn_android_contact.setText("")
+        self.menu_user_button_contact.setText("")
 #if QT_CONFIG(tooltip)
-        self.bn_android_game.setToolTip(QCoreApplication.translate("MainWindow", u"GamePad", None))
+        self.menu_user_button_game.setToolTip(QCoreApplication.translate("MainWindow", u"GamePad", None))
 #endif // QT_CONFIG(tooltip)
-        self.bn_android_game.setText("")
+        self.menu_user_button_game.setText("")
 #if QT_CONFIG(tooltip)
-        self.bn_android_clean.setToolTip(QCoreApplication.translate("MainWindow", u"Clean", None))
+        self.menu_user_button_clean.setToolTip(QCoreApplication.translate("MainWindow", u"Clean", None))
 #endif // QT_CONFIG(tooltip)
-        self.bn_android_clean.setText("")
+        self.menu_user_button_clean.setText("")
 #if QT_CONFIG(tooltip)
-        self.bn_android_world.setToolTip(QCoreApplication.translate("MainWindow", u"World", None))
+        self.menu_user_button_world.setToolTip(QCoreApplication.translate("MainWindow", u"World", None))
 #endif // QT_CONFIG(tooltip)
-        self.bn_android_world.setText("")
-        self.lab_android_contact.setText(QCoreApplication.translate("MainWindow", u"Contact", None))
+        self.menu_user_button_world.setText("")
+        self.lab_android_contact.setText(QCoreApplication.translate("MainWindow", u"Usu\u00e1rio", None))
         self.lab_person_icon.setText("")
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"Ph:", None))
-        self.label_6.setText(QCoreApplication.translate("MainWindow", u"Organisation:", None))
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Email:", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"Name: ", None))
-        self.line_android_name.setText(QCoreApplication.translate("MainWindow", u"ALBERT EINSTEIN", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Adress: ", None))
-        self.line_android_org.setText(QCoreApplication.translate("MainWindow", u"Physist", None))
-        self.line_android_adress.setText(QCoreApplication.translate("MainWindow", u"112 Mercer Street", None))
-        self.line_android_email.setText(QCoreApplication.translate("MainWindow", u"einstein@gmail.com", None))
-        self.bn_android_contact_edit.setText(QCoreApplication.translate("MainWindow", u"Edit", None))
-        self.bn_android_contact_share.setText(QCoreApplication.translate("MainWindow", u"Share", None))
-        self.bn_android_contact_delete.setText(QCoreApplication.translate("MainWindow", u"Delete", None))
-        self.bn_android_contact_save.setText(QCoreApplication.translate("MainWindow", u"Save", None))
-        self.lab_gamepad.setText(QCoreApplication.translate("MainWindow", u"GamePad", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"Nome:", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"E-mail:", None))
+        self.line_android_name.setText("")
+        self.label_6.setText(QCoreApplication.translate("MainWindow", u"Organiza\u00e7\u00e3o:", None))
+        self.line_android_adress.setText("")
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Telefone:", None))
+        self.line_android_email.setText("")
+        self.line_android_org.setText("")
+        self.user_contact_edit_button.setText(QCoreApplication.translate("MainWindow", u"Editar", None))
+        self.user_contact_delete_button.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
+        self.user_contact_save_button.setText(QCoreApplication.translate("MainWindow", u"Salvar", None))
+        self.lab_gamepad.setText(QCoreApplication.translate("MainWindow", u"Anota\u00e7\u00f5es", None))
         self.groupBox_clean.setTitle(QCoreApplication.translate("MainWindow", u"Review", None))
         self.radioButton.setText(QCoreApplication.translate("MainWindow", u"Clean History", None))
         self.radioButton_2.setText(QCoreApplication.translate("MainWindow", u"Clean Password", None))
@@ -2478,7 +2185,7 @@ class Ui_MainWindow(object):
         self.checkBox_3.setText(QCoreApplication.translate("MainWindow", u"Did you like the Stacked Window", None))
         self.lab_clean.setText("")
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Sliders", None))
-        self.label_9.setText(QCoreApplication.translate("MainWindow", u"VACANT? TRY YOUR IMAGINATION", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"...", None))
         self.lab_tab.setText("")
 #if QT_CONFIG(tooltip)
         self.frame_drag.setToolTip(QCoreApplication.translate("MainWindow", u"Drag", None))

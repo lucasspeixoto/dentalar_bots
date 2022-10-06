@@ -51,13 +51,13 @@ class MainWindow(QMainWindow):
 
         self.ui.toodle.clicked.connect(lambda: UIFunction.toodleMenu(self, 160, True))
 
-        self.ui.bn_whatsapp.clicked.connect(
-            lambda: UIFunction.buttonPressed(self, "bn_whatsapp")
+        self.ui.menu_whatsapp_button.clicked.connect(
+            lambda: UIFunction.buttonPressed(self, "menu_whatsapp_button")
         )
-        self.ui.bn_bug.clicked.connect(lambda: UIFunction.buttonPressed(self, "bn_bug"))
+        self.ui.menu_email_button.clicked.connect(lambda: UIFunction.buttonPressed(self, "menu_email_button"))
 
-        self.ui.bn_android.clicked.connect(
-            lambda: UIFunction.buttonPressed(self, "bn_android")
+        self.ui.menu_user_button.clicked.connect(
+            lambda: UIFunction.buttonPressed(self, "menu_user_button")
         )
         self.ui.bn_cloud.clicked.connect(
             lambda: UIFunction.buttonPressed(self, "bn_cloud")

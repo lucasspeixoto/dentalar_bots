@@ -110,6 +110,38 @@ class BotProcess:
     :Returns:
     """
 
+    def check_if_exists(
+        self, element: str, etype: str, first_timer: int, last_timer: int
+    ) -> bool:
+
+        try:
+            self.driver.find_element(by=self.find_options[etype], value=element)
+            contacts_exists = False
+        except Exception:
+            contacts_exists = True
+
+        self.uniform_wait(2 * first_timer, 2 * last_timer)
+
+        return contacts_exists
+
+    """
+    :Args:
+        
+    :Returns:
+    """
+
+    def normal_send(self, found, word: str, first_timer: int, last_timer: int):
+        found.send_keys(word)
+        self.uniform_wait(first_timer, last_timer)
+
+        return
+
+    """
+    :Args:
+        
+    :Returns:
+    """
+
     def dummy_send(self, found, word: str, first_timer: int, last_timer: int):
         for char in word:
             found.send_keys(char)
@@ -126,7 +158,6 @@ class BotProcess:
     def clear_field(self, element: str, etype: str, first_timer: int, last_timer: int):
         try:
             found = self.driver.find_element(by=self.find_options[etype], value=element)
-
         except Exception as error:
             print(f"Error Inside clear_field function: {error}")
             pass
@@ -146,12 +177,35 @@ class BotProcess:
     def click(self, element: str, etype: str, first_timer: int, last_timer: int):
         try:
             found = self.driver.find_element(by=self.find_options[etype], value=element)
+
         except Exception as error:
             print(f"Error Inside click function: {error}")
             pass
 
         finally:
             found.click()
+            self.uniform_wait(first_timer, last_timer)
+
+        return
+
+    """
+    :Args:
+        
+    :Returns:
+    """
+
+    def send_keys(
+        self, element: str, text: str, etype: str, first_timer: int, last_timer: int
+    ):
+        try:
+            found = self.driver.find_element(by=self.find_options[etype], value=element)
+            self.uniform_wait(first_timer, last_timer)
+        except Exception as error:
+            print(f"Error Inside send_keys function: {error}")
+            pass
+
+        finally:
+            self.normal_send(found, text, first_timer, last_timer)
             self.uniform_wait(first_timer, last_timer)
 
         return
@@ -172,6 +226,7 @@ class BotProcess:
         except Exception as error:
             print(f"Error Inside click_and_type function: {error}")
             pass
+
         finally:
             self.dummy_send(found, text, first_timer, last_timer)
             self.uniform_wait(first_timer, last_timer)

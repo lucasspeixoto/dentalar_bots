@@ -4,8 +4,6 @@
 from interface.error.error import *
 from PySide2.QtWidgets import QFileDialog
 
-from main import *
-
 
 class Files:
     def __init__(self, *args, **kwargs):
@@ -13,9 +11,6 @@ class Files:
 
         self.args = args
         self.kwargs = kwargs
-
-        self.ui = None
-        self.files = None
 
         self.error = errorUi()
 
@@ -34,19 +29,12 @@ class Files:
                     path.split(":")[0]: path.split(":")[1] for path in file.readlines()
                 }
         except FileNotFoundError:
-
             self.show_error(
                 "O arquivo 'paths.txt' foi removido ou renomeado, inclua novamente para "
                 "iniciar!",
                 "icons/1x/errorAsset 55.png",
                 "Ok",
             )
-
-        return
-
-    def set_default_image_and_file(self):
-        self.selected_image = ""
-        self.selected_file = ""
 
         return
 

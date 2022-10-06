@@ -1,2 +1,5 @@
-search_xpath://*[@id="side"]/div[1]/div/div/div[2]/div/div[2]
-test://*[@id="test"]/div[1]/div/div[2]
+search_field_xpath://*[@id="side"]/div[1]/div/div/div[2]/div/div[2]
+not_found_msg_xpath://*[@id="pane-side"]/div[1]/div/span
+clip_button_xpath://*[@id="main"]/footer/div[1]/div/span[2]/div/div[1]/div[2]/div/div/span
+insert_media_button_xpath://*[@id="main"]/footer/div[1]/div/span[2]/div/div[1]/div[2]/div/span/div[1]/div/ul/li[1]/button/input
+insert_image_message_field_xpath://*[@id="app"]/div[1]/div[1]/div[2]/div[2]/span/div[1]/span/div[1]/div/div[2]/div/div[1]/div[3]/div/div/div[2]/div[1]/div[2]

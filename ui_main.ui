@@ -723,7 +723,7 @@ QPushButton:pressed {
               <number>0</number>
              </property>
              <item>
-              <widget class="QPushButton" name="bn_whatsapp">
+              <widget class="QPushButton" name="menu_whatsapp_button">
                <property name="minimumSize">
                 <size>
                  <width>80</width>
@@ -815,7 +815,7 @@ QPushButton:pressed {
               <number>0</number>
              </property>
              <item>
-              <widget class="QPushButton" name="bn_bug">
+              <widget class="QPushButton" name="menu_email_button">
                <property name="minimumSize">
                 <size>
                  <width>80</width>
@@ -999,7 +999,7 @@ QPushButton:pressed {
               <number>0</number>
              </property>
              <item>
-              <widget class="QPushButton" name="bn_android">
+              <widget class="QPushButton" name="menu_user_button">
                <property name="minimumSize">
                 <size>
                  <width>80</width>
@@ -1038,7 +1038,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>icons/1x/androidAsset 49.png</normaloff>icons/1x/androidAsset 49.png</iconset>
+                 <normaloff>icons/1x/userAsset.png</normaloff>icons/1x/userAsset.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -1160,7 +1160,7 @@ QPushButton:pressed {
                 <string notr="true"/>
                </property>
                <property name="currentIndex">
-                <number>0</number>
+                <number>7</number>
                </property>
                <widget class="QWidget" name="page_whatsapp">
                 <property name="styleSheet">
@@ -2114,380 +2114,8 @@ QScrollBar::sub-page:vertical {
                     <string notr="true">color:rgb(255,255,255);</string>
                    </property>
                    <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Bugs Found&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;E-mails&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QFrame" name="frame_bug_main">
-                   <property name="minimumSize">
-                    <size>
-                     <width>0</width>
-                     <height>200</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>16777215</width>
-                     <height>200</height>
-                    </size>
-                   </property>
-                   <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Plain</enum>
-                   </property>
-                   <layout class="QGridLayout" name="gridLayout">
-                    <item row="5" column="7">
-                     <spacer name="horizontalSpacer">
-                      <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
-                      </property>
-                      <property name="sizeHint" stdset="0">
-                       <size>
-                        <width>421</width>
-                        <height>20</height>
-                       </size>
-                      </property>
-                     </spacer>
-                    </item>
-                    <item row="0" column="0">
-                     <widget class="QLabel" name="lab_bullet">
-                      <property name="maximumSize">
-                       <size>
-                        <width>5</width>
-                        <height>16777215</height>
-                       </size>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="pixmap">
-                       <pixmap>icons/1x/bulletAsset 54.png</pixmap>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignCenter</set>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="2" column="0">
-                     <widget class="QLabel" name="lab_bullet3">
-                      <property name="maximumSize">
-                       <size>
-                        <width>5</width>
-                        <height>16777215</height>
-                       </size>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="pixmap">
-                       <pixmap>icons/1x/bulletAsset 54.png</pixmap>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="1">
-                     <widget class="QLabel" name="lab_bug2">
-                      <property name="font">
-                       <font>
-                        <family>Segoe UI</family>
-                        <pointsize>14</pointsize>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">color:rgb(255,255,255);</string>
-                      </property>
-                      <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Simple TO&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="2" column="1">
-                     <widget class="QLabel" name="lab_bug3">
-                      <property name="font">
-                       <font>
-                        <family>Segoe UI</family>
-                        <pointsize>14</pointsize>
-                       </font>
-                      </property>
-                      <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Sertilage&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="3" column="8">
-                     <widget class="QComboBox" name="comboBox_bug">
-                      <property name="maximumSize">
-                       <size>
-                        <width>16777215</width>
-                        <height>25</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <family>Segoe UI</family>
-                        <pointsize>10</pointsize>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QComboBox {
-	border: 2px solid rgb(51,51,51);
-	border-radius: 5px;	
-	color:rgb(255,255,255);
-	background-color: rgb(51,51,51);
-}
-
-QComboBox:hover {
-	border: 2px solid rgb(0,143,170);
-	border-radius: 5px;	
-	color:rgb(255,255,255);
-	background-color: rgb(0,143,170);
-}
-
-QComboBox:!editable, QComboBox::drop-down:editable {
-	background: rgb(51,51,51);
-}
-
-QComboBox:!editable:on, QComboBox::drop-down:editable:on {
-    background:rgb(51,51,51);
-}
-
-QComboBox:on { /* shift the text when the popup opens */
-    padding-top: 3px;
-    padding-left: 4px;
-}
-
-QComboBox::drop-down {
-    subcontrol-origin: padding;
-    subcontrol-position: top right;
-    width: 15px;
-
-    border-left-width: 1px;
-    border-left-color: darkgray;
-    border-left-style: solid; /* just a single line */
-    border-top-right-radius: 5px; /* same radius as the QComboBox */
-    border-bottom-right-radius: 5px;
-}
-
-QComboBox::down-arrow {
-    image: url(icons/1x/arrow.png);
-}
-
-QComboBox::down-arrow:on { /* shift the arrow when popup is open */
-    top: 1px;
-    left: 1px;
-}
-
-QComboBox::drop-down {
-    background:rgb(51,51,51);
-}
-
-</string>
-                      </property>
-                      <property name="sizeAdjustPolicy">
-                       <enum>QComboBox::AdjustToContents</enum>
-                      </property>
-                      <property name="frame">
-                       <bool>false</bool>
-                      </property>
-                      <property name="modelColumn">
-                       <number>0</number>
-                      </property>
-                      <item>
-                       <property name="text">
-                        <string>100000</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>1000000</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>10000000</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>100000000</string>
-                       </property>
-                      </item>
-                     </widget>
-                    </item>
-                    <item row="0" column="1">
-                     <widget class="QLabel" name="lab_bug1">
-                      <property name="minimumSize">
-                       <size>
-                        <width>0</width>
-                        <height>0</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>16777215</width>
-                        <height>16777215</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <family>Segoe UI</family>
-                        <pointsize>14</pointsize>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">color:rgb(255,255,255);</string>
-                      </property>
-                      <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Vore/Lore&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="0">
-                     <widget class="QLabel" name="lab_bullet2">
-                      <property name="maximumSize">
-                       <size>
-                        <width>5</width>
-                        <height>16777215</height>
-                       </size>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="pixmap">
-                       <pixmap>icons/1x/bulletAsset 54.png</pixmap>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="3" column="9">
-                     <widget class="QPushButton" name="bn_bug_start">
-                      <property name="minimumSize">
-                       <size>
-                        <width>69</width>
-                        <height>25</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>69</width>
-                        <height>25</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <family>Segoe UI</family>
-                        <pointsize>12</pointsize>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QPushButton {
-	border: 2px solid rgb(51,51,51);
-	border-radius: 5px;	
-	color:rgb(255,255,255);
-	background-color: rgb(51,51,51);
-}
-QPushButton:hover {
-	border: 2px solid rgb(0,143,150);
-	background-color: rgb(0,143,150);
-}
-QPushButton:pressed {	
-	border: 2px solid rgb(0,143,150);
-	background-color: rgb(51,51,51);
-}
-
-QPushButton:disabled {	
-	border-radius: 5px;	
-	border: 2px solid rgb(112,112,112);
-	background-color: rgb(112,112,112);
-}</string>
-                      </property>
-                      <property name="text">
-                       <string>Start</string>
-                      </property>
-                      <property name="checkable">
-                       <bool>false</bool>
-                      </property>
-                      <property name="flat">
-                       <bool>true</bool>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="4" column="7" colspan="3">
-                     <widget class="QProgressBar" name="progressBar_bug">
-                      <property name="enabled">
-                       <bool>true</bool>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QProgressBar
-{
-	color:rgb(255,255,255);
-	background-color :rgb(51,51,51);
-	border : 2px;
-	border-radius:4px;
-}
-
-QProgressBar::chunk{
-	border : 2px;
-	border-radius:4px;
-	background-color:rgb(0,143,170);
-}</string>
-                      </property>
-                      <property name="value">
-                       <number>0</number>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignCenter</set>
-                      </property>
-                      <property name="textVisible">
-                       <bool>true</bool>
-                      </property>
-                      <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
-                      </property>
-                      <property name="invertedAppearance">
-                       <bool>false</bool>
-                      </property>
-                      <property name="textDirection">
-                       <enum>QProgressBar::TopToBottom</enum>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="3" column="7">
-                     <widget class="QLabel" name="lab_bug_action">
-                      <property name="minimumSize">
-                       <size>
-                        <width>0</width>
-                        <height>20</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>16777215</width>
-                        <height>30</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <family>Segoe UI</family>
-                        <pointsize>16</pointsize>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">color:rgb(255,255,255);</string>
-                      </property>
-                      <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Action: &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
                   </widget>
                  </item>
                  <item>
@@ -2551,7 +2179,7 @@ QProgressBar::chunk{
 }</string>
                    </property>
                    <property name="text">
-                    <string>Cloud Connect</string>
+                    <string>Conexão E-mail</string>
                    </property>
                   </widget>
                  </item>
@@ -2603,28 +2231,6 @@ QProgressBar::chunk{
                     <property name="verticalSpacing">
                      <number>0</number>
                     </property>
-                    <item row="0" column="0">
-                     <widget class="QLabel" name="label_2">
-                      <property name="minimumSize">
-                       <size>
-                        <width>100</width>
-                        <height>0</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <family>Segoe UI</family>
-                        <pointsize>14</pointsize>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">color:rgb(255,255,255);</string>
-                      </property>
-                      <property name="text">
-                       <string>Client ID :</string>
-                      </property>
-                     </widget>
-                    </item>
                     <item row="1" column="0">
                      <widget class="QLabel" name="label_3">
                       <property name="minimumSize">
@@ -2643,12 +2249,12 @@ QProgressBar::chunk{
                        <string notr="true">color:rgb(255,255,255);</string>
                       </property>
                       <property name="text">
-                       <string>Server Adress :</string>
+                       <string>Senha</string>
                       </property>
                      </widget>
                     </item>
-                    <item row="2" column="0">
-                     <widget class="QLabel" name="label_4">
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="label_2">
                       <property name="minimumSize">
                        <size>
                         <width>100</width>
@@ -2665,12 +2271,25 @@ QProgressBar::chunk{
                        <string notr="true">color:rgb(255,255,255);</string>
                       </property>
                       <property name="text">
-                       <string>Proxy :</string>
+                       <string>E-mail</string>
                       </property>
                      </widget>
                     </item>
-                    <item row="2" column="1" colspan="3">
-                     <widget class="QLineEdit" name="line_cloud_proxy">
+                    <item row="1" column="4">
+                     <spacer name="horizontalSpacer_2">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                    <item row="1" column="1" colspan="3">
+                     <widget class="QLineEdit" name="line_cloud_adress">
                       <property name="minimumSize">
                        <size>
                         <width>400</width>
@@ -2746,18 +2365,18 @@ QLineEdit:disabled {
                       </property>
                      </widget>
                     </item>
-                    <item row="1" column="1" colspan="3">
-                     <widget class="QLineEdit" name="line_cloud_adress">
+                    <item row="2" column="3">
+                     <widget class="QPushButton" name="bn_cloud_connect">
                       <property name="minimumSize">
                        <size>
-                        <width>400</width>
-                        <height>25</height>
+                        <width>85</width>
+                        <height>30</height>
                        </size>
                       </property>
                       <property name="maximumSize">
                        <size>
-                        <width>500</width>
-                        <height>25</height>
+                        <width>85</width>
+                        <height>30</height>
                        </size>
                       </property>
                       <property name="font">
@@ -2767,36 +2386,33 @@ QLineEdit:disabled {
                        </font>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">QLineEdit {
+                       <string notr="true">QPushButton {
+	border: 2px solid rgb(51,51,51);
+	border-radius: 5px;	
 	color:rgb(255,255,255);
-	border:2px solid rgb(51,51,51);
-	border-radius:4px;
-	background:rgb(51,51,51);
+	background-color: rgb(51,51,51);
+}
+QPushButton:hover {
+	border: 2px solid rgb(0,143,150);
+	background-color: rgb(0,143,150);
+}
+QPushButton:pressed {	
+	border: 2px solid rgb(0,143,150);
+	background-color: rgb(51,51,51);
 }
 
-QLineEdit:disabled {
-	color:rgb(255,255,255);
-	border:2px solid rgb(112,112,112);
-	border-radius:4px;
-	background:rgb(112,112,112);
+QPushButton:disabled {	
+	border-radius: 5px;	
+	border: 2px solid rgb(112,112,112);
+	background-color: rgb(112,112,112);
 }</string>
+                      </property>
+                      <property name="text">
+                       <string>Conectar</string>
                       </property>
                      </widget>
                     </item>
-                    <item row="1" column="4">
-                     <spacer name="horizontalSpacer_2">
-                      <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
-                      </property>
-                      <property name="sizeHint" stdset="0">
-                       <size>
-                        <width>40</width>
-                        <height>20</height>
-                       </size>
-                      </property>
-                     </spacer>
-                    </item>
-                    <item row="3" column="0" colspan="2">
+                    <item row="2" column="0" colspan="2">
                      <spacer name="horizontalSpacer_3">
                       <property name="orientation">
                        <enum>Qt::Horizontal</enum>
@@ -2809,21 +2425,21 @@ QLineEdit:disabled {
                       </property>
                      </spacer>
                     </item>
-                    <item row="3" column="2">
+                    <item row="2" column="2">
                      <widget class="QPushButton" name="bn_cloud_clear">
                       <property name="enabled">
                        <bool>true</bool>
                       </property>
                       <property name="minimumSize">
                        <size>
-                        <width>69</width>
-                        <height>25</height>
+                        <width>85</width>
+                        <height>30</height>
                        </size>
                       </property>
                       <property name="maximumSize">
                        <size>
-                        <width>69</width>
-                        <height>25</height>
+                        <width>85</width>
+                        <height>30</height>
                        </size>
                       </property>
                       <property name="font">
@@ -2855,54 +2471,7 @@ QPushButton:disabled {
 }</string>
                       </property>
                       <property name="text">
-                       <string>Clear</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="3" column="3">
-                     <widget class="QPushButton" name="bn_cloud_connect">
-                      <property name="minimumSize">
-                       <size>
-                        <width>69</width>
-                        <height>25</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>69</width>
-                        <height>25</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <family>Segoe UI</family>
-                        <pointsize>12</pointsize>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QPushButton {
-	border: 2px solid rgb(51,51,51);
-	border-radius: 5px;	
-	color:rgb(255,255,255);
-	background-color: rgb(51,51,51);
-}
-QPushButton:hover {
-	border: 2px solid rgb(0,143,150);
-	background-color: rgb(0,143,150);
-}
-QPushButton:pressed {	
-	border: 2px solid rgb(0,143,150);
-	background-color: rgb(51,51,51);
-}
-
-QPushButton:disabled {	
-	border-radius: 5px;	
-	border: 2px solid rgb(112,112,112);
-	background-color: rgb(112,112,112);
-}</string>
-                      </property>
-                      <property name="text">
-                       <string>Connect</string>
+                       <string>Limpar</string>
                       </property>
                      </widget>
                     </item>
@@ -3020,7 +2589,7 @@ QPushButton:disabled {
                         <number>0</number>
                        </property>
                        <item>
-                        <widget class="QPushButton" name="bn_android_contact">
+                        <widget class="QPushButton" name="menu_user_button_contact">
                          <property name="minimumSize">
                           <size>
                            <width>80</width>
@@ -3053,7 +2622,7 @@ QPushButton:pressed {
                          </property>
                          <property name="icon">
                           <iconset>
-                           <normaloff>icons/1x/bookAsset 57.png</normaloff>icons/1x/bookAsset 57.png</iconset>
+                           <normaloff>icons/1x/userInfo.png</normaloff>icons/1x/userInfo.png</iconset>
                          </property>
                          <property name="iconSize">
                           <size>
@@ -3106,7 +2675,7 @@ QPushButton:pressed {
                         <number>0</number>
                        </property>
                        <item>
-                        <widget class="QPushButton" name="bn_android_game">
+                        <widget class="QPushButton" name="menu_user_button_game">
                          <property name="minimumSize">
                           <size>
                            <width>80</width>
@@ -3139,7 +2708,7 @@ QPushButton:pressed {
                          </property>
                          <property name="icon">
                           <iconset>
-                           <normaloff>icons/1x/gameAsset 61.png</normaloff>icons/1x/gameAsset 61.png</iconset>
+                           <normaloff>icons/1x/notations.png</normaloff>icons/1x/notations.png</iconset>
                          </property>
                          <property name="iconSize">
                           <size>
@@ -3192,7 +2761,7 @@ QPushButton:pressed {
                         <number>0</number>
                        </property>
                        <item>
-                        <widget class="QPushButton" name="bn_android_clean">
+                        <widget class="QPushButton" name="menu_user_button_clean">
                          <property name="minimumSize">
                           <size>
                            <width>80</width>
@@ -3272,7 +2841,7 @@ QPushButton:pressed {
                         <number>0</number>
                        </property>
                        <item>
-                        <widget class="QPushButton" name="bn_android_world">
+                        <widget class="QPushButton" name="menu_user_button_world">
                          <property name="minimumSize">
                           <size>
                            <width>80</width>
@@ -3337,7 +2906,7 @@ QPushButton:pressed {
                     <string notr="true">background:rgb(91,90,90);</string>
                    </property>
                    <property name="currentIndex">
-                    <number>3</number>
+                    <number>0</number>
                    </property>
                    <widget class="QWidget" name="page_android_contact">
                     <property name="styleSheet">
@@ -3383,7 +2952,7 @@ QPushButton:pressed {
                         <string notr="true">color:rgb(255,255,255);</string>
                        </property>
                        <property name="text">
-                        <string>Contact</string>
+                        <string>Usuário</string>
                        </property>
                       </widget>
                      </item>
@@ -3416,7 +2985,7 @@ QPushButton:pressed {
                           <property name="minimumSize">
                            <size>
                             <width>200</width>
-                            <height>160</height>
+                            <height>130</height>
                            </size>
                           </property>
                           <property name="maximumSize">
@@ -3425,11 +2994,26 @@ QPushButton:pressed {
                             <height>160</height>
                            </size>
                           </property>
+                          <property name="layoutDirection">
+                           <enum>Qt::LeftToRight</enum>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::NoFrame</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Plain</enum>
+                          </property>
                           <property name="text">
                            <string/>
                           </property>
                           <property name="pixmap">
-                           <pixmap>icons/1x/peopleAsset 62.png</pixmap>
+                           <pixmap>icons/1x/userAsset512.png</pixmap>
+                          </property>
+                          <property name="scaledContents">
+                           <bool>true</bool>
+                          </property>
+                          <property name="indent">
+                           <number>0</number>
                           </property>
                          </widget>
                         </item>
@@ -3470,8 +3054,8 @@ QPushButton:pressed {
                            <property name="spacing">
                             <number>5</number>
                            </property>
-                           <item row="7" column="0">
-                            <widget class="QLabel" name="label_8">
+                           <item row="1" column="0" colspan="3">
+                            <widget class="QLabel" name="label">
                              <property name="font">
                               <font>
                                <family>Segoe UI</family>
@@ -3482,23 +3066,7 @@ QPushButton:pressed {
                               <string notr="true">color:rgb(255,255,255);</string>
                              </property>
                              <property name="text">
-                              <string>Ph:</string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item row="4" column="0">
-                            <widget class="QLabel" name="label_6">
-                             <property name="font">
-                              <font>
-                               <family>Segoe UI</family>
-                               <pointsize>14</pointsize>
-                              </font>
-                             </property>
-                             <property name="styleSheet">
-                              <string notr="true">color:rgb(255,255,255);</string>
-                             </property>
-                             <property name="text">
-                              <string>Organisation:</string>
+                              <string>Nome:</string>
                              </property>
                             </widget>
                            </item>
@@ -3514,23 +3082,7 @@ QPushButton:pressed {
                               <string notr="true">color:rgb(255,255,255);</string>
                              </property>
                              <property name="text">
-                              <string>Email:</string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item row="1" column="0" colspan="3">
-                            <widget class="QLabel" name="label">
-                             <property name="font">
-                              <font>
-                               <family>Segoe UI</family>
-                               <pointsize>14</pointsize>
-                              </font>
-                             </property>
-                             <property name="styleSheet">
-                              <string notr="true">color:rgb(255,255,255);</string>
-                             </property>
-                             <property name="text">
-                              <string>Name: </string>
+                              <string>E-mail:</string>
                              </property>
                             </widget>
                            </item>
@@ -3573,12 +3125,12 @@ QLineEdit:disabled {
 }</string>
                              </property>
                              <property name="text">
-                              <string>ALBERT EINSTEIN</string>
+                              <string/>
                              </property>
                             </widget>
                            </item>
-                           <item row="3" column="0" colspan="3">
-                            <widget class="QLabel" name="label_5">
+                           <item row="4" column="0">
+                            <widget class="QLabel" name="label_6">
                              <property name="font">
                               <font>
                                <family>Segoe UI</family>
@@ -3589,50 +3141,7 @@ QLineEdit:disabled {
                               <string notr="true">color:rgb(255,255,255);</string>
                              </property>
                              <property name="text">
-                              <string>Adress: </string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item row="4" column="3">
-                            <widget class="QLineEdit" name="line_android_org">
-                             <property name="enabled">
-                              <bool>false</bool>
-                             </property>
-                             <property name="minimumSize">
-                              <size>
-                               <width>300</width>
-                               <height>25</height>
-                              </size>
-                             </property>
-                             <property name="maximumSize">
-                              <size>
-                               <width>400</width>
-                               <height>25</height>
-                              </size>
-                             </property>
-                             <property name="font">
-                              <font>
-                               <family>Segoe UI</family>
-                               <pointsize>12</pointsize>
-                              </font>
-                             </property>
-                             <property name="styleSheet">
-                              <string notr="true">QLineEdit {
-	color:rgb(255,255,255);
-	border:2px solid rgb(51,51,51);
-	border-radius:4px;
-	background:rgb(51,51,51);
-}
-
-QLineEdit:disabled {
-	color:rgb(255,255,255);
-	border:2px solid rgb(112,112,112);
-	border-radius:4px;
-	background:rgb(112,112,112);
-}</string>
-                             </property>
-                             <property name="text">
-                              <string>Physist</string>
+                              <string>Organização:</string>
                              </property>
                             </widget>
                            </item>
@@ -3675,47 +3184,23 @@ QLineEdit:disabled {
 }</string>
                              </property>
                              <property name="text">
-                              <string>112 Mercer Street</string>
+                              <string/>
                              </property>
                             </widget>
                            </item>
-                           <item row="7" column="3">
-                            <widget class="QLineEdit" name="line_android_ph">
-                             <property name="enabled">
-                              <bool>false</bool>
-                             </property>
-                             <property name="minimumSize">
-                              <size>
-                               <width>300</width>
-                               <height>25</height>
-                              </size>
-                             </property>
-                             <property name="maximumSize">
-                              <size>
-                               <width>400</width>
-                               <height>25</height>
-                              </size>
-                             </property>
+                           <item row="3" column="0" colspan="3">
+                            <widget class="QLabel" name="label_5">
                              <property name="font">
                               <font>
                                <family>Segoe UI</family>
-                               <pointsize>12</pointsize>
+                               <pointsize>14</pointsize>
                               </font>
                              </property>
                              <property name="styleSheet">
-                              <string notr="true">QLineEdit {
-	color:rgb(255,255,255);
-	border:2px solid rgb(51,51,51);
-	border-radius:4px;
-	background:rgb(51,51,51);
-}
-
-QLineEdit:disabled {
-	color:rgb(255,255,255);
-	border:2px solid rgb(112,112,112);
-	border-radius:4px;
-	background:rgb(112,112,112);
-}</string>
+                              <string notr="true">color:rgb(255,255,255);</string>
+                             </property>
+                             <property name="text">
+                              <string>Telefone:</string>
                              </property>
                             </widget>
                            </item>
@@ -3758,22 +3243,52 @@ QLineEdit:disabled {
 }</string>
                              </property>
                              <property name="text">
-                              <string>einstein@gmail.com</string>
+                              <string/>
                              </property>
                             </widget>
                            </item>
-                           <item row="8" column="8">
-                            <spacer name="horizontalSpacer_6">
-                             <property name="orientation">
-                              <enum>Qt::Horizontal</enum>
+                           <item row="4" column="3">
+                            <widget class="QLineEdit" name="line_android_org">
+                             <property name="enabled">
+                              <bool>false</bool>
                              </property>
-                             <property name="sizeHint" stdset="0">
+                             <property name="minimumSize">
                               <size>
-                               <width>40</width>
-                               <height>20</height>
+                               <width>300</width>
+                               <height>25</height>
                               </size>
                              </property>
-                            </spacer>
+                             <property name="maximumSize">
+                              <size>
+                               <width>400</width>
+                               <height>25</height>
+                              </size>
+                             </property>
+                             <property name="font">
+                              <font>
+                               <family>Segoe UI</family>
+                               <pointsize>12</pointsize>
+                              </font>
+                             </property>
+                             <property name="styleSheet">
+                              <string notr="true">QLineEdit {
+	color:rgb(255,255,255);
+	border:2px solid rgb(51,51,51);
+	border-radius:4px;
+	background:rgb(51,51,51);
+}
+
+QLineEdit:disabled {
+	color:rgb(255,255,255);
+	border:2px solid rgb(112,112,112);
+	border-radius:4px;
+	background:rgb(112,112,112);
+}</string>
+                             </property>
+                             <property name="text">
+                              <string/>
+                             </property>
+                            </widget>
                            </item>
                            <item row="4" column="8">
                             <spacer name="horizontalSpacer_5">
@@ -3788,7 +3303,20 @@ QLineEdit:disabled {
                              </property>
                             </spacer>
                            </item>
-                           <item row="9" column="3">
+                           <item row="7" column="8">
+                            <spacer name="horizontalSpacer_6">
+                             <property name="orientation">
+                              <enum>Qt::Horizontal</enum>
+                             </property>
+                             <property name="sizeHint" stdset="0">
+                              <size>
+                               <width>40</width>
+                               <height>20</height>
+                              </size>
+                             </property>
+                            </spacer>
+                           </item>
+                           <item row="8" column="3">
                             <spacer name="verticalSpacer_4">
                              <property name="orientation">
                               <enum>Qt::Vertical</enum>
@@ -3801,7 +3329,7 @@ QLineEdit:disabled {
                              </property>
                             </spacer>
                            </item>
-                           <item row="8" column="0" colspan="7">
+                           <item row="7" column="0" colspan="7">
                             <widget class="QFrame" name="frame_3">
                              <property name="frameShape">
                               <enum>QFrame::NoFrame</enum>
@@ -3826,17 +3354,17 @@ QLineEdit:disabled {
                                <number>0</number>
                               </property>
                               <item>
-                               <widget class="QPushButton" name="bn_android_contact_edit">
+                               <widget class="QPushButton" name="user_contact_edit_button">
                                 <property name="minimumSize">
                                  <size>
-                                  <width>69</width>
-                                  <height>25</height>
+                                  <width>85</width>
+                                  <height>30</height>
                                  </size>
                                 </property>
                                 <property name="maximumSize">
                                  <size>
-                                  <width>69</width>
-                                  <height>25</height>
+                                  <width>85</width>
+                                  <height>30</height>
                                  </size>
                                 </property>
                                 <property name="font">
@@ -3868,69 +3396,22 @@ QPushButton:disabled {
 }</string>
                                 </property>
                                 <property name="text">
-                                 <string>Edit</string>
+                                 <string>Editar</string>
                                 </property>
                                </widget>
                               </item>
                               <item>
-                               <widget class="QPushButton" name="bn_android_contact_share">
+                               <widget class="QPushButton" name="user_contact_delete_button">
                                 <property name="minimumSize">
                                  <size>
-                                  <width>69</width>
-                                  <height>25</height>
+                                  <width>85</width>
+                                  <height>30</height>
                                  </size>
                                 </property>
                                 <property name="maximumSize">
                                  <size>
-                                  <width>69</width>
-                                  <height>25</height>
-                                 </size>
-                                </property>
-                                <property name="font">
-                                 <font>
-                                  <family>Segoe UI</family>
-                                  <pointsize>12</pointsize>
-                                 </font>
-                                </property>
-                                <property name="styleSheet">
-                                 <string notr="true">QPushButton {
-	border: 2px solid rgb(51,51,51);
-	border-radius: 5px;	
-	color:rgb(255,255,255);
-	background-color: rgb(51,51,51);
-}
-QPushButton:hover {
-	border: 2px solid rgb(0,143,150);
-	background-color: rgb(0,143,150);
-}
-QPushButton:pressed {	
-	border: 2px solid rgb(0,143,150);
-	background-color: rgb(51,51,51);
-}
-
-QPushButton:disabled {	
-	border-radius: 5px;	
-	border: 2px solid rgb(112,112,112);
-	background-color: rgb(112,112,112);
-}</string>
-                                </property>
-                                <property name="text">
-                                 <string>Share</string>
-                                </property>
-                               </widget>
-                              </item>
-                              <item>
-                               <widget class="QPushButton" name="bn_android_contact_delete">
-                                <property name="minimumSize">
-                                 <size>
-                                  <width>69</width>
-                                  <height>25</height>
-                                 </size>
-                                </property>
-                                <property name="maximumSize">
-                                 <size>
-                                  <width>69</width>
-                                  <height>25</height>
+                                  <width>85</width>
+                                  <height>30</height>
                                  </size>
                                 </property>
                                 <property name="font">
@@ -3962,25 +3443,25 @@ QPushButton:disabled {
 }</string>
                                 </property>
                                 <property name="text">
-                                 <string>Delete</string>
+                                 <string>Excluir</string>
                                 </property>
                                </widget>
                               </item>
                               <item>
-                               <widget class="QPushButton" name="bn_android_contact_save">
+                               <widget class="QPushButton" name="user_contact_save_button">
                                 <property name="enabled">
                                  <bool>false</bool>
                                 </property>
                                 <property name="minimumSize">
                                  <size>
-                                  <width>69</width>
-                                  <height>25</height>
+                                  <width>85</width>
+                                  <height>30</height>
                                  </size>
                                 </property>
                                 <property name="maximumSize">
                                  <size>
-                                  <width>69</width>
-                                  <height>25</height>
+                                  <width>85</width>
+                                  <height>30</height>
                                  </size>
                                 </property>
                                 <property name="font">
@@ -4012,7 +3493,7 @@ QPushButton:disabled {
 }</string>
                                 </property>
                                 <property name="text">
-                                 <string>Save</string>
+                                 <string>Salvar</string>
                                 </property>
                                </widget>
                               </item>
@@ -4071,7 +3552,7 @@ QPushButton:disabled {
                         <string notr="true">color:rgb(255,255,255);</string>
                        </property>
                        <property name="text">
-                        <string>GamePad</string>
+                        <string>Anotações</string>
                        </property>
                       </widget>
                      </item>
@@ -4103,7 +3584,7 @@ QPushButton:disabled {
                          <number>0</number>
                         </property>
                         <item>
-                         <widget class="QTextEdit" name="textEdit_gamepad">
+                         <widget class="QTextEdit" name="user_notations_input">
                           <property name="font">
                            <font>
                             <family>Segoe UI</family>
@@ -4719,7 +4200,7 @@ QSlider::sub-page:vertical {
                         <string notr="true">color:rgb(255,255,255);</string>
                        </property>
                        <property name="text">
-                        <string>VACANT? TRY YOUR IMAGINATION</string>
+                        <string>...</string>
                        </property>
                        <property name="alignment">
                         <set>Qt::AlignCenter</set>

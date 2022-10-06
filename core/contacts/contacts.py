@@ -12,15 +12,12 @@ from core.contacts.clear_contacts_list import clear_contacts_list
 from core.whatsapp.whatsapp_scrapping import *
 
 
-class Contacts(Files):
+class Contacts:
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
         self.args = args
         self.kwargs = kwargs
-
-        self.ui = None
-        self.whatsapp_scrapping = None
 
         self.contacts_list = []
         self.selected_contacts = []
@@ -46,6 +43,12 @@ class Contacts(Files):
     def send_whatsapp_messages(self):
 
         contacts: list = self.ui.contacts_list.selectedItems()
+        image_path: str = self.files.selected_image
+        message: str = self.ui.whatsapp_message_input.toPlainText()
+
+        not_found_msg_xpath: str = self.whatsapp_scrapping.whatsapp_paths[
+            "not_found_msg_xpath"
+        ]
 
         self.whatsapp_scrapping.start_driver()
 
@@ -54,8 +57,19 @@ class Contacts(Files):
         self.whatsapp_scrapping.whatsapp_login()
 
         for contact in contacts:
-            number: str = contact.text().split(" - ")[-1]
+
+            [name, number] = contact.text().split(" - ")
 
             self.whatsapp_scrapping.select_contact_number(number)
+
+            contact_exists: bool = self.whatsapp_scrapping.check_contact()
+            
+            print(f'{number} - {contact_exists}')
+
+
+            if contact_exists == True:                    
+                self.whatsapp_scrapping.insert_message_image(image_path, message)
+
+        # self.whatsapp_scrapping.driver.quit()
 
         return
