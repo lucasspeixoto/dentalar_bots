@@ -22,7 +22,7 @@ class Contacts:
         self.contacts_list = []
         self.selected_contacts = []
 
-        self.error = errorUi()
+        self.error = ErrorUi()
 
     def get_contacts_from_excel_file(self):
         get_contacts_from_excel_file(self)
@@ -45,10 +45,6 @@ class Contacts:
         contacts: list = self.ui.contacts_list.selectedItems()
         image_path: str = self.files.selected_image
         message: str = self.ui.whatsapp_message_input.toPlainText()
-
-        not_found_msg_xpath: str = self.whatsapp_scrapping.whatsapp_paths[
-            "not_found_msg_xpath"
-        ]
 
         self.whatsapp_scrapping.start_driver()
 

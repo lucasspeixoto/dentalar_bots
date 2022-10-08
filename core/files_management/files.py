@@ -12,7 +12,7 @@ class Files:
         self.args = args
         self.kwargs = kwargs
 
-        self.error = errorUi()
+        self.error = ErrorUi()
 
         self.whatsapp_paths = {}
 
@@ -62,7 +62,7 @@ class Files:
         return
 
     def show_error(self, heading, icon, btnOk):
-        errorUi.errorConstruct(self.error, heading, icon, btnOk)
+        ErrorUi.error_construct(self.error, heading, icon, btnOk)
         self.error.exec_()
 
         return

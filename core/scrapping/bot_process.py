@@ -113,7 +113,8 @@ class BotProcess:
     def check_if_exists(
         self, element: str, etype: str, first_timer: int, last_timer: int
     ) -> bool:
-
+        contacts_exists = False
+        
         try:
             self.driver.find_element(by=self.find_options[etype], value=element)
             contacts_exists = False

@@ -7,8 +7,8 @@ from PySide2.QtCore import Qt, QThreadPool
 from PySide2.QtWidgets import *
 
 from core.validations.validations import *
-from interface.dialog.dialog import dialogUi
-from interface.error.error import errorUi
+from interface.dialog.dialog import DialogUi
+from interface.error.error import ErrorUi
 from workes.worker import Worker
 
 from ui_main import Ui_MainWindow
@@ -43,31 +43,33 @@ class MainWindow(QMainWindow):
         application_name = "Automações"
         self.setWindowTitle(application_name)
 
-        UIFunction.labelTitle(self, application_name)
+        UIFunction.label_title(self, application_name)
 
-        UIFunction.initStackTab(self)
+        UIFunction.init_stack_tab(self)
 
-        UIFunction.constantFunction(self)
+        UIFunction.constant_function(self)
 
-        self.ui.toodle.clicked.connect(lambda: UIFunction.toodleMenu(self, 160, True))
+        self.ui.toodle.clicked.connect(lambda: UIFunction.toodle_menu(self, 160, True))
 
         self.ui.menu_whatsapp_button.clicked.connect(
-            lambda: UIFunction.buttonPressed(self, "menu_whatsapp_button")
+            lambda: UIFunction.change_user_page(self, "menu_whatsapp_button")
         )
-        self.ui.menu_email_button.clicked.connect(lambda: UIFunction.buttonPressed(self, "menu_email_button"))
+        self.ui.menu_email_button.clicked.connect(
+            lambda: UIFunction.change_user_page(self, "menu_email_button")
+        )
 
         self.ui.menu_user_button.clicked.connect(
-            lambda: UIFunction.buttonPressed(self, "menu_user_button")
+            lambda: UIFunction.change_user_page(self, "menu_user_button")
         )
-        self.ui.bn_cloud.clicked.connect(
-            lambda: UIFunction.buttonPressed(self, "bn_cloud")
+        self.ui.menu_connection_button.clicked.connect(
+            lambda: UIFunction.change_user_page(self, "menu_connection_button")
         )
 
-        UIFunction.stackPage(self)
+        UIFunction.stack_page(self)
 
-        self.dialog = dialogUi()
+        self.dialog = DialogUi()
 
-        self.error = errorUi()
+        self.error = ErrorUi()
 
         self.thread_pool = QThreadPool()
         print(
@@ -102,21 +104,22 @@ class MainWindow(QMainWindow):
 
         self.dragPos = self.pos()
 
-        def moveWindow(event):
-            # IF MAXIMIZED CHANGE TO NORMAL
-            if UIFunction.returStatus() == 1:
+        def move_window(event):
+            if UIFunction.return_status() == 1:
                 UIFunction.maximize_restore(self)
 
-            # MOVE WINDOW
             if event.buttons() == Qt.LeftButton:
                 self.move(self.pos() + event.globalPos() - self.dragPos)
                 self.dragPos = event.globalPos()
                 event.accept()
 
-        # WIDGET TO MOVE: WE CHOOSE THE TOPMOST FRAME WHERE THE APPLICATION NAME IS
-        # PRESENT AS THE AREA TO MOVE THE WINDOW. CALLING THE FUNCTION TO CHANGE THE
-        # POSITION OF THE WINDOW DURING MOUSE DRAG
-        self.ui.frame_appname.mouseMoveEvent = moveWindow
+        """ 
+        Widget to move: we choose the topmost frame where
+        the application name is present as the area to move
+        the window. calling the function to change the
+        position of the window during mouse drag
+        """
+        self.ui.frame_appname.mouseMoveEvent = move_window
 
     def send_whatsapp_messages_pointer(self):
         Contacts.send_whatsapp_messages(self)
@@ -154,7 +157,7 @@ class MainWindow(QMainWindow):
         button_cancel_text: str,
         button_ok_text: str,
     ):
-        dialogUi.dialogConstrict(
+        DialogUi.dialog_construct(
             self.dialog, heading, message, icon, button_cancel_text, button_ok_text
         )
         self.dialog.exec_()
@@ -166,7 +169,7 @@ class MainWindow(QMainWindow):
     """
 
     def show_error(self, heading: str, icon: str, button_ok_text: str) -> None:
-        errorUi.errorConstruct(self.error, heading, icon, button_ok_text)
+        ErrorUi.error_construct(self.error, heading, icon, button_ok_text)
         self.error.exec_()
 
 

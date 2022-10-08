@@ -17,7 +17,7 @@ from core.whatsapp.whatsapp_login import whatsapp_login
 
 from core.files_management.files import Files
 
-from interface.error.error import errorUi
+from interface.error.error import ErrorUi
 
 
 class WhatsAppScrapping(BotProcess, Configuration, Files):
@@ -26,7 +26,7 @@ class WhatsAppScrapping(BotProcess, Configuration, Files):
         self.args = args
         self.kwargs = kwargs
 
-        self.error = errorUi()
+        self.error = ErrorUi()
 
     def get_page(self, page_url: str):
         get_page(self, page_url)
