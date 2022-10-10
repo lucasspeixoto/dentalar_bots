@@ -17,15 +17,20 @@ class Ui_Error(object):
     def setupUi(self, Error):
         if not Error.objectName():
             Error.setObjectName(u"Error")
-        Error.resize(400, 150)
+        Error.resize(400, 183)
         Error.setMinimumSize(QSize(400, 150))
-        Error.setMaximumSize(QSize(400, 150))
+        Error.setMaximumSize(QSize(400, 250))
         self.horizontalLayout = QHBoxLayout(Error)
         self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.frame = QFrame(Error)
         self.frame.setObjectName(u"frame")
+        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
+        self.frame.setSizePolicy(sizePolicy)
         self.frame.setStyleSheet(u"background:rgb(51,51,51);")
         self.frame.setFrameShape(QFrame.NoFrame)
         self.frame.setFrameShadow(QFrame.Plain)
@@ -35,8 +40,8 @@ class Ui_Error(object):
         self.verticalLayout.setContentsMargins(2, 2, 2, 2)
         self.frame_top = QFrame(self.frame)
         self.frame_top.setObjectName(u"frame_top")
-        self.frame_top.setMinimumSize(QSize(0, 55))
-        self.frame_top.setMaximumSize(QSize(16777215, 55))
+        self.frame_top.setMinimumSize(QSize(0, 0))
+        self.frame_top.setMaximumSize(QSize(16777215, 80))
         self.frame_top.setStyleSheet(u"background:rgb(91,90,90);")
         self.frame_top.setFrameShape(QFrame.NoFrame)
         self.frame_top.setFrameShadow(QFrame.Plain)
@@ -53,12 +58,16 @@ class Ui_Error(object):
 
         self.lab_heading = QLabel(self.frame_top)
         self.lab_heading.setObjectName(u"lab_heading")
+        sizePolicy.setHeightForWidth(self.lab_heading.sizePolicy().hasHeightForWidth())
+        self.lab_heading.setSizePolicy(sizePolicy)
+        self.lab_heading.setMinimumSize(QSize(0, 71))
         font = QFont()
         font.setFamily(u"Segoe UI")
         font.setPointSize(12)
         self.lab_heading.setFont(font)
         self.lab_heading.setStyleSheet(u"color:rgb(255,255,255);")
         self.lab_heading.setWordWrap(True)
+        self.lab_heading.setMargin(1)
 
         self.horizontalLayout_2.addWidget(self.lab_heading)
 
@@ -67,6 +76,8 @@ class Ui_Error(object):
 
         self.frame_bottom = QFrame(self.frame)
         self.frame_bottom.setObjectName(u"frame_bottom")
+        sizePolicy.setHeightForWidth(self.frame_bottom.sizePolicy().hasHeightForWidth())
+        self.frame_bottom.setSizePolicy(sizePolicy)
         self.frame_bottom.setStyleSheet(u"background:rgb(91,90,90);")
         self.frame_bottom.setFrameShape(QFrame.NoFrame)
         self.frame_bottom.setFrameShadow(QFrame.Plain)
@@ -75,8 +86,9 @@ class Ui_Error(object):
         self.gridLayout.setContentsMargins(-1, -1, -1, 0)
         self.bn_ok = QPushButton(self.frame_bottom)
         self.bn_ok.setObjectName(u"bn_ok")
-        self.bn_ok.setMinimumSize(QSize(69, 25))
-        self.bn_ok.setMaximumSize(QSize(69, 25))
+        self.bn_ok.setMinimumSize(QSize(85, 30))
+        self.bn_ok.setMaximumSize(QSize(85, 30))
+        self.bn_ok.setFont(font)
         self.bn_ok.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(51,51,51);\n"
 "	border-radius: 5px;	\n"

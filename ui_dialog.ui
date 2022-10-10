@@ -132,7 +132,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="bn_min">
+          <widget class="QPushButton" name="minimize_dialog_button">
            <property name="minimumSize">
             <size>
              <width>55</width>
@@ -179,7 +179,7 @@ QPushButton:pressed {
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="bn_close">
+          <widget class="QPushButton" name="close_dialog_button">
            <property name="minimumSize">
             <size>
              <width>55</width>
@@ -256,17 +256,17 @@ QPushButton:pressed {
           <number>0</number>
          </property>
          <item row="1" column="3">
-          <widget class="QPushButton" name="bn_east">
+          <widget class="QPushButton" name="dialog_ok_button">
            <property name="minimumSize">
             <size>
-             <width>69</width>
-             <height>25</height>
+             <width>85</width>
+             <height>30</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>69</width>
-             <height>25</height>
+             <width>85</width>
+             <height>30</height>
             </size>
            </property>
            <property name="font">
@@ -319,17 +319,17 @@ QPushButton:pressed {
           </widget>
          </item>
          <item row="1" column="2">
-          <widget class="QPushButton" name="bn_west">
+          <widget class="QPushButton" name="dialog_cancel_button">
            <property name="minimumSize">
             <size>
-             <width>69</width>
-             <height>25</height>
+             <width>85</width>
+             <height>30</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>69</width>
-             <height>25</height>
+             <width>85</width>
+             <height>30</height>
             </size>
            </property>
            <property name="font">

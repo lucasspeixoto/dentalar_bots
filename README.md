@@ -26,6 +26,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 ```bash
 # Geração da interface .py a partir do QtDesigner .ui
 $ pyside2-uic ui_main.ui -o ui_main.py
+$ pyside2-uic ui_error.ui -o ui_error.py
+$ pyside2-uic ui_dialog.ui -o ui_dialog.py
 ```
 ## 📝 Licença
 
