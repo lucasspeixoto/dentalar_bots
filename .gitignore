@@ -132,7 +132,9 @@ dmypy.json
 .exe
 exe/
 
-
 # Notebooks
 /notebooks
 *.ipynb
+
+# Ideas
+.idea

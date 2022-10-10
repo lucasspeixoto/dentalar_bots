@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#encoding: utf-8
+# encoding: utf-8
 
 from random import uniform
 from time import sleep
@@ -9,41 +9,42 @@ from selenium.common.exceptions import WebDriverException
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
+
 from webdriver_manager.chrome import ChromeDriverManager
 
 
-class BotProcess():
-
+class BotProcess:
     def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
         self.args = args
         self.kwargs = kwargs
 
-    '''
-    # TODO: Configurar
-    # ** Configura o driver
-    '''
+    """
+    :Args:
+        
+    :Returns:
+    """
 
     def config_bot(self):
         self.find_options = {
-            'class': By.CLASS_NAME,
-            'xpath': By.XPATH,
-            'id': By.ID,
-            'tag': By.TAG_NAME
+            "class": By.CLASS_NAME,
+            "xpath": By.XPATH,
+            "id": By.ID,
+            "tag": By.TAG_NAME,
         }
 
-        # Configuração
+        # Configuration
         self.options = webdriver.ChromeOptions()
-        self.options.add_argument('--disable-infobars')
-        self.options.add_argument('--start-maximized')
-        self.options.add_argument('--disable-popup-blocking')
-        self.options.add_argument('--disable-extensions')
+        self.options.add_argument("--disable-infobars")
+        self.options.add_argument("--start-maximized")
+        self.options.add_argument("--disable-popup-blocking")
+        self.options.add_argument("--disable-extensions")
 
         # Disable the banner "Chrome is being controlled by automated test software"
         self.options.add_experimental_option("useAutomationExtension", False)
         self.options.add_experimental_option(
-            "excludeSwitches", ['enable-automation'])
+            "excludeSwitches", ["enable-automation"])
 
         # Configurações do Navegador
         self.prefs = {
@@ -51,19 +52,20 @@ class BotProcess():
             "download.prompt_for_download": False,
             "download.directory_upgrade": True,
             "plugins.always_open_pdf_externally": True,
-            "profile.default_content_setting_values.automatic_downloads": 1
+            "profile.default_content_setting_values.automatic_downloads": 1,
         }
 
-        self.options.add_experimental_option('prefs', self.prefs)
+        self.options.add_experimental_option("prefs", self.prefs)
         self.capabilities = DesiredCapabilities().CHROME
         self.capabilities.update(self.options.to_capabilities())
 
         return
 
-    '''
-    # TODO: Configurar e iniciar uma instância de driver
-    # ** Chama a configuração do selenium e inicia um driver
-    '''
+    """
+    :Args:
+        
+    :Returns:
+    """
 
     def start_driver(self):
         self.config_bot()
@@ -71,38 +73,83 @@ class BotProcess():
             self.driver = webdriver.Chrome(
                 service=Service(ChromeDriverManager().install()),
                 options=self.options,
-                desired_capabilities=self.capabilities
+                desired_capabilities=self.capabilities,
             )
         except WebDriverException:
-            self.errorexec("Página fechada, logar novamente!",
-                           "icons/1x/errorAsset 55.png", "Ok")
+            self.show_error(
+                "Página fechada, logar novamente!", "icons/1x/errorAsset 55.png", "Ok"
+            )
             return
 
-    '''
-    # TODO: Finalizar uma sessão de driver.
-    '''
+    """   
+    :Args:
+        
+    :Returns:
+    """
 
     def quit_driver(self):
         self.driver.quit()
         return
 
-    '''
-    # TODO: Pausa com tempo aleatória
-    # ** Gera por um tempo aleatório entre dois valores
-    # ** recebidos,
-    '''
+    """
+    Function to sleep during an randowm time, that
+    is between first_timer and last_timer
+    
+    :Args:
+        first_timer: Start time in seconds
+        last_timer: Last time in seconds
+        
+    :Returns: None
+    """
 
-    def uniform_wait(self, first_timer: int, last_timer: int):
-        sleep(uniform(uniform(first_timer, last_timer),
-                      uniform(first_timer, last_timer)))
+    @staticmethod
+    def uniform_wait(first_timer: int, last_timer: int):
+        sleep(
+            uniform(uniform(first_timer, last_timer),
+                    uniform(first_timer, last_timer))
+        )
 
         return
 
-    '''
-    # TODO: Digitar pausadamente um texto
-    # ** Recebe uma referência de um elemento de input,
-    # ** um texto e digita pausadamente
-    '''
+    """
+    :Args:
+        
+    :Returns:
+    """
+
+    def check_if_exists(
+        self, element: str, etype: str, first_timer: int, last_timer: int
+    ) -> bool:
+        contacts_exists = False
+
+        try:
+            self.driver.find_element(
+                by=self.find_options[etype], value=element)
+            contacts_exists = True
+        except Exception:
+            contacts_exists = False
+
+        self.uniform_wait(2 * first_timer, 2 * last_timer)
+        
+        return contacts_exists
+
+    """
+    :Args:
+        
+    :Returns:
+    """
+
+    def normal_send(self, found, word: str, first_timer: int, last_timer: int):
+        found.send_keys(word)
+        self.uniform_wait(first_timer, last_timer)
+
+        return
+
+    """
+    :Args:
+        
+    :Returns:
+    """
 
     def dummy_send(self, found, word: str, first_timer: int, last_timer: int):
         for char in word:
@@ -111,19 +158,20 @@ class BotProcess():
 
         return
 
-    '''
-    # TODO: Apagar texto inserido em um elemento
-    # ** Recebe uma referência de um elemento de input,
-    # ** e apaga o texto que eventualmente existir
-    '''
+    """
+    :Args:
+        
+    :Returns:
+    """
 
-    def clear_field(self, element: str, etype: str, first_timer: int, last_timer: int):
+    def clear_field(
+        self, element: str, etype: str, first_timer: int, last_timer: int
+    ) -> None:
         try:
             found = self.driver.find_element(
                 by=self.find_options[etype], value=element)
-
         except Exception as error:
-            print(f'Error Inside clear_field function: {error}')
+            print(f"Error Inside clear_field function: {error}")
             pass
 
         finally:
@@ -132,17 +180,19 @@ class BotProcess():
 
         return
 
-    '''
-    # TODO: Clicar em um elemento
-    # ** Recebe uma referência de um elemento e clica
-    '''
+    """
+    :Args:
+        
+    :Returns:
+    """
 
     def click(self, element: str, etype: str, first_timer: int, last_timer: int):
         try:
             found = self.driver.find_element(
                 by=self.find_options[etype], value=element)
+
         except Exception as error:
-            print(f'Error Inside click function: {error}')
+            print(f"Error Inside click function: {error}")
             pass
 
         finally:
@@ -151,40 +201,68 @@ class BotProcess():
 
         return
 
-    '''
-    # TODO: Clicar e inserir textos em inputs
-    # ** Recebe uma referência de um elemento, um texto
-    # ** e clica no elemento digitando o texto recebido
-    # ** na sequência
-    '''
+    """
+    :Args:
+        
+    :Returns:
+    """
 
-    def click_and_type(self, element: str, text: str, etype: str, first_timer: int, last_timer: int):
+    def send_keys(
+        self, element: str, text: str, etype: str, first_timer: int, last_timer: int
+    ):
+        try:
+            found = self.driver.find_element(
+                by=self.find_options[etype], value=element)
+            self.uniform_wait(first_timer, last_timer)
+        except Exception as error:
+            print(f"Error Inside send_keys function: {error}")
+            pass
+
+        finally:
+            self.normal_send(found, text, first_timer, last_timer)
+            self.uniform_wait(first_timer, last_timer)
+
+        return
+
+    """
+    :Args:
+        
+    :Returns:
+    """
+
+    def click_and_type(
+        self, element: str, text: str, etype: str, first_timer: int, last_timer: int
+    ):
         self.click(element, etype, first_timer, last_timer)
         try:
             found = self.driver.find_element(
                 by=self.find_options[etype], value=element)
 
         except Exception as error:
-            print(f'Error Inside click_and_type function: {error}')
+            print(f"Error Inside click_and_type function: {error}")
             pass
+
         finally:
             self.dummy_send(found, text, first_timer, last_timer)
             self.uniform_wait(first_timer, last_timer)
 
         return
 
-    '''
-    # TODO: Obter a label de um elemento
-    # ** Recebe as referências para determinado elemento
-    # ** e retorna o texto 
-    '''
+    """
+    :Args:
+        
+    :Returns:
+    """
 
-    def get_element_text(self, element: str, etype: str, first_timer: int, last_timer: int) -> str:
+    def get_element_text(
+        self, element: str, element_type: str, first_timer: int, last_timer: int
+    ) -> str:
         try:
             found = self.driver.find_element(
-                by=self.find_options[etype], value=element)
+                by=self.find_options[element_type], value=element
+            )
         except Exception as error:
-            print(f'Error Inside get_element_text function: {error}')
+            print(f"Error Inside get_element_text function: {error}")
             pass
 
         finally:

@@ -58,11 +58,11 @@ class Ui_Dialog(object):
 
         self.horizontalLayout.addWidget(self.lab_heading)
 
-        self.bn_min = QPushButton(self.frame_top)
-        self.bn_min.setObjectName(u"bn_min")
-        self.bn_min.setMinimumSize(QSize(55, 55))
-        self.bn_min.setMaximumSize(QSize(55, 55))
-        self.bn_min.setStyleSheet(u"QPushButton {\n"
+        self.minimize_dialog_button = QPushButton(self.frame_top)
+        self.minimize_dialog_button.setObjectName(u"minimize_dialog_button")
+        self.minimize_dialog_button.setMinimumSize(QSize(55, 55))
+        self.minimize_dialog_button.setMaximumSize(QSize(55, 55))
+        self.minimize_dialog_button.setStyleSheet(u"QPushButton {\n"
 "	border: none;\n"
 "	background-color: rgb(51,51,51);\n"
 "}\n"
@@ -74,18 +74,18 @@ class Ui_Dialog(object):
 "}")
         icon = QIcon()
         icon.addFile(u"icons/1x/hideAsset 53.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.bn_min.setIcon(icon)
-        self.bn_min.setIconSize(QSize(22, 12))
-        self.bn_min.setAutoDefault(False)
-        self.bn_min.setFlat(True)
+        self.minimize_dialog_button.setIcon(icon)
+        self.minimize_dialog_button.setIconSize(QSize(22, 12))
+        self.minimize_dialog_button.setAutoDefault(False)
+        self.minimize_dialog_button.setFlat(True)
 
-        self.horizontalLayout.addWidget(self.bn_min)
+        self.horizontalLayout.addWidget(self.minimize_dialog_button)
 
-        self.bn_close = QPushButton(self.frame_top)
-        self.bn_close.setObjectName(u"bn_close")
-        self.bn_close.setMinimumSize(QSize(55, 55))
-        self.bn_close.setMaximumSize(QSize(55, 55))
-        self.bn_close.setStyleSheet(u"QPushButton {\n"
+        self.close_dialog_button = QPushButton(self.frame_top)
+        self.close_dialog_button.setObjectName(u"close_dialog_button")
+        self.close_dialog_button.setMinimumSize(QSize(55, 55))
+        self.close_dialog_button.setMaximumSize(QSize(55, 55))
+        self.close_dialog_button.setStyleSheet(u"QPushButton {\n"
 "	border: none;\n"
 "	background-color: rgb(51,51,51);\n"
 "}\n"
@@ -97,12 +97,12 @@ class Ui_Dialog(object):
 "}")
         icon1 = QIcon()
         icon1.addFile(u"icons/1x/closeAsset 43.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.bn_close.setIcon(icon1)
-        self.bn_close.setIconSize(QSize(22, 22))
-        self.bn_close.setAutoDefault(False)
-        self.bn_close.setFlat(True)
+        self.close_dialog_button.setIcon(icon1)
+        self.close_dialog_button.setIconSize(QSize(22, 22))
+        self.close_dialog_button.setAutoDefault(False)
+        self.close_dialog_button.setFlat(True)
 
-        self.horizontalLayout.addWidget(self.bn_close)
+        self.horizontalLayout.addWidget(self.close_dialog_button)
 
 
         self.verticalLayout_2.addWidget(self.frame_top)
@@ -117,15 +117,15 @@ class Ui_Dialog(object):
         self.gridLayout.setHorizontalSpacing(5)
         self.gridLayout.setVerticalSpacing(0)
         self.gridLayout.setContentsMargins(15, -1, 35, 0)
-        self.bn_east = QPushButton(self.frame_bottom)
-        self.bn_east.setObjectName(u"bn_east")
-        self.bn_east.setMinimumSize(QSize(69, 25))
-        self.bn_east.setMaximumSize(QSize(69, 25))
+        self.dialog_ok_button = QPushButton(self.frame_bottom)
+        self.dialog_ok_button.setObjectName(u"dialog_ok_button")
+        self.dialog_ok_button.setMinimumSize(QSize(85, 30))
+        self.dialog_ok_button.setMaximumSize(QSize(85, 30))
         font1 = QFont()
         font1.setFamily(u"Segoe UI")
         font1.setPointSize(12)
-        self.bn_east.setFont(font1)
-        self.bn_east.setStyleSheet(u"QPushButton {\n"
+        self.dialog_ok_button.setFont(font1)
+        self.dialog_ok_button.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(51,51,51);\n"
 "	border-radius: 5px;	\n"
 "	color:rgb(255,255,255);\n"
@@ -139,9 +139,9 @@ class Ui_Dialog(object):
 "	border: 2px solid rgb(0,143,150);\n"
 "	background-color: rgb(51,51,51);\n"
 "}")
-        self.bn_east.setAutoDefault(False)
+        self.dialog_ok_button.setAutoDefault(False)
 
-        self.gridLayout.addWidget(self.bn_east, 1, 3, 1, 1)
+        self.gridLayout.addWidget(self.dialog_ok_button, 1, 3, 1, 1)
 
         self.lab_icon = QLabel(self.frame_bottom)
         self.lab_icon.setObjectName(u"lab_icon")
@@ -150,12 +150,12 @@ class Ui_Dialog(object):
 
         self.gridLayout.addWidget(self.lab_icon, 0, 0, 1, 1)
 
-        self.bn_west = QPushButton(self.frame_bottom)
-        self.bn_west.setObjectName(u"bn_west")
-        self.bn_west.setMinimumSize(QSize(69, 25))
-        self.bn_west.setMaximumSize(QSize(69, 25))
-        self.bn_west.setFont(font1)
-        self.bn_west.setStyleSheet(u"QPushButton {\n"
+        self.dialog_cancel_button = QPushButton(self.frame_bottom)
+        self.dialog_cancel_button.setObjectName(u"dialog_cancel_button")
+        self.dialog_cancel_button.setMinimumSize(QSize(85, 30))
+        self.dialog_cancel_button.setMaximumSize(QSize(85, 30))
+        self.dialog_cancel_button.setFont(font1)
+        self.dialog_cancel_button.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(51,51,51);\n"
 "	border-radius: 5px;	\n"
 "	color:rgb(255,255,255);\n"
@@ -169,9 +169,9 @@ class Ui_Dialog(object):
 "	border: 2px solid rgb(0,143,150);\n"
 "	background-color: rgb(51,51,51);\n"
 "}")
-        self.bn_west.setAutoDefault(False)
+        self.dialog_cancel_button.setAutoDefault(False)
 
-        self.gridLayout.addWidget(self.bn_west, 1, 2, 1, 1)
+        self.gridLayout.addWidget(self.dialog_cancel_button, 1, 2, 1, 1)
 
         self.lab_message = QLabel(self.frame_bottom)
         self.lab_message.setObjectName(u"lab_message")
@@ -196,11 +196,11 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
         self.lab_heading.setText("")
-        self.bn_min.setText("")
-        self.bn_close.setText("")
-        self.bn_east.setText("")
+        self.minimize_dialog_button.setText("")
+        self.close_dialog_button.setText("")
+        self.dialog_ok_button.setText("")
         self.lab_icon.setText("")
-        self.bn_west.setText("")
+        self.dialog_cancel_button.setText("")
         self.lab_message.setText("")
     # retranslateUi
 

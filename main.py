@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
-#encoding: utf-8
+# encoding: utf-8
 
 import sys
 
-
-from PySide2.QtCore import (Qt, QThreadPool)
+from PySide2.QtCore import Qt, QThreadPool
 from PySide2.QtWidgets import *
-from interface.dialog.dialog import dialogUi
-from interface.error.error import errorUi
+
+from core.validations.validations import *
+from interface.dialog.dialog import DialogUi
+from interface.error.error import ErrorUi
 from workes.worker import Worker
 
 from ui_main import Ui_MainWindow
@@ -18,173 +19,163 @@ from core.scrapping.bot_process import *
 from core.contacts.contacts import *
 from core.whatsapp.whatsapp_scrapping import *
 from core.files_management.files import *
+from core.user.user import *
 
-# CONTAIN STRING VARIABLE CONTAINING THE ABOUT OF EACH PAGE IN THE APPLICATION
 from help import *
 
 
-# OUR APPLICATION MAIN WINDOW :
-# -----> MAIN APPLICATION CLASS
 class MainWindow(QMainWindow):
     def __init__(self):
 
         super(MainWindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        
 
         self.contacts = Contacts()
 
         self.files = Files()
-        self.files.set_default_image_and_file()
-        
-        self.configuration = Configuration()
 
         self.bot = BotProcess()
 
         self.whatsapp_scrapping = WhatsAppScrapping()
 
-        application_name = "Automações"
-        self.setWindowTitle(application_name)
-        # EVENTHOW IT IS AVSENT THIS IS NECESSERY AS THE OPERATING SYSTEM RECOGNISES THE SOFTWARE SUING THIS NAME
-        # SO YOU WILL SEE THE NAME ENTERED HERE IN THE TASKBAR, TITLEBAR, E.T.C
-        # PASSING THE CODE TO SET THE TITLE TO THE CUSTOME TOPBAR IN OUR UI
-        UIFunction.labelTitle(self, application_name)
-        # THIS UOFunction CLASS IS IN THE FILE: ui_function.py.
-        ###############################
+        self.dialog = DialogUi()
 
-        # -----> INITIAL STACKED WIDGET PAGE WIDGET AND TAB
-        # THIS MAKE THE INITIAL WINDOW OF OUR APPLICATION, I.E. THE FIRST PAGE OR THE WELCOME PAGE/SCREEN            ---------(C5)
-        # IN OUR APPLICATION THIS IS THE MENU BAR, TOODLE SWITCH, MIN, MAX, CLOSE BUTTONS, AND THE HOME PAGE.
-        # ALL THIS GET INITIALISED HERE.
-        # SINCE ALL THE FUNCTION RELATED STUFF IS DONE IN THE ui_function.py FILE, IT GOES THERE
-        # REMEMBER THIS FUNCTION CAN ALSO BE DONE HERE, BUT DUE TO CONVINENCE IT IS SHIFTD TO A NEW FILE.
-        UIFunction.initStackTab(self)
-        ############################################################
+        self.error = ErrorUi()
 
-        # ----> CERTAIN TOOLS LIKE DRAG, MAXIMISE, MINIMISE, CLOSE AND HIDING OF THE WINDOWS TOPBAR
-        # THIS WINDOW INITIALISES THE BUTTONS NECESSERY FOR THE MAINWINDOW LIKE: CLOSE, MIN, MAX E.T.C.                ---------(C6)
-        UIFunction.constantFunction(self)
-        #############################################################
-
-        # ----> TOODLE THE MENU HERE
-        # THIS CODE DETETS THE BUTTON IN THE RIGHT TOP IS PRESSED OR NOT AND IF PRESSED IT CONNECT  TO A FUNCTION IN THE ui_function.py                 ---------(C7)
-        # FILE, WHICH EXPANDS THE MENU BAR TO DOUBLE ITS WIDTH MAKING ROOM FOR THE ABOUT PAGES.
-        # THIS EFFECT CALLED AS TOODLE, CAN BE MADE USE IN MANY WAYS. CHECK THE FUNCTION: toodleMenu: IN THE ui_function.py
-        # FILE FOR THE CLEAR WORKING
-        self.ui.toodle.clicked.connect(
-            lambda: UIFunction.toodleMenu(self, 160, True))
-        #############################################################
-
-        # ----> MENU BUTTON PRESSED EVENTS
-        # NOW SINCE OUR DEMO APPLICATION HAS ONLY 4 MENU BUTTONS: Home, Bug, Android, Cloud, WHEN USER PRESSES IT THE FOLLOWING CODE             ---------(C8)
-        # REDIRECTS IT TO THE ui_function.py FILE buttonPressed() FUNCTION TO MAKE THE NECESSERY RESPONSES TO THE BUTTON PRESSED.
-        # IT TAKES SELF AND THE BUTTON NAME AS THE RGUMENT, THIS IS ONLY TO RECOGNISE WHICH BUTTON IS PRESSED BY THE buttonPressed() FUNCTION.
-        self.ui.bn_whatsapp.clicked.connect(
-            lambda: UIFunction.buttonPressed(self, 'bn_whatsapp'))
-        self.ui.bn_bug.clicked.connect(
-            lambda: UIFunction.buttonPressed(self, 'bn_bug'))
-        self.ui.bn_android.clicked.connect(
-            lambda: UIFunction.buttonPressed(self, 'bn_android'))
-        self.ui.bn_cloud.clicked.connect(
-            lambda: UIFunction.buttonPressed(self, 'bn_cloud'))
-        #############################################################
-
-        # -----> STACK PAGE FUNCTION
-        # OUR APPLICATION CHANGES THE PAGES BY USING THE STACKED WIDGET, THIS CODE POINTS TO A FUNCTION IN ui_function.py FILE             ---------(C9)
-        # WHICH GOES AND SETS THE DEFAULT IN THESE PAGES AND SEARCHES FOR THE RESPONSES MADE BY THE USER IN THE CORRSPONDING PAGES.
-        UIFunction.stackPage(self)
-        #############################################################
-
-        # ----> EXECUTING THE ERROR AND DIALOG BOX MENU : THIS HELP TO CALL THEM WITH THE FUNCTIONS.
-        # THIS CODE INITIALISED THE DIALOGBOX AND THE ERRORBOX, MAKES AN OBJECT OF THE CORRESPONDING CLASS, SO THAT WE CAN CALL THEM         ---------(C10)
-        # WHENEVER NECESSERY.
-        self.diag = dialogUi()
-        self.error = errorUi()
-        #############################################################
-
-        self.threadpool = QThreadPool()
-        print("Multithreading with maximum %d threads" %
-              self.threadpool.maxThreadCount())
-
-        # --PAGE WhatsApp---------------------------------:
-
-        # --Set Default image path ----------------------:
-        #self.contacts.selected_image = ''
-
-        # --Load Contacts----------------------:
-        self.ui.load_contacts_button.clicked.connect(
-            lambda: Contacts.get_contacts_from_excel_file(self))
-
-        # -- Check Load All Contacts Button
-        self.ui.send_to_all_contacts_checkbox.toggled.connect(
-            lambda: Contacts.toggle_all_contacts(self))
-
-        # -- Clear All Contacts in the list Button
-        self.ui.clear_contacts_list_button.clicked.connect(
-            lambda: Contacts.clear_contacts_list(self))
-
-        # -- Send messages
-        self.ui.send_whatsapp_messages_button.clicked.connect(
-            lambda: self.send_whatsapp_messages())
-
-        # -- Load Image
-        self.ui.load_image_button.clicked.connect(
-            lambda: Files.load_image(self))
+        self.thread_pool = QThreadPool()  # self.thread_pool.maxThreadCount()
 
         self.dragPos = self.pos()
 
-        def moveWindow(event):
-            # IF MAXIMIZED CHANGE TO NORMAL
-            if UIFunction.returStatus() == 1:
+        application_name = "Automações"
+        self.setWindowTitle(application_name)
+
+        UIFunction.label_title(self, application_name)
+
+        UIFunction.init_stack_tab(self)
+
+        UIFunction.constant_function(self)
+
+        UIFunction.stack_page(self)
+        
+        User.load_user_details(self)
+
+        self.ui.toodle.clicked.connect(
+            lambda: UIFunction.toodle_menu(self, 160, True))
+
+        self.ui.menu_whatsapp_button.clicked.connect(
+            lambda: UIFunction.change_user_page(self, "menu_whatsapp_button")
+        )
+
+        self.ui.menu_email_button.clicked.connect(
+            lambda: UIFunction.change_user_page(self, "menu_email_button")
+        )
+
+        self.ui.menu_user_button.clicked.connect(
+            lambda: UIFunction.change_user_page(self, "menu_user_button")
+        )
+        self.ui.menu_connection_button.clicked.connect(
+            lambda: UIFunction.change_user_page(self, "menu_connection_button")
+        )
+
+        self.ui.load_contacts_button.clicked.connect(
+            lambda: Contacts.get_contacts_from_excel_file(self)
+        )
+
+        self.ui.send_to_all_contacts_checkbox.toggled.connect(
+            lambda: Contacts.toggle_all_contacts(self)
+        )
+
+        self.ui.clear_contacts_list_button.clicked.connect(
+            lambda: Contacts.clear_contacts_list(self)
+        )
+
+        self.ui.validate_whatsapp_sending_button.clicked.connect(
+            lambda: Validations.validate_whatsapp_needed_data(self)
+        )
+
+        self.ui.reset_validations_whatsapp_sending_button.clicked.connect(
+            lambda: Validations.reset_validate_whatsapp_needed_data(self)
+        )
+
+        self.ui.send_whatsapp_messages_button.clicked.connect(
+            lambda: self.send_whatsapp_messages()
+        )
+
+        self.ui.load_image_button.clicked.connect(
+            lambda: Files.load_image(self)
+        )
+
+        def move_window(event) -> None:
+            if UIFunction.return_status() == 1:
                 UIFunction.maximize_restore(self)
 
-            # MOVE WINDOW
             if event.buttons() == Qt.LeftButton:
                 self.move(self.pos() + event.globalPos() - self.dragPos)
                 self.dragPos = event.globalPos()
                 event.accept()
 
-        # WIDGET TO MOVE: WE CHOOSE THE TOPMOST FRAME WHERE THE APPLICATION NAME IS PRESENT AS THE AREA TO MOVE THE WINDOW.
-        # CALLING THE FUNCTION TO CJANGE THE POSITION OF THE WINDOW DURING MOUSE DRAG
-        self.ui.frame_appname.mouseMoveEvent = moveWindow
-       
+        """ 
+        Widget to move: we choose the topmost frame where
+        the application name is present as the area to move
+        the window. calling the function to change the
+        position of the window during mouse drag
+        """
+        self.ui.frame_appname.mouseMoveEvent = move_window
 
-    def send_whatsapp_messages_pointer(self):
+    def send_whatsapp_messages_pointer(self) -> None:
         Contacts.send_whatsapp_messages(self)
-        
+
         return
 
-    def send_whatsapp_messages(self):
-
+    def send_whatsapp_messages(self) -> None:
         worker = Worker(self.send_whatsapp_messages_pointer)
 
-        self.threadpool.start(worker)
+        self.thread_pool.start(worker)
 
-    # ----> FUNCTION TO CAPTURE THE INITIAL POSITION OF THE MOUSE: NECESSERY FOR THE moveWindow FUNCTION
-    def mousePressEvent(self, event):
+    """
+    function to capture the initial position of the mouse: necessary
+    for the move window function
+    """
+
+    def mousePressEvent(self, event) -> None:
         self.dragPos = event.globalPos()
-    #############################################################
 
-    # -----> FUNCTION WHICH OPENS THE DIALOG AND DISPLAYS IT: SO TO CALL DIALOG BOX JUST CALL THE FUNCTION dialogexec() WITH ALL THE PARAMETER
-    # NOW WHENEVER YOU WANT A DIALOG BOX TO APPEAR IN THE APP LIKE IN PRESS OF CLODE BUTTON, THIS CAN BE DONE BY CALLING THIS FUNCTION.        ----------(C11)
-    # IT TAKES DIALOG OBJECT(INITIALISED EARLIER), HEADER NAME OF DIALOG BOX, MESSAGE TO BE DISPLAYED, ICON, BUTTON NAMES.
-    # THIS CODE EXECUTES THE DIALOGBOX AND SO WE CAN SEE THE DIALOG BOX IN THE SCREEN.
-    # DURING THE APPEARENCE OF THIS WINDOW, YOU CANNOT USE THE MAINWINDOW, YOU SHPULD EITHER PRESS ANY ONE OFT HE PROVIDED BUTTONS
-    # OR JUST CLODE THE DIALOG BOX.
-    def dialogexec(self, heading, message, icon, btn1, btn2):
-        dialogUi.dialogConstrict(self.diag, heading, message, icon, btn1, btn2)
-        self.diag.exec_()
-    #############################################################
+    """ Function which opens the dialog and displays it: so to call 
+    dialog box just call the function show_dialog() with all the
+    parameter now whenever you want a dialog box to appear in the
+    app like in press of clode button, this can be done by calling this function. 
+    it takes dialog object(initialised earlier), header name of dialog box,
+    message to be displayed, icon, button names. This code executes
+    the dialogbox and so we can see the dialog box in the screen.
+    during the appearence of this window, you cannot use the mainwindow,
+    you shpuld either press any one oft he provided buttons  or just
+    clode the dialog box.
+    """
 
-    # -----> FUNCTION WHICH OPENS THE ERROR BOX AND DISPLAYS IT: SO TO CALL DIALOG BOX JUST CALL THE FUNCTION errorexec() WITH ALL THE PARAMETER
-    # SAME AS COMMEND (C11), EXCEPT THIS IS FOR THE ERROR BOX.
+    def show_dialog(
+        self,
+        heading: str,
+        message: str,
+        icon: str,
+        button_cancel_text: str,
+        button_ok_text: str,
+    ) -> None:
+        DialogUi.dialog_construct(
+            self.dialog, heading, message, icon, button_cancel_text, button_ok_text
+        )
+        self.dialog.exec_()
 
-    def errorexec(self, heading, icon, btnOk):
-        errorUi.errorConstrict(self.error, heading, icon, btnOk)
+    """
+    Function which opens the error box and displays it: so to 
+    call dialog box just call the function show_error() with
+    all the parameter same as commend (c11),
+    except this is for the error box. 
+    """
+
+    def show_error(self, heading: str, icon: str, button_ok_text: str) -> None:
+        ErrorUi.error_construct(self.error, heading, icon, button_ok_text)
         self.error.exec_()
-
-        ##############################################################
 
 
 if __name__ == "__main__":

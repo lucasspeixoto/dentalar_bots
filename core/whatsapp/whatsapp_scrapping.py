@@ -1,65 +1,44 @@
 # -*- coding: utf-8 -*-
-#encoding: utf-8
-
-import sys
-
-from selenium.webdriver.common.by import By
-
-from selenium.webdriver.support import expected_conditions as EC
-
-from selenium.webdriver.support.ui import WebDriverWait
+# encoding: utf-8
 
 from core.scrapping.get_page import get_page
 
 from core.scrapping.bot_process import BotProcess
 
 from core.scrapping.configuration import Configuration
+from core.whatsapp.check_contact import check_contact
+from core.whatsapp.insert_message_image import insert_message_image
 
 from core.whatsapp.select_contact_number import select_contact_number
 
 from core.contacts.contacts import *
 
-from main import *
+from core.whatsapp.whatsapp_login import whatsapp_login
 
-from interface.error.error import errorUi
+from core.files_management.files import Files
 
-class WhatsAppScrapping(BotProcess, Configuration):
+from interface.error.error import ErrorUi
 
-    
+
+class WhatsAppScrapping(BotProcess, Configuration, Files):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        
-        self.error = errorUi()
-         
-    def get_page(self, page_url: str): get_page(self, page_url)
+        self.args = args
+        self.kwargs = kwargs
+
+        self.error = ErrorUi()
+
+    def get_page(self, page_url: str):
+        get_page(self, page_url)
 
     def whatsapp_login(self):
-        
-        sys.settrace
-                
-        search_xpath = '''//*[@id="side"]/div[1]/div/div/div[2]/div/div[2]'''
+        whatsapp_login(self)
 
-        try:
-            elem = WebDriverWait(self.driver, 200).until(
-                EC.presence_of_element_located((By.XPATH, search_xpath))
-            )
-            print('Online!')
-        finally:
-            try:
-                elem.click()
-                self.uniform_wait(2, 3)
-            except Exception:
-                self.driver.quit()
-                self.errorexec(f"Tempo expirado, logar novamente!",
-                            "icons/1x/errorAsset 55.png", "Ok")
+    def select_contact_number(self, contact: str):
+        select_contact_number(self, contact)
 
-        return
+    def check_contact(self):
+        return check_contact(self)
 
-    def select_contact_number(
-        self, contact: str): select_contact_number(self, contact)
-    
-    def errorexec(self, heading, icon, btnOk):
-        errorUi.errorConstrict(self.error, heading, icon, btnOk)
-        self.error.exec_()
-    
-    
+    def insert_message_image(self, image_path: str, message: str):
+        insert_message_image(self, image_path, message)
