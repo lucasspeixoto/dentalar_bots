@@ -125,12 +125,12 @@ class BotProcess:
         try:
             self.driver.find_element(
                 by=self.find_options[etype], value=element)
-            contacts_exists = False
-        except Exception:
             contacts_exists = True
+        except Exception:
+            contacts_exists = False
 
         self.uniform_wait(2 * first_timer, 2 * last_timer)
-
+        
         return contacts_exists
 
     """

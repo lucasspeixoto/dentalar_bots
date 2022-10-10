@@ -42,7 +42,7 @@ class UIFunction:
         global init
         if init == False:
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_whatsapp)
-            self.ui.lab_tab.setText("WhatsApp")
+            self.ui.footer_page_title.setText("WhatsApp")
             self.ui.frame_whatsapp.setStyleSheet("background:rgb(91,90,90)")
             init = True
 
@@ -136,13 +136,13 @@ class UIFunction:
                 extend = max_width
                 # * Make the stacked widget page to ajuda > whatsapp page
                 self.ui.stackedWidget.setCurrentWidget(self.ui.page_whatsapp_help)
-                self.ui.lab_tab.setText("Ajuda > WhatsApp")
+                self.ui.footer_page_title.setText("Ajuda > WhatsApp")
                 self.ui.frame_whatsapp.setStyleSheet("background:rgb(91,90,90)")
             else:
                 extend = min_width
                 # * revert the Ajuda > WhatsApp page to normal WhatsApp page
                 self.ui.stackedWidget.setCurrentWidget(self.ui.page_whatsapp)
-                self.ui.lab_tab.setText("WhatsApp")
+                self.ui.footer_page_title.setText("WhatsApp")
                 self.ui.frame_whatsapp.setStyleSheet("background:rgb(91,90,90)")
             # * This animation is responsible for the toodle to move in a some fixed state.
             self.animation = QPropertyAnimation(
@@ -204,46 +204,46 @@ class UIFunction:
         if button_name == "menu_whatsapp_button":
             if self.ui.frame_bottom_west.width() == 80 and index != 0:
                 self.ui.stackedWidget.setCurrentWidget(self.ui.page_whatsapp)
-                self.ui.lab_tab.setText("WhatsApp")
+                self.ui.footer_page_title.setText("WhatsApp")
                 self.ui.frame_whatsapp.setStyleSheet("background:rgb(91,90,90)")
 
             elif self.ui.frame_bottom_west.width() == 160 and index != 1:
                 self.ui.stackedWidget.setCurrentWidget(self.ui.page_whatsapp_help)
-                self.ui.lab_tab.setText("Ajuda WhatsApp")
+                self.ui.footer_page_title.setText("Ajuda WhatsApp")
                 self.ui.frame_whatsapp.setStyleSheet("background:rgb(91,90,90)")
 
         elif button_name == "menu_email_button":
             if self.ui.frame_bottom_west.width() == 80 and index != 5:
                 self.ui.stackedWidget.setCurrentWidget(self.ui.page_bug)
-                self.ui.lab_tab.setText("E-mails")
+                self.ui.footer_page_title.setText("E-mails")
                 self.ui.frame_bug.setStyleSheet("background:rgb(91,90,90)")
 
             elif self.ui.frame_bottom_west.width() == 160 and index != 4:
                 self.ui.stackedWidget.setCurrentWidget(self.ui.page_about_bug)
-                self.ui.lab_tab.setText("Ajuda > E-mails")
+                self.ui.footer_page_title.setText("Ajuda > E-mails")
                 self.ui.frame_bug.setStyleSheet("background:rgb(91,90,90)")
 
         elif button_name == "menu_user_button":
             if self.ui.frame_bottom_west.width() == 80 and index != 7:
                 self.ui.stackedWidget.setCurrentWidget(self.ui.page_android)
-                self.ui.lab_tab.setText("Usuário")
+                self.ui.footer_page_title.setText("Usuário")
                 self.ui.frame_android.setStyleSheet("background:rgb(91,90,90)")
                 UIFunction.user_stack_pages(self, "page_contact")
 
             elif self.ui.frame_bottom_west.width() == 160 and index != 3:
                 self.ui.stackedWidget.setCurrentWidget(self.ui.page_about_android)
-                self.ui.lab_tab.setText("Ajuda > Usuário")
+                self.ui.footer_page_title.setText("Ajuda > Usuário")
                 self.ui.frame_android.setStyleSheet("background:rgb(91,90,90)")
 
         elif button_name == "menu_connection_button":
             if self.ui.frame_bottom_west.width() == 80 and index != 6:
                 self.ui.stackedWidget.setCurrentWidget(self.ui.page_cloud)
-                self.ui.lab_tab.setText("Conexão E-mail")
+                self.ui.footer_page_title.setText("Conexão E-mail")
                 self.ui.frame_cloud.setStyleSheet("background:rgb(91,90,90)")
 
             elif self.ui.frame_bottom_west.width() == 160 and index != 2:
                 self.ui.stackedWidget.setCurrentWidget(self.ui.page_about_cloud)
-                self.ui.lab_tab.setText("Ajuda > Conexão E-mail")
+                self.ui.footer_page_title.setText("Ajuda > Conexão E-mail")
                 self.ui.frame_cloud.setStyleSheet("background:rgb(91,90,90)")
 
     """
@@ -310,22 +310,22 @@ class UIFunction:
 
         if page == "page_contact":
             self.ui.stackedWidget_android.setCurrentWidget(self.ui.page_android_contact)
-            self.ui.lab_tab.setText("Usuário > Informações")
+            self.ui.footer_page_title.setText("Usuário > Informações")
             self.ui.frame_android_contact.setStyleSheet("background:rgb(91,90,90)")
 
         elif page == "page_notations":
             self.ui.stackedWidget_android.setCurrentWidget(self.ui.page_android_game)
-            self.ui.lab_tab.setText("Usuário > Anotações")
+            self.ui.footer_page_title.setText("Usuário > Anotações")
             self.ui.frame_android_game.setStyleSheet("background:rgb(91,90,90)")
 
         elif page == "page_clean":
             self.ui.stackedWidget_android.setCurrentWidget(self.ui.page_android_clean)
-            self.ui.lab_tab.setText("Usuário > Clean")
+            self.ui.footer_page_title.setText("Usuário > Clean")
             self.ui.frame_android_clean.setStyleSheet("background:rgb(91,90,90)")
 
         elif page == "page_world":
             self.ui.stackedWidget_android.setCurrentWidget(self.ui.page_android_world)
-            self.ui.lab_tab.setText("Usuário > World")
+            self.ui.footer_page_title.setText("Usuário > World")
             self.ui.frame_android_world.setStyleSheet("background:rgb(91,90,90)")
 
 

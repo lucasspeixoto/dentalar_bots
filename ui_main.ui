@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>916</width>
+    <width>900</width>
     <height>600</height>
    </rect>
   </property>
@@ -317,7 +317,7 @@ QPushButton:pressed {
            <widget class="QFrame" name="frame_person">
             <property name="minimumSize">
              <size>
-              <width>55</width>
+              <width>60</width>
               <height>55</height>
              </size>
             </property>
@@ -376,10 +376,10 @@ QPushButton:pressed {
                 <set>Qt::AlignCenter</set>
                </property>
                <property name="margin">
-                <number>1</number>
+                <number>2</number>
                </property>
                <property name="indent">
-                <number>2</number>
+                <number>5</number>
                </property>
               </widget>
              </item>
@@ -3787,7 +3787,7 @@ QScrollBar::sub-page:vertical {
               <number>0</number>
              </property>
              <item>
-              <widget class="QFrame" name="frame_tab">
+              <widget class="QFrame" name="frame_footer">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -3825,7 +3825,15 @@ QScrollBar::sub-page:vertical {
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="lab_tab">
+                 <widget class="QLabel" name="footer_page_title">
+                  <property name="font">
+                   <font>
+                    <family>Segoe UI</family>
+                   </font>
+                  </property>
+                  <property name="layoutDirection">
+                   <enum>Qt::LeftToRight</enum>
+                  </property>
                   <property name="styleSheet">
                    <string notr="true">QLabel {
 	color:rgb(255,255,255);
@@ -3834,11 +3842,37 @@ QScrollBar::sub-page:vertical {
                   <property name="text">
                    <string/>
                   </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="footer_version_title">
+                  <property name="font">
+                   <font>
+                    <family>Segoe UI</family>
+                    <pointsize>12</pointsize>
+                    <weight>75</weight>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="layoutDirection">
+                   <enum>Qt::RightToLeft</enum>
+                  </property>
+                  <property name="autoFillBackground">
+                   <bool>false</bool>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLabel {
+	color:rgb(255,255,255);
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>v1.0.0</string>
+                  </property>
                   <property name="textFormat">
-                   <enum>Qt::RichText</enum>
+                   <enum>Qt::PlainText</enum>
                   </property>
                   <property name="alignment">
-                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                   <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
                   </property>
                   <property name="wordWrap">
                    <bool>true</bool>
@@ -3847,7 +3881,7 @@ QScrollBar::sub-page:vertical {
                    <number>0</number>
                   </property>
                   <property name="indent">
-                   <number>-1</number>
+                   <number>0</number>
                   </property>
                  </widget>
                 </item>
