@@ -19,6 +19,7 @@ from core.scrapping.bot_process import *
 from core.contacts.contacts import *
 from core.whatsapp.whatsapp_scrapping import *
 from core.files_management.files import *
+from core.user.user import *
 
 from help import *
 
@@ -34,11 +35,17 @@ class MainWindow(QMainWindow):
 
         self.files = Files()
 
-        self.configuration = Configuration()
-
         self.bot = BotProcess()
 
         self.whatsapp_scrapping = WhatsAppScrapping()
+
+        self.dialog = DialogUi()
+
+        self.error = ErrorUi()
+
+        self.thread_pool = QThreadPool()  # self.thread_pool.maxThreadCount()
+
+        self.dragPos = self.pos()
 
         application_name = "Automações"
         self.setWindowTitle(application_name)
@@ -49,11 +56,17 @@ class MainWindow(QMainWindow):
 
         UIFunction.constant_function(self)
 
-        self.ui.toodle.clicked.connect(lambda: UIFunction.toodle_menu(self, 160, True))
+        UIFunction.stack_page(self)
+        
+        User.load_user_details(self)
+
+        self.ui.toodle.clicked.connect(
+            lambda: UIFunction.toodle_menu(self, 160, True))
 
         self.ui.menu_whatsapp_button.clicked.connect(
             lambda: UIFunction.change_user_page(self, "menu_whatsapp_button")
         )
+
         self.ui.menu_email_button.clicked.connect(
             lambda: UIFunction.change_user_page(self, "menu_email_button")
         )
@@ -63,17 +76,6 @@ class MainWindow(QMainWindow):
         )
         self.ui.menu_connection_button.clicked.connect(
             lambda: UIFunction.change_user_page(self, "menu_connection_button")
-        )
-
-        UIFunction.stack_page(self)
-
-        self.dialog = DialogUi()
-
-        self.error = ErrorUi()
-
-        self.thread_pool = QThreadPool()
-        print(
-            "Multithreading with maximum %d threads" % self.thread_pool.maxThreadCount()
         )
 
         self.ui.load_contacts_button.clicked.connect(
@@ -100,11 +102,11 @@ class MainWindow(QMainWindow):
             lambda: self.send_whatsapp_messages()
         )
 
-        self.ui.load_image_button.clicked.connect(lambda: Files.load_image(self))
+        self.ui.load_image_button.clicked.connect(
+            lambda: Files.load_image(self)
+        )
 
-        self.dragPos = self.pos()
-
-        def move_window(event):
+        def move_window(event) -> None:
             if UIFunction.return_status() == 1:
                 UIFunction.maximize_restore(self)
 
@@ -121,32 +123,34 @@ class MainWindow(QMainWindow):
         """
         self.ui.frame_appname.mouseMoveEvent = move_window
 
-    def send_whatsapp_messages_pointer(self):
+    def send_whatsapp_messages_pointer(self) -> None:
         Contacts.send_whatsapp_messages(self)
 
         return
 
-    def send_whatsapp_messages(self):
+    def send_whatsapp_messages(self) -> None:
         worker = Worker(self.send_whatsapp_messages_pointer)
 
         self.thread_pool.start(worker)
 
-        return
-
     """
-    function to capture the initial position of the mouse: necessary for the move window function
+    function to capture the initial position of the mouse: necessary
+    for the move window function
     """
 
-    def mousePressEvent(self, event):
+    def mousePressEvent(self, event) -> None:
         self.dragPos = event.globalPos()
 
-    """ Function which opens the dialog and displays it: so to call dialog box just call
-    the function show_dialog() with all the parameter now whenever you want a dialog box
-    to appear in the app like in press of clode button, this can be done by calling this function. 
-    it takes dialog object(initialised earlier), header name of dialog box, message to be displayed,
-    icon, button names. This code executes the dialogbox and so we can see the dialog box in the screen.
-    during the appearence of this window, you cannot use the mainwindow, you shpuld either press
-    any one oft he provided buttons  or just clode the dialog box.
+    """ Function which opens the dialog and displays it: so to call 
+    dialog box just call the function show_dialog() with all the
+    parameter now whenever you want a dialog box to appear in the
+    app like in press of clode button, this can be done by calling this function. 
+    it takes dialog object(initialised earlier), header name of dialog box,
+    message to be displayed, icon, button names. This code executes
+    the dialogbox and so we can see the dialog box in the screen.
+    during the appearence of this window, you cannot use the mainwindow,
+    you shpuld either press any one oft he provided buttons  or just
+    clode the dialog box.
     """
 
     def show_dialog(
@@ -156,15 +160,16 @@ class MainWindow(QMainWindow):
         icon: str,
         button_cancel_text: str,
         button_ok_text: str,
-    ):
+    ) -> None:
         DialogUi.dialog_construct(
             self.dialog, heading, message, icon, button_cancel_text, button_ok_text
         )
         self.dialog.exec_()
 
     """
-    Function which opens the error box and displays it: so to call dialog box just call
-    the function show_error() with all the parameter same as commend (c11),
+    Function which opens the error box and displays it: so to 
+    call dialog box just call the function show_error() with
+    all the parameter same as commend (c11),
     except this is for the error box. 
     """
 

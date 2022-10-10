@@ -4,6 +4,7 @@
 from PySide2 import QtCore, QtGui
 from PySide2.QtCore import QPropertyAnimation
 from PySide2.QtWidgets import QFrame
+from core.user.user import User
 
 from main import *
 
@@ -73,14 +74,18 @@ class UIFunction:
             self.showMaximized()
             GLOBAL_STATE = 1
             self.ui.maximize_main_windown_button.setToolTip("Restaurar")
-            self.ui.maximize_main_windown_button.setIcon(QtGui.QIcon("icons/1x/restore.png"))
+            self.ui.maximize_main_windown_button.setIcon(
+                QtGui.QIcon("icons/1x/restore.png")
+            )
             self.ui.frame_drag.hide()
         else:
             GLOBAL_STATE = 0
             self.showNormal()
             self.resize(self.width() + 1, self.height() + 1)
             self.ui.maximize_main_windown_button.setToolTip("Maximizar")
-            self.ui.maximize_main_windown_button.setIcon(QtGui.QIcon("icons/1x/max.png"))
+            self.ui.maximize_main_windown_button.setIcon(
+                QtGui.QIcon("icons/1x/max.png")
+            )
             self.ui.frame_drag.show()
 
     """
@@ -112,7 +117,6 @@ class UIFunction:
     """
 
     def toodle_menu(self, max_width: int, clicked: bool):
-
         """
         this line clears the bg of previous tabs : i.e
         making then normal color than lighter color.
@@ -173,10 +177,14 @@ class UIFunction:
         buttons in our dialog box, which is carried out by the below code
         """
         # * Minimize button function
-        self.ui.minimize_main_windown_button.clicked.connect(lambda: self.showMinimized())
+        self.ui.minimize_main_windown_button.clicked.connect(
+            lambda: self.showMinimized()
+        )
 
         # * Maximize/restore button function
-        self.ui.maximize_main_windown_button.clicked.connect(lambda: UIFunction.maximize_restore(self))
+        self.ui.maximize_main_windown_button.clicked.connect(
+            lambda: UIFunction.maximize_restore(self)
+        )
 
         # * Close application function button
         self.ui.close_main_windown_button.clicked.connect(lambda: self.close())
@@ -267,22 +275,12 @@ class UIFunction:
             lambda: UIFunction.user_stack_pages(self, "page_world")
         )
 
+        self.ui.user_contact_edit_button.clicked.connect(lambda: User.edit_user(self))
+
+        self.ui.user_contact_save_button.clicked.connect(lambda: User.save_user(self))
+
         self.ui.user_contact_delete_button.clicked.connect(
-            lambda: self.show_dialog(
-                "Atenção!",
-                "Este usuário será excluído, Deseja continuar ?.",
-                "icons/1x/errorAsset 55.png",
-                "Cancelar",
-                "Sim",
-            )
-        )
-
-        self.ui.user_contact_edit_button.clicked.connect(
-            lambda: APFunction.editable(self)
-        )
-
-        self.ui.user_contact_save_button.clicked.connect(
-            lambda: APFunction.save_contact(self)
+            lambda: User.delete_user(self)
         )
 
         self.ui.user_notations_input.setVerticalScrollBar(self.ui.vsb_gamepad)
@@ -349,23 +347,3 @@ class APFunction:
 
         self.ui.emails_password_input.setText("")
         self.ui.emails_email_input.setText("")
-
-    def editable(self):
-        self.ui.user_contact_name_input.setEnabled(True)
-        self.ui.user_contact_tel_input.setEnabled(True)
-        self.ui.user_contact_org_input.setEnabled(True)
-        self.ui.user_contact_email_input.setEnabled(True)
-
-        self.ui.user_contact_save_button.setEnabled(True)
-        self.ui.user_contact_edit_button.setEnabled(False)
-        self.ui.user_contact_delete_button.setEnabled(False)
-
-    def save_contact(self):
-        self.ui.user_contact_name_input.setEnabled(False)
-        self.ui.user_contact_tel_input.setEnabled(False)
-        self.ui.user_contact_org_input.setEnabled(False)
-        self.ui.user_contact_email_input.setEnabled(False)
-
-        self.ui.user_contact_save_button.setEnabled(False)
-        self.ui.user_contact_edit_button.setEnabled(True)
-        self.ui.user_contact_delete_button.setEnabled(True)

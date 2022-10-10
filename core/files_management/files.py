@@ -16,6 +16,8 @@ class Files:
 
         self.whatsapp_paths = {}
 
+        self.user_detail = {}
+
         self.selected_image = ""
         self.selected_file = ""
 
@@ -58,11 +60,5 @@ class Files:
             )
             self.files.selected_image = ""
             self.ui.selected_whatsapp_image_path_text.setText(self.files.selected_image)
-
-        return
-
-    def show_error(self, heading, icon, btnOk):
-        ErrorUi.error_construct(self.error, heading, icon, btnOk)
-        self.error.exec_()
 
         return

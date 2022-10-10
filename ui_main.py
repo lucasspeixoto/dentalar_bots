@@ -121,13 +121,13 @@ class Ui_MainWindow(object):
         self.horizontalLayout_9.setSpacing(0)
         self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
         self.horizontalLayout_9.setContentsMargins(0, 0, 0, 0)
-        self.lab_user = QLabel(self.frame_user)
-        self.lab_user.setObjectName(u"lab_user")
-        self.lab_user.setFont(font1)
-        self.lab_user.setStyleSheet(u"color:rgb(255,255,255);")
-        self.lab_user.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.user_name_label = QLabel(self.frame_user)
+        self.user_name_label.setObjectName(u"user_name_label")
+        self.user_name_label.setFont(font1)
+        self.user_name_label.setStyleSheet(u"color:rgb(255,255,255);")
+        self.user_name_label.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
-        self.horizontalLayout_9.addWidget(self.lab_user)
+        self.horizontalLayout_9.addWidget(self.user_name_label)
 
 
         self.horizontalLayout_4.addWidget(self.frame_user)
@@ -1735,7 +1735,7 @@ class Ui_MainWindow(object):
 
         self.stackedWidget.setCurrentIndex(7)
         self.load_contacts_button.setDefault(False)
-        self.stackedWidget_android.setCurrentIndex(3)
+        self.stackedWidget_android.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1745,7 +1745,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.toodle.setText("")
         self.app_name.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Automa\u00e7\u00f5es</p></body></html>", None))
-        self.lab_user.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#ffffff;\">User</span></p></body></html>", None))
+        self.user_name_label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#ffffff;\">User</span></p></body></html>", None))
         self.lab_person.setText("")
 #if QT_CONFIG(tooltip)
         self.minimize_main_windown_button.setToolTip(QCoreApplication.translate("MainWindow", u"Minimizar", None))

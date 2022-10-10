@@ -43,8 +43,9 @@ class DialogUi(QDialog):
         # * CLOSE APPLICATION FUNCTION BUTTON
         self.d.close_dialog_button.clicked.connect(lambda: self.close())
 
-        # * THIS FUNCTION WILL CHECKT WEATHER THE BUTRTON ON THE DIALOGBOX IS CLICKED, AND IF SO DIRECTS TO THE FUNCTINON : diag_return()
+        # * THIS FUNCTION WILL CHECKT WEATHER THE BUTTON ON THE DIALOGBOX IS CLICKED, AND IF SO DIRECTS TO THE FUNCTINON : diag_return()
         self.d.dialog_ok_button.clicked.connect(lambda: self.close())
+        
         self.d.dialog_cancel_button.clicked.connect(lambda: self.close())
 
         """
