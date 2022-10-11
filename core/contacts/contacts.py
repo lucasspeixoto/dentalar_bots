@@ -54,18 +54,19 @@ class Contacts:
 
         for contact in contacts:
 
-            [name, number] = contact.text().split(" - ")
+            number = contact.text().split(" - ")[-1]
 
             self.whatsapp_scrapping.select_contact_number(number)
 
             contact_exists: bool = self.whatsapp_scrapping.check_contact()
-            
-            print(f'{number} - {contact_exists}')
 
+            print(f"{number} - {contact_exists}")
 
-            if contact_exists == True:                    
+            if contact_exists == True:
                 self.whatsapp_scrapping.insert_message_image(image_path, message)
 
-        # self.whatsapp_scrapping.driver.quit()
+        self.whatsapp_scrapping.quit_driver()
+
+        self.show_error("Processo Encerrado!", "icons/1x/errorAsset 55.png", "Ok")
 
         return
