@@ -43,8 +43,7 @@ class BotProcess:
 
         # Disable the banner "Chrome is being controlled by automated test software"
         self.options.add_experimental_option("useAutomationExtension", False)
-        self.options.add_experimental_option(
-            "excludeSwitches", ["enable-automation"])
+        self.options.add_experimental_option("excludeSwitches", ["enable-automation"])
 
         # Configurações do Navegador
         self.prefs = {
@@ -88,7 +87,9 @@ class BotProcess:
     """
 
     def quit_driver(self):
+        self.uniform_wait(3, 3)
         self.driver.quit()
+
         return
 
     """
@@ -105,8 +106,7 @@ class BotProcess:
     @staticmethod
     def uniform_wait(first_timer: int, last_timer: int):
         sleep(
-            uniform(uniform(first_timer, last_timer),
-                    uniform(first_timer, last_timer))
+            uniform(uniform(first_timer, last_timer), uniform(first_timer, last_timer))
         )
 
         return
@@ -123,14 +123,13 @@ class BotProcess:
         contacts_exists = False
 
         try:
-            self.driver.find_element(
-                by=self.find_options[etype], value=element)
+            self.driver.find_element(by=self.find_options[etype], value=element)
             contacts_exists = True
         except Exception:
             contacts_exists = False
 
         self.uniform_wait(2 * first_timer, 2 * last_timer)
-        
+
         return contacts_exists
 
     """
@@ -168,8 +167,7 @@ class BotProcess:
         self, element: str, etype: str, first_timer: int, last_timer: int
     ) -> None:
         try:
-            found = self.driver.find_element(
-                by=self.find_options[etype], value=element)
+            found = self.driver.find_element(by=self.find_options[etype], value=element)
         except Exception as error:
             print(f"Error Inside clear_field function: {error}")
             pass
@@ -188,8 +186,7 @@ class BotProcess:
 
     def click(self, element: str, etype: str, first_timer: int, last_timer: int):
         try:
-            found = self.driver.find_element(
-                by=self.find_options[etype], value=element)
+            found = self.driver.find_element(by=self.find_options[etype], value=element)
 
         except Exception as error:
             print(f"Error Inside click function: {error}")
@@ -211,8 +208,7 @@ class BotProcess:
         self, element: str, text: str, etype: str, first_timer: int, last_timer: int
     ):
         try:
-            found = self.driver.find_element(
-                by=self.find_options[etype], value=element)
+            found = self.driver.find_element(by=self.find_options[etype], value=element)
             self.uniform_wait(first_timer, last_timer)
         except Exception as error:
             print(f"Error Inside send_keys function: {error}")
@@ -235,8 +231,7 @@ class BotProcess:
     ):
         self.click(element, etype, first_timer, last_timer)
         try:
-            found = self.driver.find_element(
-                by=self.find_options[etype], value=element)
+            found = self.driver.find_element(by=self.find_options[etype], value=element)
 
         except Exception as error:
             print(f"Error Inside click_and_type function: {error}")

@@ -138,3 +138,6 @@ exe/
 
 # Ideas
 .idea
+
+# Output exe build
+/output
