@@ -44,7 +44,7 @@ class Contacts:
 
         contacts: list = self.ui.contacts_list.selectedItems()
         image_path: str = self.files.selected_image
-        message: str = self.ui.whatsapp_message_input.toPlainText()
+        paragraphs: str = self.ui.whatsapp_message_input.toPlainText().split("\n\n")
 
         self.whatsapp_scrapping.start_driver()
 
@@ -63,10 +63,12 @@ class Contacts:
             print(f"{number} - {contact_exists}")
 
             if contact_exists == True:
-                self.whatsapp_scrapping.insert_message_image(image_path, message)
+                self.whatsapp_scrapping.insert_message_image(image_path, paragraphs)
 
         self.whatsapp_scrapping.quit_driver()
 
-        self.show_error("Processo Encerrado!", "icons/1x/errorAsset 55.png", "Ok")
+        # self.show_error("Processo Encerrado!", "icons/1x/errorAsset 55.png", "Ok")
 
         return
+    
+    
