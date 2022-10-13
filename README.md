@@ -19,7 +19,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 🔖 Layout
 
-![interface](images/Layout/layout.png 'Layout')
+![interface](images/Layout/layout.gif 'Layout')
 
 ## ✨ Geração .ui --> .py
 
