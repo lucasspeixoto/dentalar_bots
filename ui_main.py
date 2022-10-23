@@ -69,8 +69,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {	\n"
 "	background-color: rgba(0,0,0,0);\n"
 "}")
+        self.toodle.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
         icon = QIcon()
-        icon.addFile(u"icons/1x/logo.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u"assets/images/logo.png", QSize(), QIcon.Normal, QIcon.Off)
         self.toodle.setIcon(icon)
         self.toodle.setIconSize(QSize(22, 12))
         self.toodle.setFlat(True)
@@ -146,7 +147,8 @@ class Ui_MainWindow(object):
         self.user_logo_header.setObjectName(u"user_logo_header")
         self.user_logo_header.setMaximumSize(QSize(50, 50))
         self.user_logo_header.setFont(font)
-        self.user_logo_header.setPixmap(QPixmap(u"icons/1x/userHeader.png"))
+        self.user_logo_header.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
+        self.user_logo_header.setPixmap(QPixmap(u"assets/images/user_header.png"))
         self.user_logo_header.setScaledContents(False)
         self.user_logo_header.setAlignment(Qt.AlignCenter)
         self.user_logo_header.setMargin(2)
@@ -180,8 +182,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {	\n"
 "	background-color: rgba(0,0,0,0);\n"
 "}")
+        self.minimize_main_windown_button.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
         icon1 = QIcon()
-        icon1.addFile(u"icons/1x/hideAsset 53.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon1.addFile(u"assets/images/hide.png", QSize(), QIcon.Normal, QIcon.Off)
         self.minimize_main_windown_button.setIcon(icon1)
         self.minimize_main_windown_button.setIconSize(QSize(22, 22))
         self.minimize_main_windown_button.setFlat(True)
@@ -215,8 +218,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {	\n"
 "	background-color: rgba(0,0,0,0);\n"
 "}")
+        self.maximize_main_windown_button.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
         icon2 = QIcon()
-        icon2.addFile(u"icons/1x/max.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon2.addFile(u"assets/images/max.png", QSize(), QIcon.Normal, QIcon.Off)
         self.maximize_main_windown_button.setIcon(icon2)
         self.maximize_main_windown_button.setIconSize(QSize(22, 22))
         self.maximize_main_windown_button.setFlat(True)
@@ -249,8 +253,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {	\n"
 "	background-color: rgba(0,0,0,0);\n"
 "}")
+        self.close_main_windown_button.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
         icon3 = QIcon()
-        icon3.addFile(u"icons/1x/closeAsset 43.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon3.addFile(u"assets/images/close.png", QSize(), QIcon.Normal, QIcon.Off)
         self.close_main_windown_button.setIcon(icon3)
         self.close_main_windown_button.setIconSize(QSize(22, 22))
         self.close_main_windown_button.setFlat(True)
@@ -311,7 +316,7 @@ class Ui_MainWindow(object):
 "	background-color: rgba(0,0,0,0);\n"
 "}")
         icon4 = QIcon()
-        icon4.addFile(u"icons/1x/whatsappAsset.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon4.addFile(u"assets/images/whatsapp.png", QSize(), QIcon.Normal, QIcon.Off)
         self.menu_whatsapp_button.setIcon(icon4)
         self.menu_whatsapp_button.setIconSize(QSize(22, 22))
         self.menu_whatsapp_button.setFlat(True)
@@ -346,8 +351,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {	\n"
 "	background-color: rgba(0,0,0,0);\n"
 "}")
+        self.menu_email_button.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
         icon5 = QIcon()
-        icon5.addFile(u"icons/1x/emailsAsset.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon5.addFile(u"assets/images/emails.png", QSize(), QIcon.Normal, QIcon.Off)
         self.menu_email_button.setIcon(icon5)
         self.menu_email_button.setIconSize(QSize(22, 22))
         self.menu_email_button.setFlat(True)
@@ -382,8 +388,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {	\n"
 "	background-color: rgba(0,0,0,0);\n"
 "}")
+        self.menu_connection_button.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
         icon6 = QIcon()
-        icon6.addFile(u"icons/1x/cloudAsset.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon6.addFile(u"assets/images/cloud.png", QSize(), QIcon.Normal, QIcon.Off)
         self.menu_connection_button.setIcon(icon6)
         self.menu_connection_button.setIconSize(QSize(22, 22))
         self.menu_connection_button.setFlat(True)
@@ -418,8 +425,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {	\n"
 "	background-color: rgba(0,0,0,0);\n"
 "}")
+        self.menu_user_button.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
         icon7 = QIcon()
-        icon7.addFile(u"icons/1x/userAsset.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon7.addFile(u"assets/images/user.png", QSize(), QIcon.Normal, QIcon.Off)
         self.menu_user_button.setIcon(icon7)
         self.menu_user_button.setIconSize(QSize(20, 22))
         self.menu_user_button.setFlat(True)
@@ -1154,8 +1162,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {	\n"
 "	background-color: rgba(0,0,0,0);\n"
 "}")
+        self.user_contact_button.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
         icon8 = QIcon()
-        icon8.addFile(u"icons/1x/userInfo.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon8.addFile(u"assets/images/user_info.png", QSize(), QIcon.Normal, QIcon.Off)
         self.user_contact_button.setIcon(icon8)
         self.user_contact_button.setIconSize(QSize(13, 16))
         self.user_contact_button.setFlat(True)
@@ -1189,8 +1198,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {	\n"
 "	background-color: rgba(0,0,0,0);\n"
 "}")
+        self.user_notations_button.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
         icon9 = QIcon()
-        icon9.addFile(u"icons/1x/notations.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon9.addFile(u"assets/images/notations.png", QSize(), QIcon.Normal, QIcon.Off)
         self.user_notations_button.setIcon(icon9)
         self.user_notations_button.setIconSize(QSize(20, 13))
         self.user_notations_button.setFlat(True)
@@ -1224,8 +1234,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {	\n"
 "	background-color: rgba(0,0,0,0);\n"
 "}")
+        self.user_clean_button.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
         icon10 = QIcon()
-        icon10.addFile(u"icons/1x/cleanAsset 59.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon10.addFile(u"assets/images/clean.png", QSize(), QIcon.Normal, QIcon.Off)
         self.user_clean_button.setIcon(icon10)
         self.user_clean_button.setFlat(True)
 
@@ -1258,8 +1269,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {	\n"
 "	background-color: rgba(0,0,0,0);\n"
 "}")
+        self.user_world_button.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
         icon11 = QIcon()
-        icon11.addFile(u"icons/1x/worldAsset 60.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon11.addFile(u"assets/images/world.png", QSize(), QIcon.Normal, QIcon.Off)
         self.user_world_button.setIcon(icon11)
         self.user_world_button.setFlat(True)
 
@@ -1307,9 +1319,10 @@ class Ui_MainWindow(object):
         self.user_contact_icon_label.setMinimumSize(QSize(200, 130))
         self.user_contact_icon_label.setMaximumSize(QSize(200, 160))
         self.user_contact_icon_label.setLayoutDirection(Qt.LeftToRight)
+        self.user_contact_icon_label.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
         self.user_contact_icon_label.setFrameShape(QFrame.NoFrame)
         self.user_contact_icon_label.setFrameShadow(QFrame.Plain)
-        self.user_contact_icon_label.setPixmap(QPixmap(u"icons/1x/userAsset512.png"))
+        self.user_contact_icon_label.setPixmap(QPixmap(u"assets/images/user_big.png"))
         self.user_contact_icon_label.setScaledContents(True)
         self.user_contact_icon_label.setIndent(0)
 
@@ -1751,7 +1764,7 @@ class Ui_MainWindow(object):
 
         self.stackedWidget.setCurrentIndex(7)
         self.load_contacts_button.setDefault(False)
-        self.stackedWidget_android.setCurrentIndex(0)
+        self.stackedWidget_android.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

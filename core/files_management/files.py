@@ -34,7 +34,7 @@ class Files:
             self.show_error(
                 "O arquivo 'paths.txt' foi removido ou renomeado, inclua novamente para "
                 "iniciar!",
-                "icons/1x/errorAsset 55.png",
+                "assets/images/error.png",
                 "Ok",
             )
 
@@ -56,7 +56,7 @@ class Files:
             self.ui.selected_whatsapp_image_path_text.setWordWrap(True)
         else:
             self.show_error(
-                "Nenhuma imagem selecionada!", "icons/1x/errorAsset 55.png", "Ok"
+                "Nenhuma imagem selecionada!", "assets/images/error.png", "Ok"
             )
             self.files.selected_image = ""
             self.ui.selected_whatsapp_image_path_text.setText(self.files.selected_image)

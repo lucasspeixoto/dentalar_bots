@@ -129,7 +129,7 @@ class User:
         """ self.show_dialog(
             "Atenção!",
             "Este usuário será excluído, Deseja continuar ?",
-            "icons/1x/errorAsset 55.png",
+            "assets/images/error.png",
             "Cancelar",
             "Sim",
         ) """

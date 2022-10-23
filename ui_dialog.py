@@ -73,7 +73,7 @@ class Ui_Dialog(object):
 "	background-color: rgb(51,51,51);\n"
 "}")
         icon = QIcon()
-        icon.addFile(u"icons/1x/hideAsset 53.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u"assets/images/hide.png", QSize(), QIcon.Normal, QIcon.Off)
         self.minimize_dialog_button.setIcon(icon)
         self.minimize_dialog_button.setIconSize(QSize(22, 12))
         self.minimize_dialog_button.setAutoDefault(False)
@@ -96,7 +96,7 @@ class Ui_Dialog(object):
 "	background-color: rgb(51,51,51);\n"
 "}")
         icon1 = QIcon()
-        icon1.addFile(u"icons/1x/closeAsset 43.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon1.addFile(u"assets/images/close.png", QSize(), QIcon.Normal, QIcon.Off)
         self.close_dialog_button.setIcon(icon1)
         self.close_dialog_button.setIconSize(QSize(22, 22))
         self.close_dialog_button.setAutoDefault(False)
@@ -110,6 +110,7 @@ class Ui_Dialog(object):
         self.frame_bottom = QFrame(self.frame_2)
         self.frame_bottom.setObjectName(u"frame_bottom")
         self.frame_bottom.setStyleSheet(u"background:rgb(91,90,90);")
+        self.frame_bottom.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
         self.frame_bottom.setFrameShape(QFrame.StyledPanel)
         self.frame_bottom.setFrameShadow(QFrame.Raised)
         self.gridLayout = QGridLayout(self.frame_bottom)

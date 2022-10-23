@@ -26,7 +26,7 @@ def get_contacts_from_excel_file(self):
     except FileNotFoundError:
         self.ui.contacts_list.clear()
         self.ui.whatsapp_page_contacts_frame_text.setText("Contatos")
-        self.show_error("Nenhum arquivo carregado!", "icons/1x/errorAsset 55.png", "Ok")
+        self.show_error("Nenhum arquivo carregado!", "assets/images/error.png", "Ok")
 
         return
 

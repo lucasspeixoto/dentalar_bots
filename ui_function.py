@@ -75,7 +75,7 @@ class UIFunction:
             GLOBAL_STATE = 1
             self.ui.maximize_main_windown_button.setToolTip("Restaurar")
             self.ui.maximize_main_windown_button.setIcon(
-                QtGui.QIcon("icons/1x/restore.png")
+                QtGui.QIcon("assets/images/restore.png")
             )
             self.ui.frame_drag.hide()
         else:
@@ -84,7 +84,7 @@ class UIFunction:
             self.resize(self.width() + 1, self.height() + 1)
             self.ui.maximize_main_windown_button.setToolTip("Maximizar")
             self.ui.maximize_main_windown_button.setIcon(
-                QtGui.QIcon("icons/1x/max.png")
+                QtGui.QIcon("assets/images/max.png")
             )
             self.ui.frame_drag.show()
 
@@ -340,7 +340,7 @@ class APFunction:
 
         else:
             self.show_error(
-                "E-mail ou senha incorreto", "icons/1x/errorAsset 55.png", "Ok"
+                "E-mail ou senha incorreto", "assets/images/error.png", "Ok"
             )
 
     def emails_clear_fields(self):

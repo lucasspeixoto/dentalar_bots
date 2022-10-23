@@ -164,12 +164,15 @@ QPushButton:pressed {
 	background-color: rgba(0,0,0,0);
 }</string>
             </property>
+            <property name="locale">
+             <locale language="Portuguese" country="Brazil"/>
+            </property>
             <property name="text">
              <string/>
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>icons/1x/logo.png</normaloff>icons/1x/logo.png</iconset>
+              <normaloff>assets/images/logo.png</normaloff>assets/images/logo.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -363,11 +366,14 @@ QPushButton:pressed {
                  <pointsize>12</pointsize>
                 </font>
                </property>
+               <property name="locale">
+                <locale language="Portuguese" country="Brazil"/>
+               </property>
                <property name="text">
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap>icons/1x/userHeader.png</pixmap>
+                <pixmap>assets/images/user_header.png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>false</bool>
@@ -445,12 +451,15 @@ QPushButton:pressed {
 	background-color: rgba(0,0,0,0);
 }</string>
                </property>
+               <property name="locale">
+                <locale language="Portuguese" country="Brazil"/>
+               </property>
                <property name="text">
                 <string/>
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>icons/1x/hideAsset 53.png</normaloff>icons/1x/hideAsset 53.png</iconset>
+                 <normaloff>assets/images/hide.png</normaloff>assets/images/hide.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -528,12 +537,15 @@ QPushButton:pressed {
 	background-color: rgba(0,0,0,0);
 }</string>
                </property>
+               <property name="locale">
+                <locale language="Portuguese" country="Brazil"/>
+               </property>
                <property name="text">
                 <string/>
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>icons/1x/max.png</normaloff>icons/1x/max.png</iconset>
+                 <normaloff>assets/images/max.png</normaloff>assets/images/max.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -608,12 +620,15 @@ QPushButton:pressed {
 	background-color: rgba(0,0,0,0);
 }</string>
                </property>
+               <property name="locale">
+                <locale language="Portuguese" country="Brazil"/>
+               </property>
                <property name="text">
                 <string/>
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>icons/1x/closeAsset 43.png</normaloff>icons/1x/closeAsset 43.png</iconset>
+                 <normaloff>assets/images/close.png</normaloff>assets/images/close.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -774,7 +789,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>icons/1x/whatsappAsset.png</normaloff>icons/1x/whatsappAsset.png</iconset>
+                 <normaloff>assets/images/whatsapp.png</normaloff>assets/images/whatsapp.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -861,12 +876,15 @@ QPushButton:pressed {
 	background-color: rgba(0,0,0,0);
 }</string>
                </property>
+               <property name="locale">
+                <locale language="Portuguese" country="Brazil"/>
+               </property>
                <property name="text">
                 <string/>
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>icons/1x/emailsAsset.png</normaloff>icons/1x/emailsAsset.png</iconset>
+                 <normaloff>assets/images/emails.png</normaloff>assets/images/emails.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -953,12 +971,15 @@ QPushButton:pressed {
 	background-color: rgba(0,0,0,0);
 }</string>
                </property>
+               <property name="locale">
+                <locale language="Portuguese" country="Brazil"/>
+               </property>
                <property name="text">
                 <string/>
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>icons/1x/cloudAsset.png</normaloff>icons/1x/cloudAsset.png</iconset>
+                 <normaloff>assets/images/cloud.png</normaloff>assets/images/cloud.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -1045,12 +1066,15 @@ QPushButton:pressed {
 	background-color: rgba(0,0,0,0);
 }</string>
                </property>
+               <property name="locale">
+                <locale language="Portuguese" country="Brazil"/>
+               </property>
                <property name="text">
                 <string/>
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>icons/1x/userAsset.png</normaloff>icons/1x/userAsset.png</iconset>
+                 <normaloff>assets/images/user.png</normaloff>assets/images/user.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -2629,12 +2653,15 @@ QPushButton:pressed {
 	background-color: rgba(0,0,0,0);
 }</string>
                          </property>
+                         <property name="locale">
+                          <locale language="Portuguese" country="Brazil"/>
+                         </property>
                          <property name="text">
                           <string/>
                          </property>
                          <property name="icon">
                           <iconset>
-                           <normaloff>icons/1x/userInfo.png</normaloff>icons/1x/userInfo.png</iconset>
+                           <normaloff>assets/images/user_info.png</normaloff>assets/images/user_info.png</iconset>
                          </property>
                          <property name="iconSize">
                           <size>
@@ -2715,12 +2742,15 @@ QPushButton:pressed {
 	background-color: rgba(0,0,0,0);
 }</string>
                          </property>
+                         <property name="locale">
+                          <locale language="Portuguese" country="Brazil"/>
+                         </property>
                          <property name="text">
                           <string/>
                          </property>
                          <property name="icon">
                           <iconset>
-                           <normaloff>icons/1x/notations.png</normaloff>icons/1x/notations.png</iconset>
+                           <normaloff>assets/images/notations.png</normaloff>assets/images/notations.png</iconset>
                          </property>
                          <property name="iconSize">
                           <size>
@@ -2801,12 +2831,15 @@ QPushButton:pressed {
 	background-color: rgba(0,0,0,0);
 }</string>
                          </property>
+                         <property name="locale">
+                          <locale language="Portuguese" country="Brazil"/>
+                         </property>
                          <property name="text">
                           <string/>
                          </property>
                          <property name="icon">
                           <iconset>
-                           <normaloff>icons/1x/cleanAsset 59.png</normaloff>icons/1x/cleanAsset 59.png</iconset>
+                           <normaloff>assets/images/clean.png</normaloff>assets/images/clean.png</iconset>
                          </property>
                          <property name="flat">
                           <bool>true</bool>
@@ -2881,12 +2914,15 @@ QPushButton:pressed {
 	background-color: rgba(0,0,0,0);
 }</string>
                          </property>
+                         <property name="locale">
+                          <locale language="Portuguese" country="Brazil"/>
+                         </property>
                          <property name="text">
                           <string/>
                          </property>
                          <property name="icon">
                           <iconset>
-                           <normaloff>icons/1x/worldAsset 60.png</normaloff>icons/1x/worldAsset 60.png</iconset>
+                           <normaloff>assets/images/world.png</normaloff>assets/images/world.png</iconset>
                          </property>
                          <property name="flat">
                           <bool>true</bool>
@@ -2918,7 +2954,7 @@ QPushButton:pressed {
                     <string notr="true">background:rgb(91,90,90);</string>
                    </property>
                    <property name="currentIndex">
-                    <number>0</number>
+                    <number>1</number>
                    </property>
                    <widget class="QWidget" name="page_android_contact">
                     <property name="styleSheet">
@@ -3009,6 +3045,9 @@ QPushButton:pressed {
                           <property name="layoutDirection">
                            <enum>Qt::LeftToRight</enum>
                           </property>
+                          <property name="locale">
+                           <locale language="Portuguese" country="Brazil"/>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::NoFrame</enum>
                           </property>
@@ -3019,7 +3058,7 @@ QPushButton:pressed {
                            <string/>
                           </property>
                           <property name="pixmap">
-                           <pixmap>icons/1x/userAsset512.png</pixmap>
+                           <pixmap>assets/images/user_big.png</pixmap>
                           </property>
                           <property name="scaledContents">
                            <bool>true</bool>

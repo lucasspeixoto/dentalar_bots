@@ -67,7 +67,7 @@ class Contacts:
 
         self.whatsapp_scrapping.quit_driver()
 
-        # self.show_error("Processo Encerrado!", "icons/1x/errorAsset 55.png", "Ok")
+        # self.show_error("Processo Encerrado!", "assets/images/error.png", "Ok")
 
         return
     

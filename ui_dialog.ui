@@ -162,7 +162,7 @@ QPushButton:pressed {
            </property>
            <property name="icon">
             <iconset>
-             <normaloff>icons/1x/hideAsset 53.png</normaloff>icons/1x/hideAsset 53.png</iconset>
+             <normaloff>assets/images/hide.png</normaloff>assets/images/hide.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -209,7 +209,7 @@ QPushButton:pressed {
            </property>
            <property name="icon">
             <iconset>
-             <normaloff>icons/1x/closeAsset 43.png</normaloff>icons/1x/closeAsset 43.png</iconset>
+             <normaloff>assets/images/close.png</normaloff>assets/images/close.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -232,6 +232,9 @@ QPushButton:pressed {
        <widget class="QFrame" name="frame_bottom">
         <property name="styleSheet">
          <string notr="true">background:rgb(91,90,90);</string>
+        </property>
+        <property name="locale">
+         <locale language="Portuguese" country="Brazil"/>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>

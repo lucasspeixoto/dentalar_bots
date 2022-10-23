@@ -76,7 +76,7 @@ class BotProcess:
             )
         except WebDriverException:
             self.show_error(
-                "Página fechada, logar novamente!", "icons/1x/errorAsset 55.png", "Ok"
+                "Página fechada, logar novamente!", "assets/images/error.png", "Ok"
             )
             return
 

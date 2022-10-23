@@ -46,7 +46,7 @@ class Validations:
         if any(self.files.whatsapp_paths) == False:
             self.errorexec(
                 "O arquivo 'paths.txt' foi removido ou renomeado, inclua novamente para enviar as mensagens!",
-                "icons/1x/errorAsset 55.png",
+                "assets/images/error.png",
                 "Ok",
             )
             self.ui.validate_whatsapp_sending_button.setEnabled(False)
@@ -69,7 +69,7 @@ class Validations:
         if has_error == True:
             self.show_error(
                 "Para o envio é necessário selecionar um ou mais contatos, inserir a mensagem e selecionar a imagem.",
-                "icons/1x/errorAsset 55.png",
+                "assets/images/error.png",
                 "Ok",
             )
             reset_validate_whatsapp_needed_data(self)
