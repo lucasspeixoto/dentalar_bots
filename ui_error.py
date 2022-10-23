@@ -20,6 +20,7 @@ class Ui_Error(object):
         Error.resize(400, 183)
         Error.setMinimumSize(QSize(400, 150))
         Error.setMaximumSize(QSize(400, 250))
+        Error.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
         self.horizontalLayout = QHBoxLayout(Error)
         self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
